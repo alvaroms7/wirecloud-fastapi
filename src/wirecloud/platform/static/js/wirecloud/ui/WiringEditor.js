@@ -28,6 +28,69 @@ Wirecloud.ui = Wirecloud.ui || {};
 
     "use strict";
 
+    const WIRING_CLIPBOARD_STORAGE_KEY = "wirecloud.wiring.clipboard";
+
+    const getClipboardStorage = function getClipboardStorage() {
+        try {
+            return window.localStorage;
+        } catch (e) {
+            return null;
+        }
+    };
+
+    const readCopiedComponents = function readCopiedComponents() {
+        const storage = getClipboardStorage();
+
+        if (storage == null) {
+            return [];
+        }
+
+        try {
+            const data = JSON.parse(storage.getItem(WIRING_CLIPBOARD_STORAGE_KEY));
+
+            if (data != null && data.version === 1 && Array.isArray(data.components)) {
+                return data.components;
+            }
+        } catch (e) {
+            storage.removeItem(WIRING_CLIPBOARD_STORAGE_KEY);
+        }
+
+        return [];
+    };
+
+    const writeCopiedComponents = function writeCopiedComponents(components) {
+        const storage = getClipboardStorage();
+
+        if (storage == null) {
+            return;
+        }
+
+        try {
+            storage.setItem(WIRING_CLIPBOARD_STORAGE_KEY, JSON.stringify({
+                version: 1,
+                components: components
+            }));
+        } catch (e) {
+            // Ignore storage quota/private-mode errors. The in-memory clipboard
+            // still works for the current page.
+        }
+    };
+
+    const getCopiedComponentMeta = function getCopiedComponentMeta(copiedComponent) {
+        const meta = copiedComponent.meta;
+        const metaUri = copiedComponent.metaUri || (meta != null ? meta.uri : null);
+
+        if (meta != null && meta.uri != null) {
+            return meta;
+        }
+
+        if (metaUri != null && this.workspace != null && this.workspace.resources != null) {
+            return this.workspace.resources.getOrCreateMissing(metaUri, copiedComponent.type);
+        }
+
+        return meta;
+    };
+
     const bindEndpoint = function bindEndpoint(endpoint) {
         this.connectionEngine.appendEndpoint(endpoint);
         this.suggestionManager.appendEndpoint(endpoint);
@@ -682,27 +745,13 @@ Wirecloud.ui = Wirecloud.ui || {};
         this.copiedComponents = [];
         const allConnections = [];
 
-        // First pass: collect all components
-        const componentsMap = {};
-        for (const type in this.selectedComponents) {
-            for (const id in this.selectedComponents[type]) {
-                const component = this.selectedComponents[type][id];
-                componentsMap[component.id] = component;
-            }
-        }
-
-        console.log('[COPY] Selected components:', Object.keys(this.selectedComponents.operator).length + Object.keys(this.selectedComponents.widget).length);
-
         // Second pass: collect all connections between selected components
         for (const type in this.selectedComponents) {
             for (const id in this.selectedComponents[type]) {
                 const component = this.selectedComponents[type][id];
-                console.log('[COPY] Checking component:', component.id, 'type:', type);
 
                 // Check all endpoints of this component
                 component.forEachEndpoint((endpoint) => {
-                    console.log('[COPY]   Endpoint:', endpoint.name, 'type:', endpoint.type, 'has connections:', endpoint.connections ? endpoint.connections.length : 0);
-
                     if (!endpoint.connections) {
                         return;
                     }
@@ -712,14 +761,11 @@ Wirecloud.ui = Wirecloud.ui || {};
                         const targetEndpointId = connection.target && connection.target.endpoint ? connection.target.endpoint.id : null;
 
                         if (!sourceEndpointId || !targetEndpointId) {
-                            console.log('[COPY]     Connection skipped: missing endpoint IDs');
                             return;
                         }
 
                         const sourceComponent = connection.source && connection.source.endpoint ? connection.source.endpoint.component : null;
                         const targetComponent = connection.target && connection.target.endpoint ? connection.target.endpoint.component : null;
-
-                        console.log('[COPY]     Connection: source=' + (sourceComponent ? sourceComponent.id : 'null') + ', target=' + (targetComponent ? targetComponent.id : 'null'));
 
                         // Only include connections where BOTH endpoints are in selected components
                         if (sourceComponent && targetComponent &&
@@ -730,7 +776,6 @@ Wirecloud.ui = Wirecloud.ui || {};
 
                             // Check if we already have this connection
                             if (!allConnections.some(c => c.key === connectionKey)) {
-                                console.log('[COPY]     ✓ Connection added:', connectionKey);
                                 allConnections.push({
                                     key: connectionKey,
                                     sourceComponentId: sourceComponent.id,
@@ -745,15 +790,11 @@ Wirecloud.ui = Wirecloud.ui || {};
                                     targetHandle: connection.targetHandle
                                 });
                             }
-                        } else {
-                            console.log('[COPY]     ✗ Connection skipped: components not both selected');
                         }
                     });
                 });
             }
         }
-
-        console.log('[COPY] Total connections found:', allConnections.length);
 
         // Third pass: copy component information with connections
         for (const type in this.selectedComponents) {
@@ -803,6 +844,7 @@ Wirecloud.ui = Wirecloud.ui || {};
                     id: component.id,
                     type: component.type,
                     meta: component._component.meta,
+                    metaUri: component._component.meta.uri,
                     position: component.position(),
                     collapsed: component.collapsed,
                     preferences: preferences,
@@ -813,19 +855,17 @@ Wirecloud.ui = Wirecloud.ui || {};
             }
         }
         // Copy operation completed
+        writeCopiedComponents(this.copiedComponents);
     };
 
     const pasteComponents = function pasteComponents() {
-        const copiedComponents = this.copiedComponents;
+        const copiedComponents = this.copiedComponents.length > 0 ? this.copiedComponents : readCopiedComponents();
+
         if (!copiedComponents || copiedComponents.length === 0) {
-            console.log('[PASTE] No components to paste');
             return;
         }
 
-        console.log('[PASTE] Pasting', copiedComponents.length, 'components');
-        copiedComponents.forEach((cc) => {
-            console.log('[PASTE]   -', cc.id, '(', cc.type, ') with', cc.sourceEndpoints.reduce((n, ep) => n + ep.connections.length, 0), 'connections');
-        });
+        this.copiedComponents = copiedComponents;
 
         const newComponents = {};
 
@@ -833,6 +873,12 @@ Wirecloud.ui = Wirecloud.ui || {};
             const pasteOffset = 20;
 
             for (const copiedComponent of copiedComponents) {
+                const copiedComponentMeta = getCopiedComponentMeta.call(this, copiedComponent);
+
+                if (copiedComponentMeta == null) {
+                    continue;
+                }
+
                 if (copiedComponent.type === 'operator') {
                     const operatorOptions = {
                         position: {
@@ -842,24 +888,20 @@ Wirecloud.ui = Wirecloud.ui || {};
                         collapsed: copiedComponent.collapsed
                     };
 
-                    if (Object.keys(copiedComponent.preferences).length > 0) {
-                        operatorOptions.preferences = {};
-                        for (const key in copiedComponent.preferences) {
-                            operatorOptions.preferences[key] = {
-                                value: copiedComponent.preferences[key]
-                            };
-                        }
+                    operatorOptions.preferences = {};
+                    for (const key in copiedComponent.preferences) {
+                        operatorOptions.preferences[key] = {
+                            value: copiedComponent.preferences[key]
+                        };
                     }
-                    if (Object.keys(copiedComponent.properties).length > 0) {
-                        operatorOptions.properties = {};
-                        for (const key in copiedComponent.properties) {
-                            operatorOptions.properties[key] = {
-                                value: copiedComponent.properties[key]
-                            };
-                        }
+                    operatorOptions.properties = {};
+                    for (const key in copiedComponent.properties) {
+                        operatorOptions.properties[key] = {
+                            value: copiedComponent.properties[key]
+                        };
                     }
 
-                    const newComponent = await this.workspace.wiring.createOperator(copiedComponent.meta, operatorOptions);
+                    const newComponent = await this.workspace.wiring.createOperator(copiedComponentMeta, operatorOptions);
                     const visualOptions = {
                         position: operatorOptions.position,
                         collapsed: operatorOptions.collapsed,
@@ -872,39 +914,24 @@ Wirecloud.ui = Wirecloud.ui || {};
                     this.layout.content.appendChild(component);
                     this.behaviourEngine.updateComponent(component);
                     disableComponent.call(this, component);
-                    console.log('[PASTE] Created operator:', copiedComponent.id, '-> new id:', newComponent.id);
 
                 } else if (copiedComponent.type === 'widget') {
-                    console.log('[PASTE] Creating widget from meta:', copiedComponent.meta.name);
-
                     try {
-                        const widgetView = await this.workspace.view.activeTab.createWidget(copiedComponent.meta);
-                        console.log('[PASTE] Widget created:', widgetView ? widgetView.model.id : 'null');
-
-                        if (!widgetView || !widgetView.model) {
-                            console.error('[PASTE] ✗ Widget creation failed: widgetView is invalid');
-                            continue;
-                        }
+                        const widgetView = await this.workspace.view.activeTab.createWidget(copiedComponentMeta);
 
                         // Apply preferences AFTER widget is created
-                        if (Object.keys(copiedComponent.preferences).length > 0) {
-                            console.log('[PASTE] Applying preferences to widget');
-                            for (const key in copiedComponent.preferences) {
-                                const prefValue = copiedComponent.preferences[key];
-                                if (widgetView.model.preferences && widgetView.model.preferences[key]) {
-                                    widgetView.model.preferences[key].value = prefValue;
-                                }
+                        for (const key in copiedComponent.preferences) {
+                            const prefValue = copiedComponent.preferences[key];
+                            if (widgetView.model.preferences && widgetView.model.preferences[key]) {
+                                widgetView.model.preferences[key].value = prefValue;
                             }
                         }
 
                         // Apply properties
-                        if (Object.keys(copiedComponent.properties).length > 0) {
-                            console.log('[PASTE] Applying properties to widget');
-                            for (const key in copiedComponent.properties) {
-                                const propValue = copiedComponent.properties[key];
-                                if (widgetView.model.properties && widgetView.model.properties[key]) {
-                                    widgetView.model.properties[key].value = propValue;
-                                }
+                        for (const key in copiedComponent.properties) {
+                            const propValue = copiedComponent.properties[key];
+                            if (widgetView.model.properties && widgetView.model.properties[key]) {
+                                widgetView.model.properties[key].value = propValue;
                             }
                         }
 
@@ -923,50 +950,34 @@ Wirecloud.ui = Wirecloud.ui || {};
                         this.layout.content.appendChild(component);
                         this.behaviourEngine.updateComponent(component);
                         disableComponent.call(this, component);
-                        console.log('[PASTE] Created widget:', copiedComponent.id, '-> new id:', widgetView.model.id);
                     } catch (error) {
-                        console.error('[PASTE] ✗ Widget creation error:', error);
-                        continue;
+                        console.error('Widget creation error:', error);
                     }
                 }
             }
 
-            console.log('[PASTE] All components created. Now creating connections...');
-
             for (const copiedComponent of copiedComponents) {
                 const newComponent = newComponents[copiedComponent.id];
                 if (!newComponent) {
-                    console.log('[PASTE] ✗ Component not found:', copiedComponent.id);
                     continue;
                 }
-
-                console.log('[PASTE] Processing connections for:', copiedComponent.id);
 
                 for (const endpointInfo of copiedComponent.sourceEndpoints) {
                     const sourceEndpoint = newComponent.getEndpoint('source', endpointInfo.name);
                     if (!sourceEndpoint) {
-                        console.log('[PASTE]   ✗ Source endpoint not found:', endpointInfo.name);
                         continue;
                     }
-
-                    console.log('[PASTE]   Source endpoint found:', endpointInfo.name, 'with', endpointInfo.connections.length, 'connections');
 
                     for (const connectionInfo of endpointInfo.connections) {
                         const targetComponent = newComponents[connectionInfo.targetComponent];
                         if (!targetComponent) {
-                            console.log('[PASTE]     ✗ Target component not found:', connectionInfo.targetComponent);
                             continue;
                         }
-
-                        console.log('[PASTE]     Target component found:', connectionInfo.targetComponent);
 
                         const targetEndpoint = targetComponent.getEndpoint('target', connectionInfo.targetEndpoint);
                         if (!targetEndpoint) {
-                            console.log('[PASTE]     ✗ Target endpoint not found:', connectionInfo.targetEndpoint);
                             continue;
                         }
-
-                        console.log('[PASTE]     ✓ Creating connection:', sourceEndpoint.name, '->', targetEndpoint.name);
 
                         try {
                             const connection = await this.workspace.wiring.createConnection(sourceEndpoint._endpoint, targetEndpoint._endpoint);
@@ -974,15 +985,13 @@ Wirecloud.ui = Wirecloud.ui || {};
                                 sourceHandle: connectionInfo.sourceHandle,
                                 targetHandle: connectionInfo.targetHandle
                             });
-                            console.log('[PASTE]     ✓ Connection created successfully');
                         } catch (error) {
-                            console.error('[PASTE]     ✗ Failed to create connection:', error);
+                            console.error('Failed to create connection:', error);
                         }
                     }
                 }
             }
 
-            console.log('[PASTE] Finished. Selecting new components.');
             clearComponentSelection.call(this);
             for (const id in newComponents) {
                 const newComponent = newComponents[id];
@@ -992,7 +1001,7 @@ Wirecloud.ui = Wirecloud.ui || {};
                 newComponent.toFirst();
             }
         })().catch((error) => {
-            console.error('[PASTE] Error in paste operation:', error);
+            console.error('Error in paste operation:', error);
         });
     };
 
@@ -1030,7 +1039,7 @@ Wirecloud.ui = Wirecloud.ui || {};
             this.selectedCount = 0;
 
             this.orderableComponent = null;
-            this.copiedComponents = [];
+            this.copiedComponents = readCopiedComponents();
             this.disable();
         }
 
