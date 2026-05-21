@@ -376,9 +376,6 @@ async def create_tab_collection(db: DBDep, user: UserDep, request: Request, work
         tab_title = tab_name
 
     for aux_tab in workspace.tabs.values():
-        print("Aux tab: ", aux_tab)
-        print("Tab name: ", tab_name)
-        print()
         if aux_tab.name == tab_name:
             return build_error_response(request, 409, _("A tab with the given name already exists"))
 
