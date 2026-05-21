@@ -150,14 +150,14 @@
                 });
 
                 if (this.workspace.restricted) {
-                    reject(utils.interpolate(utils.gettext("The destination tab (%(title)s) is readonly"), {
+                    return reject(utils.interpolate(utils.gettext("The destination tab (%(title)s) is readonly"), {
                         title: this.title
                     }));
                 }
 
-                // Add action to all layout configurations
-                for (let i = 0; i < options.layoutConfig.length; i++) {
-                    options.layoutConfig[i].action = 'update';
+                const layoutConfigurations = options.layoutConfig || [];
+                for (let i = 0; i < layoutConfigurations.length; i++) {
+                    layoutConfigurations[i].action = 'update';
                 }
 
                 var content = utils.merge(options, {

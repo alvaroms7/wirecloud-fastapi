@@ -263,3 +263,46 @@ async def test_commit_and_start_transaction_error_paths(monkeypatch):
 
     with pytest.raises(OperationFailure):
         await failing_other.start_transaction()
+
+
+async def test_get_session_abort_non_transient_error(monkeypatch):
+    async def _true():
+        return True
+
+    class _Session:
+        def __init__(self):
+            self.in_transaction = False
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return None
+
+        async def commit_transaction(self):
+            raise RuntimeError("commit-failed")
+
+        async def abort_transaction(self):
+            raise OperationFailure("abort-failed", code=99, details={"errorLabels": []})
+
+    class _Client:
+        def __init__(self, session):
+            self._session = session
+
+        def start_session(self):
+            return self._session
+
+    class _PySession(database.PyMongoSession):
+        async def start_transaction(self):
+            self._session.in_transaction = True
+
+    monkeypatch.setattr(database, "USE_TRANSACTIONS", True)
+    database._transactions_supported = True
+    monkeypatch.setattr(database, "check_transactions_supported", _true)
+    monkeypatch.setattr(database, "client", _Client(_Session()))
+    monkeypatch.setattr(database, "PyMongoSession", _PySession)
+
+    gen = database.get_session()
+    _ = await gen.__anext__()
+    with pytest.raises(OperationFailure):
+        await gen.__anext__()

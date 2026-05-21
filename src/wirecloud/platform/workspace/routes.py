@@ -22,6 +22,7 @@ from typing import Optional
 from io import BytesIO
 
 from fastapi import APIRouter, Response, Request, Body, Form, UploadFile, File, Path
+from fastapi.responses import JSONResponse
 
 from wirecloud import docs as root_docs
 from wirecloud.catalogue.utils import wgt_deployer
@@ -325,7 +326,7 @@ async def delete_workspace_entry(db: DBDep, user: UserDep, request: Request, wor
     response_model=TabData,
     response_description=docs.create_tab_collection_response_description,
     responses={
-        200: {"content": {"application/json": {"example": docs.create_tab_collection_response_example}}},
+        201: {"content": {"application/json": {"example": docs.create_tab_collection_response_example}}},
         401: root_docs.generate_auth_required_response_openapi_description(
             docs.create_tab_collection_auth_required_response_description
         ),
@@ -379,7 +380,8 @@ async def create_tab_collection(db: DBDep, user: UserDep, request: Request, work
             return build_error_response(request, 409, _("A tab with the given name already exists"))
 
     tab = await create_tab(db, user, tab_title, workspace, name=tab_name)
-    return await get_tab_data(db, request, tab, user=user)
+    tab_data = await get_tab_data(db, request, tab, user=user)
+    return JSONResponse(content=tab_data.model_dump(), status_code=201)
 
 
 @workspace_router.get(

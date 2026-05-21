@@ -304,7 +304,7 @@ async def test_tab_routes(app_client, db_session, monkeypatch):
     monkeypatch.setattr(routes, "create_tab", _create_tab)
     monkeypatch.setattr(routes, "get_tab_data", _tab_data)
     created = await app_client.post("/api/workspace/507f1f77bcf86cd799439012/tabs/", json={"name": "new-tab", "title": ""})
-    assert created.status_code == 200
+    assert created.status_code == 201
 
     monkeypatch.setattr(routes, "get_workspace_by_id", _none)
     get_missing = await app_client.get("/api/workspace/507f1f77bcf86cd799439012/tab/tab-0/")
