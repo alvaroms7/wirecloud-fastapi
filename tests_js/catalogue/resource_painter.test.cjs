@@ -138,6 +138,12 @@ const createEnvironment = (extraContext = { extra: 'ctx' }) => {
                 },
             },
         },
+        contextManager: {
+            get: (key) => {
+                if (key === 'permissions') return [];
+                return false;
+            },
+        },
     };
 
     loadLegacyScript('src/wirecloud/catalogue/static/js/wirecloud/ui/ResourcePainter.js');
@@ -321,8 +327,40 @@ test('ResourcePainter renderAdvancedOperations includes Publish for local catalo
     assert.equal(commands.some((entry) => entry[0] === 'publishOtherMarket'), true);
 });
 
+test('ResourcePainter renderAdvancedOperations includes massive update button for superuser', () => {
+    const { painter, commands } = createEnvironment();
 
+    global.Wirecloud.contextManager.get = (key) => {
+        if (key === 'issuperuser') return true;
+        if (key === 'permissions') return [];
+        return false;
+    };
 
+    const resource = buildResource('widget');
+    const advanced = painter.renderAdvancedOperations(resource);
+
+    const updateButton = advanced.children.find((button) => button?.options?.text === 'Update all resource versions');
+    assert.equal(Boolean(updateButton), true);
+    updateButton.trigger('click');
+    assert.equal(commands.some((entry) => entry[0] === 'massiveUpdate'), true);
+});
+
+test('ResourcePainter renderAdvancedOperations handles null permissions fallback', () => {
+    const { painter } = createEnvironment();
+
+    global.Wirecloud.contextManager.get = (key) => {
+        if (key === 'issuperuser') return false;
+        if (key === 'permissions') return null;
+        return false;
+    };
+
+    const resource = buildResource('widget');
+    resource.getAllVersions = () => [{ text: '1.0' }];
+    resource.isAllow = () => false;
+
+    const advanced = painter.renderAdvancedOperations(resource);
+    assert.ok(advanced.children.every((button) => button?.options?.text !== 'Update all resource versions'));
+});
 
 
 

@@ -57,7 +57,7 @@
                 }.bind(this),
                 onFailure: function (response) {
                     this.windowContent.innerHTML = '<div class="alert alert-danger">Error processing resource documentation</div>';
-                },
+                }.bind(this),
                 onComplete: function () {
                     this.windowContent.classList.remove('disabled');
                 }.bind(this)

@@ -57,10 +57,6 @@
             throw new Error('Missing Object.defineProperties support');
         }
 
-        if (!('defineProperties' in Object)) {
-            throw new Error('Missing Object.defineProperties support');
-        }
-
         if (!('classList' in document.documentElement)) {
             throw new Error('Missing Element.classList support');
         }

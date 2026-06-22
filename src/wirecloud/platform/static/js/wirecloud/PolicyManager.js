@@ -43,6 +43,12 @@
         }
     });
 
+    Object.defineProperty(PolicyManager, 'register', {
+        value: function register(context, actions) {
+            policy[context] = actions;
+        }
+    });
+
     Object.preventExtensions(PolicyManager);
     Object.defineProperty(Wirecloud, 'PolicyManager', {value: PolicyManager});
 

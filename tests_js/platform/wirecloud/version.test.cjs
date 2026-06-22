@@ -33,3 +33,29 @@ test('Wirecloud.Version rejects malformed versions', () => {
     assert.throws(() => new Wirecloud.Version(null), /missing or invalid version parameter/);
     assert.throws(() => new Wirecloud.Version('1.0').compareTo('bad'), /invalid version parameter/);
 });
+
+test('Wirecloud.Version compareTo handles different array lengths', () => {
+    // 1.0.0 vs 1.0 — second has fewer segments, null coalesce uses 0
+    assert.equal(new Wirecloud.Version('1.0.0').compareTo('1.0'), 0);
+    // 1.0.1 vs 1.0 — patch version 1 > 0
+    assert.equal(new Wirecloud.Version('1.0.1').compareTo('1.0'), 1);
+    // 1.0 vs 1.0.1 — 0 < 1
+    assert.equal(new Wirecloud.Version('1.0').compareTo('1.0.1'), -1);
+});
+
+test('Wirecloud.Version compareTo dev versions with different devtext', () => {
+    // Both dev, different devtext → returns 1
+    assert.equal(new Wirecloud.Version('1.0-devalice').compareTo('1.0-devbob'), 1);
+});
+
+test('Wirecloud.Version compareTo dev versions with same devtext returns 0', () => {
+    assert.equal(new Wirecloud.Version('1.0-devalice').compareTo('1.0-devalice'), 0);
+});
+
+test('Wirecloud.Version compareTo both non-dev (null devtext) returns 0', () => {
+    assert.equal(new Wirecloud.Version('1.0').compareTo('1.0'), 0);
+});
+
+test('Wirecloud.Version compareTo non-dev version is higher than dev version', () => {
+    assert.equal(new Wirecloud.Version('1.0').compareTo('1.0-devalice'), 1);
+});

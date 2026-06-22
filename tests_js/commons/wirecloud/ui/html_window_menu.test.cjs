@@ -111,11 +111,12 @@ test('Wirecloud.ui.HTMLWindowMenu show success path injects content and repaints
     assert.equal(menu.windowContent.classList.contains('disabled'), false);
 });
 
-test('Wirecloud.ui.HTMLWindowMenu show failure path currently throws TypeError', () => {
+test('Wirecloud.ui.HTMLWindowMenu show failure path displays error message', () => {
     resetLegacyRuntime();
     const { HTMLWindowMenu, setMode } = setupHTMLWindowMenu();
     const menu = new HTMLWindowMenu('/docs', 'Documentation', 'extra');
 
     setMode('failure');
-    assert.throws(() => menu.show(), TypeError);
+    assert.doesNotThrow(() => menu.show());
+    assert.equal(menu.windowContent.innerHTML, '<div class="alert alert-danger">Error processing resource documentation</div>');
 });

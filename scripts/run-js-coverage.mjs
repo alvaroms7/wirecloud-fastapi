@@ -5,7 +5,8 @@ import process from 'node:process';
 
 const rootDir = process.cwd();
 const coverageRoot = path.join(rootDir, 'coverage', 'js');
-const c8Bin = path.join(rootDir, 'node_modules', '.bin', process.platform === 'win32' ? 'c8.cmd' : 'c8');
+const c8Bin = path.join(rootDir, 'node_modules', 'c8', 'bin', 'c8.js');
+const c8Preload = path.join(rootDir, 'scripts', 'node26-yargs-cjs-shim.cjs');
 
 const listFromEnv = (name) => (process.env[name] || '')
     .split(',')
@@ -62,7 +63,10 @@ if (Object.values(thresholds).some(Boolean)) {
     });
 }
 
-const result = spawnSync(c8Bin, [
+const result = spawnSync(process.execPath, [
+    '-r',
+    c8Preload,
+    c8Bin,
     ...c8Args,
     process.execPath,
     './scripts/run-js-tests.mjs',
