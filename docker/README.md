@@ -1,6 +1,6 @@
 # Docker deployment
 
-This directory contains a complete Docker setup for Wirecloud FastAPI:
+This directory contains a complete Docker setup for WireCloud 2:
 
 - `Dockerfile`: multi-stage image build (frontend assets + python wheel)
 - `settings.py`: environment-driven runtime settings
@@ -10,25 +10,35 @@ This directory contains a complete Docker setup for Wirecloud FastAPI:
 
 ## Quick start
 
-1. Create env file:
+1. Create the environment file:
 
 ```bash
 cp docker/.env.example docker/.env
 ```
 
-2. Start the stack:
+2. Replace `WIRECLOUD_JWT_KEY` and `WIRECLOUD_SECRET_KEY` in `docker/.env`
+   with different random values.
+
+3. Start the stack from the repository root:
 
 ```bash
-cd docker
-docker compose up -d --build
+docker compose -f docker/docker-compose.yml up -d --build
 ```
 
-3. Open Wirecloud:
+4. Install the bundled resources and create an administrator:
 
-- `http://localhost:8000`
+```bash
+docker compose -f docker/docker-compose.yml exec wirecloud python -m manage populate
+docker compose -f docker/docker-compose.yml exec wirecloud python -m manage createsuperuser
+```
+
+5. Open <http://localhost:8000/>.
 
 ## Notes
 
 - `settings.py` is loaded through `PYTHONPATH=/app/docker` in the image.
-- Change `WIRECLOUD_SECRET_KEY` and `WIRECLOUD_JWT_KEY` in production.
-- Persistent app data is stored in the `wirecloud_data` docker volume.
+- Persistent application, MongoDB, and Elasticsearch data are stored in named
+  volumes. Do not run `docker compose down --volumes` unless you intend to
+  delete them.
+- The complete procedure, configuration reference, backup notes, and production
+  checklist are in the [installation documentation](../docs/installation.md).

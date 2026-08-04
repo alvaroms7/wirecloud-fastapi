@@ -12,3 +12,5 @@ deployment/
 coverage.xml
 htmlcov/
 coverage/
+site/
+build/
