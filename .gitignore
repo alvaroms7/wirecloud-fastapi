@@ -14,3 +14,4 @@ htmlcov/
 coverage/
 site/
 build/
+*.egg-info/

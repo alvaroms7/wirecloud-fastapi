@@ -70,6 +70,10 @@ fork and Dependabot pull requests a read-only token, so those runs publish the
 same results in the workflow summary and as downloadable artifacts without
 attempting to post a comment.
 
+A separate package workflow builds and verifies the Python wheel on every push,
+pull request, and published GitHub release. The wheel is retained as a workflow
+artifact for normal CI runs and is also attached to published releases.
+
 ## Documentation
 
 Install the pinned documentation tool and build in strict mode:
