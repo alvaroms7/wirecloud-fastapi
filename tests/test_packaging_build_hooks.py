@@ -63,7 +63,11 @@ def test_frontend_build_requires_npm(monkeypatch):
     fake.__class__ = type("MixedCmd", (module._FrontendBuildMixin, _FakeCommand), {})
 
     monkeypatch.delenv("WIRECLOUD_SKIP_NPM_BUILD", raising=False)
-    monkeypatch.setattr(module.shutil, "which", lambda name: None)
+
+    def missing_npm(*_args, **_kwargs):
+        raise FileNotFoundError("npm")
+
+    monkeypatch.setattr(module.subprocess, "check_call", missing_npm)
 
     with pytest.raises(RuntimeError, match="npm is required"):
         fake._run_frontend_build()
@@ -79,7 +83,6 @@ def test_frontend_build_runs_npm_once(monkeypatch):
     calls = []
 
     monkeypatch.delenv("WIRECLOUD_SKIP_NPM_BUILD", raising=False)
-    monkeypatch.setattr(module.shutil, "which", lambda name: "/usr/bin/npm")
 
     def fake_check_call(cmd, cwd, env):
         calls.append((cmd, cwd, env.get("WIRECLOUD_SKIP_NPM_BUILD")))
@@ -90,7 +93,8 @@ def test_frontend_build_runs_npm_once(monkeypatch):
     fake._run_frontend_build()
 
     assert len(calls) == 1
-    assert calls[0][0] == ["/usr/bin/npm", "run", "build"]
+    expected_npm = "npm.cmd" if os.name == "nt" else "npm"
+    assert calls[0][0] == [expected_npm, "run", "build"]
     assert calls[0][1] == str(PROJECT_ROOT)
 
 
@@ -102,7 +106,6 @@ def test_frontend_build_propagates_npm_failure(monkeypatch):
     fake.__class__ = type("MixedCmd", (module._FrontendBuildMixin, _FakeCommand), {})
 
     monkeypatch.delenv("WIRECLOUD_SKIP_NPM_BUILD", raising=False)
-    monkeypatch.setattr(module.shutil, "which", lambda name: "/usr/bin/npm")
 
     def failing_check_call(*_args, **_kwargs):
         raise subprocess.CalledProcessError(returncode=7, cmd=["npm", "run", "build"])

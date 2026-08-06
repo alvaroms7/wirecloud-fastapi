@@ -14,6 +14,165 @@ Use the complete procedure in [Getting started](getting-started.md). The supplie
 
 For production, place a TLS-terminating reverse proxy or ingress in front of WireCloud, use externally managed secrets, apply resource limits, and replace the single-node data services with infrastructure matching your availability and backup requirements.
 
+## Install from a release wheel
+
+Published GitHub releases contain a pre-built `.whl` file. The same wheel is
+available as the `wirecloud-wheel` artifact on push and pull-request workflow
+runs. A wheel already contains the compiled frontend, so a machine consuming it
+needs Python but does not need Node.js or npm.
+
+### Install from PyPI (planned)
+
+WireCloud 2.0 is not published on [PyPI](https://pypi.org/) yet. Once publication
+starts, install the latest release directly from the Python package index:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install wirecloud
+```
+
+To deploy a specific release, pin its version:
+
+```bash
+python -m pip install "wirecloud==2.0.0"
+```
+
+The PyPI package will contain the same compiled frontend as the GitHub release
+wheel. After installing it, create the `config/` and `data/` directories and
+follow the configuration and startup instructions below.
+
+### Install a wheel from GitHub
+
+Create a small deployment project. Download a wheel from the release's
+**Assets** section into `packages/`, or use the GitHub CLI:
+
+```text
+my-wirecloud/
+├── .env
+├── .venv/
+├── config/
+│   └── settings.py
+├── data/
+└── packages/
+    └── wirecloud-2.0.0-py3-none-any.whl
+```
+
+```bash
+mkdir -p my-wirecloud/packages
+cd my-wirecloud
+gh release download 2.0.0 --pattern '*.whl' --dir packages
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install ./packages/wirecloud-2.0.0-py3-none-any.whl
+mkdir -p config data
+```
+
+WireCloud imports a Python module named `settings`. Put the directory containing
+the selected `settings.py` first on `PYTHONPATH`. For example, the following
+`config/settings.py` configures a local MongoDB and Elasticsearch while keeping
+the deployment state inside the project:
+
+```python
+import os
+from pathlib import Path
+
+from aiocache import caches
+
+
+PROJECT_DIR = Path(__file__).resolve().parents[1]
+BASEDIR = str(PROJECT_DIR / "data")
+
+DEBUG = False
+ALLOW_ANONYMOUS_ACCESS = False
+
+INSTALLED_APPS = (
+    "wirecloud.commons",
+    "wirecloud.platform",
+    "wirecloud.catalogue",
+    "wirecloud.proxy",
+    "wirecloud.fiware",
+    "wirecloud.keycloak",
+)
+
+DATABASE = {
+    "DRIVER": "mongodb",
+    "NAME": "wirecloud",
+    "HOST": "127.0.0.1",
+    "PORT": "27017",
+    "USER": "",
+    "PASSWORD": "",
+    "USE_TRANSACTIONS": False,
+}
+
+ELASTICSEARCH = {
+    "HOST": "127.0.0.1",
+    "PORT": 9200,
+    "USER": "",
+    "PASSWORD": "",
+    "SECURE": False,
+}
+
+LANGUAGES = (("en", "English"), ("es", "Spanish"), ("pt", "Portuguese"))
+DEFAULT_LANGUAGE = "en"
+
+JWT_KEY = os.environ["WIRECLOUD_JWT_KEY"]
+SECRET_KEY = os.environ["WIRECLOUD_SECRET_KEY"]
+SESSION_AGE = 60 * 60 * 24 * 14
+
+OID_CONNECT_ENABLED = False
+WIRECLOUD_HTTPS_VERIFY = True
+
+CACHE_DIR = str(PROJECT_DIR / "data" / "cache")
+CATALOGUE_MEDIA_ROOT = str(PROJECT_DIR / "data" / "catalogue" / "media")
+WIDGET_DEPLOYMENT_DIR = str(PROJECT_DIR / "data" / "deployment" / "widgets")
+
+AVAILABLE_THEMES = ["defaulttheme"]
+THEME_ACTIVE = "defaulttheme"
+
+PROXY_WHITELIST_ENABLED = False
+PROXY_WHITELIST = []
+PROXY_BLACKLIST_ENABLED = False
+PROXY_BLACKLIST = []
+
+caches.set_config({
+    "default": {
+        "cache": "aiocache.SimpleMemoryCache",
+        "ttl": 3600,
+    }
+})
+cache = caches.get("default")
+```
+
+Store stable, unique values of at least 32 characters in `.env`; changing them
+invalidates existing sessions. Do not commit this file:
+
+```dotenv
+WIRECLOUD_JWT_KEY=replace-with-a-stable-random-value-of-at-least-32-characters
+WIRECLOUD_SECRET_KEY=replace-with-a-different-random-value-of-at-least-32-characters
+```
+
+Load the environment and select the configuration before using management
+commands or starting the server:
+
+```bash
+set -a
+. ./.env
+set +a
+export PYTHONPATH="$PWD/config"
+
+python -m manage populate
+python -m manage createsuperuser
+uvicorn wirecloud.main:app --host 127.0.0.1 --port 8000
+```
+
+Keep `PYTHONPATH` set for every WireCloud command. To run a second instance with
+a different configuration, point it at another directory containing its own
+`settings.py`; the installed wheel can be shared, while database, search,
+storage, secrets, and feature settings remain project-specific. See
+[Configuration](configuration.md) for all available settings and production
+guidance.
+
 ## Install from source
 
 Source installations are useful for development and custom deployments. They require:
