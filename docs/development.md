@@ -61,6 +61,15 @@ pytest --cov
 pytest --cov --cov-report=html
 ```
 
+## Continuous integration
+
+GitHub Actions runs the Python and JavaScript test suites with coverage on every
+push and pull request. Pull requests from branches in this repository receive a
+single coverage comment that is updated on each run. GitHub gives workflows from
+fork and Dependabot pull requests a read-only token, so those runs publish the
+same results in the workflow summary and as downloadable artifacts without
+attempting to post a comment.
+
 ## Documentation
 
 Install the pinned documentation tool and build in strict mode:
