@@ -12,8 +12,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Wirecloud/wirecloud/actions/workflows/ci.yml"><img alt="Tests and coverage" src="https://github.com/Wirecloud/wirecloud/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/Wirecloud/wirecloud/actions/workflows/package.yml"><img alt="Python package" src="https://github.com/Wirecloud/wirecloud/actions/workflows/package.yml/badge.svg"></a>
+  <a href="https://github.com/ficodes/wirecloud/actions/workflows/ci.yml"><img alt="Tests and coverage" src="https://github.com/ficodes/wirecloud/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/ficodes/wirecloud/actions/workflows/package.yml"><img alt="Python package" src="https://github.com/ficodes/wirecloud/actions/workflows/package.yml/badge.svg"></a>
   <a href="https://wirecloud.readthedocs.io/"><img alt="Documentation" src="https://readthedocs.org/projects/wirecloud/badge/?version=latest"></a>
   <a href="LICENSE"><img alt="License: AGPL-3.0" src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg"></a>
 </p>
