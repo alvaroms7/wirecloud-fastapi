@@ -31,7 +31,6 @@ if (testFiles.length === 0) {
 const result = spawnSync(process.execPath, [
     '--test',
     '--test-concurrency=1',
-    '--test-isolation=process',
     '--test-reporter=spec',
     ...testFiles,
 ], {
