@@ -1,6 +1,6 @@
 # Docker deployment
 
-This directory contains a complete Docker setup for WireCloud 2:
+This directory contains a complete Docker setup for WireCloud:
 
 - `Dockerfile`: multi-stage image build (frontend assets + python wheel)
 - `settings.py`: environment-driven runtime settings

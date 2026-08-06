@@ -1,6 +1,6 @@
 # Migrating from WireCloud 1
 
-WireCloud 2 includes an importer for a Django-based WireCloud instance backed by MySQL, PostgreSQL, or SQLite. The importer reads the old SQL database and calls the old instance over HTTP to retrieve packaged resources.
+WireCloud includes an importer for a legacy Django-based instance backed by MySQL, PostgreSQL, or SQLite. The importer reads the old SQL database and calls the old instance over HTTP to retrieve packaged resources.
 
 ## What is imported
 
@@ -21,7 +21,7 @@ Unsupported or inconsistent records are reported while the importer continues wh
 2. Back up the destination if it contains any data.
 3. Keep the old WireCloud HTTP service reachable during the import.
 4. Obtain an old-instance superuser account and direct SQL read credentials.
-5. Configure and start the WireCloud 2 destination with MongoDB and Elasticsearch.
+5. Configure and start the destination WireCloud instance with MongoDB and Elasticsearch.
 6. Install migration dependencies in the environment that will run the command with `python -m pip install '.[migration]'`. The supplied runtime container does not install this extra; use a source environment or build a derived migration image rather than modifying a running production container.
 
 Run the migration against a fresh destination. The command can reuse some existing users and groups, but name conflicts can skip workspaces or produce a partial result; it is not designed as continuous synchronization.

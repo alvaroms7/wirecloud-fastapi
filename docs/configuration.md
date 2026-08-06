@@ -50,7 +50,7 @@ derived image) when deploying the supplied container behind HTTPS.
 
 Standalone MongoDB deployments do not support transactions. WireCloud detects the corresponding server error and continues without transactions. Use a replica set when transactional behavior is required.
 
-The `mysql` and `postgresql` names accepted by parts of settings validation are for migration-related compatibility; the WireCloud 2 runtime database implementation builds a MongoDB connection.
+The `mysql` and `postgresql` names accepted by parts of settings validation are for migration-related compatibility; the WireCloud runtime database implementation builds a MongoDB connection.
 
 ## Elasticsearch
 

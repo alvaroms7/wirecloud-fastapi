@@ -1,8 +1,10 @@
-# WireCloud 2
+# WireCloud
 
 WireCloud is a web platform for building dashboards and application mashups from reusable components. Users place visual **widgets** in a workspace and connect them to widgets or non-visual **operators** through the wiring editor.
 
-WireCloud 2 keeps that mashup model and replaces the former Django server with a FastAPI backend. It uses MongoDB for application data, Elasticsearch for search, and serves an OpenAPI description of its HTTP API.
+WireCloud keeps that mashup model and now uses a FastAPI backend. It stores
+application data in MongoDB, uses Elasticsearch for search, and serves an
+OpenAPI description of its HTTP API.
 
 ## Choose a path
 
@@ -37,4 +39,8 @@ Marketplace
 
 ## Documentation versions
 
-These pages describe WireCloud 2.x and its FastAPI/MongoDB architecture. The [legacy WireCloud documentation](https://wirecloud.readthedocs.io/en/stable/) describes the 1.x Django application; use it only while operating an old instance or interpreting old component concepts. Deployment and administration commands from the legacy manual do not apply to WireCloud 2.
+These pages describe WireCloud's FastAPI and MongoDB architecture. The [legacy
+WireCloud documentation](https://wirecloud.readthedocs.io/en/stable/) describes
+the former Django and SQL architecture; use it only while operating an older
+instance or interpreting legacy component concepts. Its deployment and
+administration commands do not apply to the current WireCloud implementation.

@@ -23,7 +23,7 @@ needs Python but does not need Node.js or npm.
 
 ### Install from PyPI (planned)
 
-WireCloud 2.0 is not published on [PyPI](https://pypi.org/) yet. Once publication
+WireCloud is not published on [PyPI](https://pypi.org/) yet. Once publication
 starts, install the latest release directly from the Python package index:
 
 ```bash
