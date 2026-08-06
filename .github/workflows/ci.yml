@@ -23,12 +23,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.9"
           cache: "pip"
@@ -37,7 +37,7 @@ jobs:
             requirements-test.txt
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
           cache: "npm"
@@ -174,7 +174,7 @@ jobs:
         run: echo "Coverage is not posted as a PR comment because GitHub gives this pull request a read-only token. The complete report is available in this summary." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-reports
           path: |
@@ -201,7 +201,7 @@ jobs:
 
     steps:
       - name: Create or update the coverage comment
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           PYTHON_BASE: ${{ needs.test_and_coverage.outputs.python_base }}
           PYTHON_HEAD: ${{ needs.test_and_coverage.outputs.python_head }}
