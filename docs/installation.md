@@ -14,6 +14,30 @@ Use the complete procedure in [Getting started](getting-started.md). The supplie
 
 For production, place a TLS-terminating reverse proxy or ingress in front of WireCloud, use externally managed secrets, apply resource limits, and replace the single-node data services with infrastructure matching your availability and backup requirements.
 
+### Use a published Docker image
+
+By default, each published release provides a multi-platform image on Docker
+Hub. Pin a release rather than relying on `latest` in production:
+
+```bash
+docker pull ficodes/wirecloud:2.0.0
+```
+
+To use a published image with the supplied Compose stack, remove the `build`
+block from the `wirecloud` service in `docker/docker-compose.yml` and set its
+image explicitly:
+
+```yaml
+services:
+  wirecloud:
+    image: ficodes/wirecloud:2.0.0
+```
+
+Keep the environment, dependency services, ports, and volumes from the supplied
+Compose file. Release images support `linux/amd64` and `linux/arm64`; runtime
+configuration is supplied through the same environment variables documented in
+[Configuration](configuration.md).
+
 ## Install from a release wheel
 
 Published GitHub releases contain a pre-built `.whl` file. The same wheel is

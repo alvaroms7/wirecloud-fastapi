@@ -34,6 +34,23 @@ docker compose -f docker/docker-compose.yml exec wirecloud python -m manage crea
 
 5. Open <http://localhost:8000/>.
 
+## Published images
+
+Release images for `linux/amd64` and `linux/arm64` are published to one
+configurable repository. The default is Docker Hub:
+
+```bash
+docker pull fiware/wirecloud:2.0.0
+```
+
+Check the release notes for the canonical location when the repository's
+publishing configuration overrides this default.
+
+For a deployment based on a published image, remove the `build` block from the
+`wirecloud` service in `docker-compose.yml` and replace its image with a pinned
+release, for example `image: fiware/wirecloud:2.0.0`. Keep the supplied
+environment, ports, dependencies, and volumes.
+
 ## Notes
 
 - `settings.py` is loaded through `PYTHONPATH=/app/docker` in the image.
