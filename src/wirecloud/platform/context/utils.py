@@ -17,7 +17,7 @@
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
 from typing import Optional, Any
-from urllib.request import Request
+from fastapi import Request
 
 from wirecloud.settings import cache
 from wirecloud.platform.context.crud import get_all_constants
@@ -26,9 +26,6 @@ from wirecloud.platform.context.schemas import BaseContextKey, PlatformContextKe
 from wirecloud.commons.auth.schemas import UserAll, Session
 from wirecloud.database import DBSession
 from wirecloud.platform.workspace.models import Workspace
-
-
-# TODO Add type hints to these functions
 
 
 def get_platform_context_definitions() -> dict[str, BaseContextKey]:

@@ -54,7 +54,9 @@ def find_request_language() -> Optional[str]:
 
         for value in frame.f_locals.values():
             if isinstance(value, Request) or isinstance(value, WebSocket):
-                return value.state.lang
+                lang = getattr(value.state, "lang", None)
+                if lang is not None:
+                    return lang
 
     return None
 

@@ -28,8 +28,7 @@ from wirecloud.database import DBSession
 from wirecloud.platform.workspace.models import Workspace
 
 WORKSPACES_INDEX = 'workspaces'
-# TODO check this
-WORKSPACE_CONTENT_FIELDS = ["owner", "name^1.3"]  # "title^1.3"
+WORKSPACE_CONTENT_FIELDS = ["owner", "name^1.3", "title^1.3"]
 WORKSPACE_MAPPINGS = {
     "settings": {
         "analysis": {

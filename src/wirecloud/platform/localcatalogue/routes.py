@@ -224,14 +224,12 @@ async def create_resource(db: DBDep, user: UserDep, request: Request,
         elif len(user_objs) > 0 and (len(user_objs) != 1 or user_objs[0].id != user.id):
             return build_error_response(request, 403, _('You are not allowed allow to install components to other users'))
         elif len(group_objs) > 0:
-            # TODO Handle organizations
             for group in group_objs:
                 if group.is_organization:
                     organization = await get_top_group_organization(db, group)
                     owners = organization.users
                     if user.id not in owners:
                         return build_error_response(request, 403, _('You are not allowed to install components to non-owned organizations'))
-            pass
 
     try:
         fix_dev_version(file_contents, user)
@@ -340,7 +338,6 @@ async def delete_resources(db: DBSession, user: UserAll, request: Request, vendo
         affectedVersions=[]
     ) if affected else None
 
-    # TODO Send uninstall signal to semantic wiring, if we implement it because... it is not used in the original??
     if allusers:
         await delete_catalogue_resources(db, [resource.id for resource in resources])
 

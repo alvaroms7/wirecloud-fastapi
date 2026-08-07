@@ -21,7 +21,8 @@ from typing import Union
 
 from fastapi import APIRouter, Request, Response, Body, Path
 
-from wirecloud.commons.auth.crud import get_user_preferences, get_group_by_name, get_user_by_username
+from wirecloud.commons.auth.crud import get_user_preferences, get_group_by_name, get_user_by_username, \
+    get_top_group_organization
 from wirecloud.commons.auth.models import DBPlatformPreference as PlatformPreferenceModel
 from wirecloud.commons.auth.utils import UserDep, UserDepNoCSRF
 from wirecloud.commons.utils.http import build_error_response, consumes, authentication_required
@@ -191,13 +192,21 @@ async def create_workspace_preferences(db: DBDep, request: Request, user: UserDe
                 if user is None:
                     continue
                 await add_user_to_workspace(db, workspace, user)
-                # TODO: Add organization support
 
-            elif entrytype.type in (ShareListEnum.group, ShareListEnum.organization):
+            elif entrytype.type == ShareListEnum.group:
                 group = await get_group_by_name(db, entrytype.name)
                 if group is None:
                     continue
                 await add_group_to_workspace(db, workspace, group)
+
+            elif entrytype.type == ShareListEnum.organization:
+                group = await get_group_by_name(db, entrytype.name)
+                if group is None:
+                    continue
+                organization = await get_top_group_organization(db, group)
+                if organization is None:
+                    continue
+                await add_group_to_workspace(db, workspace, organization)
 
         del preferences['sharelist']
 

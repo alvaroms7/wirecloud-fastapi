@@ -41,9 +41,8 @@ class WirecloudCatalogueManager(MarketManager):
         self._name = name
         self._options = options
 
-    # TODO Type of endpoint
     async def publish(self, db: DBSession, endpoint: Optional[MarketEndpoint], wgt_file: WgtFile, user: User,
-                      request: Request = None, template: Optional[MACD] = None):
+                      request: Optional[Request] = None, template: Optional[MACD] = None):
         if self._name == 'local':
             added, resource = await install_component(db, wgt_file, users=[user])
             if not added:
@@ -52,5 +51,4 @@ class WirecloudCatalogueManager(MarketManager):
             await add_resource_to_index(db, resource)
 
             return resource
-        else:
-            raise Exception('TODO')
+        raise ValueError(_('Unsupported WireCloud catalogue: %(catalogue)s') % {'catalogue': self._name})

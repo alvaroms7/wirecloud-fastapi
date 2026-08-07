@@ -23,6 +23,7 @@ from fastapi import FastAPI
 from wirecloud.platform.plugins import WirecloudPlugin
 from wirecloud.proxy.urls import patterns as proxy_patterns
 from wirecloud.proxy.routes import router as proxy_router
+from wirecloud.proxy.utils import ValidationError, validation_error_handler
 from wirecloud.settings_validator import _set_default_if_missing
 
 logger = logging.getLogger(__name__)
@@ -38,6 +39,7 @@ class WirecloudProxyPlugin(WirecloudPlugin):
             return
 
         app.include_router(proxy_router, prefix="/cdp", tags=["Proxy"])
+        app.add_exception_handler(ValidationError, validation_error_handler)
 
     def get_config_validators(self) -> tuple[Callable, ...]:
         def validate_proxy_settings(settings, _offline: bool) -> None:

@@ -731,7 +731,8 @@ async def test_create_resource_direct_embedded_and_streaming_branches(monkeypatc
     monkeypatch.setattr(routes, "WgtFile", lambda *_args, **_kwargs: SimpleNamespace(read=lambda _src: b"embedded"))
     monkeypatch.setattr(routes, "fix_dev_version", lambda *_args, **_kwargs: None)
     monkeypatch.setattr(routes, "get_user_by_username", lambda *_args, **_kwargs: _user_ok())
-    monkeypatch.setattr(routes, "get_group_by_name", lambda *_args, **_kwargs: _group_non_org())
+    monkeypatch.setattr(routes, "get_group_by_name", lambda *_args, **_kwargs: _organization_group())
+    monkeypatch.setattr(routes, "get_top_group_organization", lambda *_args, **_kwargs: _owned_organization())
     monkeypatch.setattr(routes, "add_resource_to_index", lambda *_args, **_kwargs: _none())
 
     async def _none():
@@ -740,8 +741,11 @@ async def test_create_resource_direct_embedded_and_streaming_branches(monkeypatc
     async def _user_ok():
         return SimpleNamespace(id="u1", username="alice")
 
-    async def _group_non_org():
-        return SimpleNamespace(id="g1", is_organization=False)
+    async def _organization_group():
+        return SimpleNamespace(id="g1", is_organization=True)
+
+    async def _owned_organization():
+        return SimpleNamespace(users=["u1"])
 
     calls = {"n": 0}
 
@@ -813,11 +817,15 @@ async def test_create_resource_remaining_branch_arcs(monkeypatch):
     monkeypatch.setattr(routes, "WIRECLOUD_PROXY", _ProxyStream())
     monkeypatch.setattr(routes, "WgtFile", lambda *_args, **_kwargs: SimpleNamespace(read=lambda _src: b"embedded"))
     monkeypatch.setattr(routes, "fix_dev_version", lambda *_args, **_kwargs: None)
-    monkeypatch.setattr(routes, "get_group_by_name", lambda *_args, **_kwargs: _group_non_org())
+    monkeypatch.setattr(routes, "get_group_by_name", lambda *_args, **_kwargs: _organization_group())
+    monkeypatch.setattr(routes, "get_top_group_organization", lambda *_args, **_kwargs: _owned_organization())
     monkeypatch.setattr(routes, "add_resource_to_index", lambda *_args, **_kwargs: _none())
 
-    async def _group_non_org():
-        return SimpleNamespace(id="g1", is_organization=False)
+    async def _organization_group():
+        return SimpleNamespace(id="g1", is_organization=True)
+
+    async def _owned_organization():
+        return SimpleNamespace(users=["u1"])
 
     async def _none():
         return None

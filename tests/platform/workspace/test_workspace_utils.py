@@ -554,6 +554,15 @@ async def test_get_global_workspace_data_paths(monkeypatch, db_session):
     assert created_tab_data.wiring.operators["3"].properties["k2"].value == "7"
     assert len(created_tab_data.groups) == 1
 
+    async def _organization():
+        return SimpleNamespace(name="Acme", is_organization=True)
+
+    monkeypatch.setattr(utils, "get_group_by_id", lambda *_args, **_kwargs: _organization())
+    organization_data = await utils._get_global_workspace_data(db_session, req, ws, user)
+    assert organization_data.groups == []
+    assert organization_data.users[-1].username == "Acme"
+    assert organization_data.users[-1].organization is True
+
     async def _catalogue_not_available(_db, _vendor, _name, _version):
         info = SimpleNamespace(
             variables=SimpleNamespace(

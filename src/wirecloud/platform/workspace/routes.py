@@ -49,6 +49,7 @@ from wirecloud.platform.workspace.utils import get_workspace_data, get_global_wo
     get_tab_data, get_workspace_entry, is_owner_or_has_permission
 from wirecloud.platform.workspace import docs
 from wirecloud.translation import gettext as _
+from wirecloud.commons.utils.urlify import URLify
 
 workspace_router = APIRouter()
 workspaces_router = APIRouter()
@@ -124,6 +125,9 @@ async def create_workspace_collection(db: DBDep, user: UserDep, request: Request
             workspace_title = workspace_name
 
         if dry_run:
+            candidate_name = workspace_name or URLify(workspace_title)
+            if not allow_renaming and await is_a_workspace_with_that_name(db, candidate_name, user.id):
+                return build_error_response(request, 409, _("A workspace with the given name already exists"))
             return Response(status_code=204)
 
         workspace = await create_empty_workspace(db, workspace_title, user, name=workspace_name,

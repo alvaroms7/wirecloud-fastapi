@@ -140,7 +140,7 @@ async def get_widget_file(db: DBDep, request: Request, vendor: Vendor = Path(pat
                                                                 vendor=vendor, name=name, version=version,
                                                                 path=response.headers['Location'])
 
-    # TODO cache
+    patch_cache_headers(response, creation_date)
     return response
 
 

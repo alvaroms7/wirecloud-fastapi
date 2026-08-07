@@ -17,15 +17,13 @@
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
 from datetime import timezone, datetime
-from urllib.request import Request
-
 from bson import ObjectId
 from typing import Optional, Union
 import os
 from copy import deepcopy
 from io import BytesIO
 
-from fastapi import Response
+from fastapi import Request, Response
 
 from wirecloud.catalogue.schemas import CatalogueResource, CatalogueResourceType
 from wirecloud.platform.localcatalogue.schemas import MassiveUpdateResponse
@@ -165,8 +163,8 @@ async def create_workspace(db: DBSession, request: Optional[Request], owner: Use
             raise ValueError("WgtFile is not a mashup")
 
         for embedded_resource in resource_info.embedded:
-            if embedded_resource.src.startswith('https://'):
-                resource_file = download_http_content(embedded_resource.src)
+            if embedded_resource.src.startswith(('http://', 'https://')):
+                resource_file = await download_http_content(embedded_resource.src)
             else:
                 resource_file = BytesIO(wgt.read(embedded_resource.src))
 
@@ -178,8 +176,27 @@ async def create_workspace(db: DBSession, request: Optional[Request], owner: Use
     await check_mashup_dependencies(db, template, mashup_user if mashup_user is not None else owner)
 
     if dry_run:
-        # TODO check name conflict
-        return None
+        if (new_name is None or new_name.strip() == '') and (new_title is None or new_title.strip() == ''):
+            processed_info = template.get_resource_processed_info(process_urls=False)
+            new_name = processed_info.name
+            new_title = processed_info.title
+        elif new_title is None or new_title.strip() == '':
+            new_title = new_name
+        elif new_name is None or new_name.strip() == '':
+            new_name = URLify(new_title)
+
+        if not allow_renaming and await is_a_workspace_with_that_name(db, new_name, owner.id):
+            return None
+
+        return Workspace(
+            _id=Id(),
+            name=new_name,
+            title=new_title,
+            creator=owner.id,
+            public=public,
+            searchable=searchable,
+            users=[WorkspaceAccessPermissions(id=owner.id)],
+        )
 
     workspace = await build_workspace_from_template(db, request, template, owner, allow_renaming=allow_renaming,
                                                     new_name=new_name, new_title=new_title,

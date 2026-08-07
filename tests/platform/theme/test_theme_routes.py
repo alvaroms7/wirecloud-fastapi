@@ -42,6 +42,8 @@ async def test_get_theme_info_success(app_client, monkeypatch):
     assert payload["label"] == "Default"
     assert payload["templates"]["wirecloud/head"] == "<wirecloud/head.html>"
     assert payload["templates"]["wirecloud/body"] == "<wirecloud/body.html>"
+    expected_cache = "no-store" if routes.settings.DEBUG else "public, max-age=31536000, immutable"
+    assert response.headers["cache-control"] == expected_cache
 
 
 async def test_get_theme_info_theme_not_found_with_empty_theme_list(app_client, monkeypatch):

@@ -24,5 +24,8 @@ async def test_validation_error_get_response_and_header_validation(monkeypatch):
     assert captured["request"] == request
     assert captured["msg"] == "bad input"
 
+    handled = await utils.validation_error_handler(request, exc)
+    assert handled == response
+
     assert utils.is_valid_response_header("content-type") is True
     assert utils.is_valid_response_header("transfer-encoding") is False

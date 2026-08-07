@@ -35,7 +35,7 @@ from urllib.request import Request
 
 import os
 import jinja2
-from fastapi import APIRouter, Request, Path, Query
+from fastapi import APIRouter, Request, Response, Path, Query
 
 from wirecloud.commons.templates.tags import get_translation, get_static_path, get_url_from_view
 from wirecloud.platform.plugins import get_templates
@@ -44,6 +44,7 @@ from wirecloud.commons.utils.theme import get_available_themes, get_jinja2_templ
 from wirecloud.platform.theme import docs
 import wirecloud.docs as root_docs
 from wirecloud.platform.theme.schemas import ThemeInfo
+from wirecloud import settings
 
 router = APIRouter()
 
@@ -61,10 +62,10 @@ router = APIRouter()
             docs.get_theme_info_validation_error_response_description)
     }
 )
-def get_theme_info(request: Request, theme: str = Path(..., description=docs.get_theme_info_theme_param_description),
+def get_theme_info(request: Request, response: Response,
+                   theme: str = Path(..., description=docs.get_theme_info_theme_param_description),
                    view: str = Query("classic", description=docs.get_theme_info_view_param_description)):
-    # TODO Cache response. This will never change while the server is running, or at least it shouldn't, but just in case
-    # TODO disable cache for development
+    response.headers["Cache-Control"] = "no-store" if settings.DEBUG else "public, max-age=31536000, immutable"
 
     themes = get_available_themes(request.state.lang)
     theme_metadata = None

@@ -16,8 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# FIXME This was using regex and not re, make sure it works
-import re as regex
+import re
 
 
 def cmp(a, b):
@@ -26,7 +25,7 @@ def cmp(a, b):
 
 class Version(object):
 
-    version_re = regex.compile(r'^([1-9]\d*|0)((?:\.(?:[1-9]\d*|0))*)(?:(a|b|rc)([1-9]\d*))?(-dev.*)?$')
+    version_re = re.compile(r'^([1-9]\d*|0)((?:\.(?:[1-9]\d*|0))*)(?:(a|b|rc)([1-9]\d*))?(-dev.*)?$')
 
     def __init__(self, vstring: str, reverse: bool = False):
         self.vstring = vstring

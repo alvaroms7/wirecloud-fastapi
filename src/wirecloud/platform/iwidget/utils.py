@@ -323,7 +323,7 @@ async def update_widget_instance(db: DBSession, request: Request,  data: WidgetI
 
     if data.layout is not None:
         if data.layout < 0:
-            raise ValueError('Invalid value for layout field') # TODO remove this
+            raise ValueError(_('Invalid value for layout field'))
         layout = data.layout
         iwidget.layout = layout
 
@@ -348,5 +348,4 @@ async def update_widget_instance(db: DBSession, request: Request,  data: WidgetI
     if update_cache:
         from wirecloud.platform.workspace.crud import change_workspace
         await change_workspace(db, workspace, user)
-
 

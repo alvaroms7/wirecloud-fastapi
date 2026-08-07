@@ -257,6 +257,7 @@ async def test_platform_context_definitions_and_values(monkeypatch, db_session):
     assert values["username"] == "alice"
     assert values["fullname"] == "Alice Doe"
     assert values["groups"] == ("dev", "ops")
+    assert values["organizations"] == ()
     assert values["realuser"] == "root"
     assert values["mode"] == "classic"
     assert values["theme"] == "wirecloud.defaulttheme"
@@ -266,6 +267,7 @@ async def test_platform_context_definitions_and_values(monkeypatch, db_session):
     assert anon["username"] == "anonymous"
     assert anon["isanonymous"] is True
     assert anon["groups"] == ()
+    assert anon["organizations"] == ()
     assert anon["mode"] is None
     assert anon["theme"] is None
 

@@ -72,7 +72,6 @@ async def install_component(db: DBSession, file_contents: WgtFile, executor_user
         initially_available = resource.is_installed_for(executor_user)
     installed_to_someone = False
 
-    # TODO Send signals or whatever system we will implement to notify the installation of the resource
     change = public is True and resource.public is False
     if change:
         await change_resource_publicity(db, resource, True)
@@ -82,16 +81,10 @@ async def install_component(db: DBSession, file_contents: WgtFile, executor_user
     for user in users:
         change = await install_resource_to_user(db, resource, user)
         installed_to_someone |= change
-        if change and not public:
-            # resource_installed.send(sender=resource, user=user)
-            pass
 
     for group in groups:
         change = await install_resource_to_group(db, resource, group)
         installed_to_someone |= change
-        if change and not public:
-            # resource_installed.send(sender=resource, group=group)
-            pass
 
     await catalogue_utils.create_widget_on_resource_creation(db, resource)
     catalogue_utils.deploy_operators_on_resource_creation(resource)

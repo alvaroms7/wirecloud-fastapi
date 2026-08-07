@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# TODO Add translations
-
 import re
 from typing import Any
 from copy import deepcopy
@@ -29,6 +27,7 @@ from wirecloud.commons.utils.template.base import ObsoleteFormatError, TemplateF
 from wirecloud.commons.utils.template.schemas.macdschemas import *
 from wirecloud.database import Id
 from wirecloud.platform.wiring.schemas import WiringInput, WiringOutput
+from wirecloud.translation import find_request_language
 from wirecloud.commons.utils.template.parsers.json import JSONTemplateParser
 from wirecloud.commons.utils.template.parsers.xml import ApplicationMashupTemplateParser
 from wirecloud.commons.utils.template.parsers.rdf import RDFTemplateParser
@@ -106,9 +105,7 @@ class TemplateParser(object):
         info = deepcopy(self.get_resource_info())
 
         if translate and lang is None:
-            # TODO Obtain lang from the request
-            # lang = translation.get_language()
-            lang = "en"
+            lang = find_request_language() or "en"
 
         variables: dict[str, Union[MACDPreference, MACDProperty, WiringInput, WiringOutput]] = {}
         if info.type == MACType.widget or info.type == MACType.operator:

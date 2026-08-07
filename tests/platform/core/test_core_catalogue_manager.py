@@ -43,5 +43,5 @@ async def test_publish_local_existing_and_non_local(monkeypatch, db_session):
         await manager.publish(db_session, None, "wgt-file", user=SimpleNamespace(username="u"))
 
     remote_manager = WirecloudCatalogueManager("wirecloud", "remote", options=SimpleNamespace())
-    with pytest.raises(Exception, match="TODO"):
+    with pytest.raises(ValueError, match="Unsupported WireCloud catalogue: remote"):
         await remote_manager.publish(db_session, None, "wgt-file", user=SimpleNamespace(username="u"))
