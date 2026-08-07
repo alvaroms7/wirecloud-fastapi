@@ -63,6 +63,15 @@ def test_find_request_language_and_gettext_paths(monkeypatch, tmp_path):
     monkeypatch.setattr(translation.inspect, "stack", lambda: [fake_frame_a, fake_frame_b])
     assert translation.find_request_language() == "es"
 
+    scope_without_lang = req.scope.copy()
+    scope_without_lang["state"] = {}
+    req_without_lang = Request(scope_without_lang)
+    mixed_frame = SimpleNamespace(frame=SimpleNamespace(
+        f_locals={"request_without_lang": req_without_lang, "request_with_lang": req}
+    ))
+    monkeypatch.setattr(translation.inspect, "stack", lambda: [mixed_frame])
+    assert translation.find_request_language() == "es"
+
     monkeypatch.setattr(translation.inspect, "stack", lambda: [])
     assert translation.find_request_language() is None
 

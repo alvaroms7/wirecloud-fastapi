@@ -608,6 +608,16 @@ async def test_create_resource_direct_branches(monkeypatch):
     )
     assert ok.status_code == 201
 
+    async def _regular_group(_db, name):
+        return SimpleNamespace(id=name, is_organization=False)
+
+    monkeypatch.setattr(routes, "get_group_by_name", _regular_group)
+    regular_groups = await create_resource_fn(
+        SimpleNamespace(), owner_user, req_json,
+        force_create=False, public=False, users=None, groups=["devs", "ops"], install_embedded_resources=False
+    )
+    assert regular_groups.status_code == 201
+
 
 async def test_get_resource_description_and_workspace_direct_extra_branches(monkeypatch):
     monkeypatch.setattr(routes, "build_error_response", lambda _request, status, _msg, details=None: Response(status_code=status))

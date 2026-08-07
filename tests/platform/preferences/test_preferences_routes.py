@@ -214,6 +214,12 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
             return SimpleNamespace(type=routes.ShareListEnum.organization, name="org1")
         if call_index["n"] == 5:
             return SimpleNamespace(type="skip", name="noop")
+        if call_index["n"] == 6:
+            return SimpleNamespace(type=routes.ShareListEnum.group, name="group1")
+        if call_index["n"] == 7:
+            return SimpleNamespace(type=routes.ShareListEnum.organization, name="missing-group")
+        if call_index["n"] == 8:
+            return SimpleNamespace(type=routes.ShareListEnum.organization, name="group1")
         return original_validate(item)
 
     monkeypatch.setattr(routes.ShareListPreference, "model_validate", staticmethod(_validate))
@@ -226,6 +232,9 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
                 {"type": "group", "name": "missing-group"},
                 {"type": "organization", "name": "org1"},
                 {"type": "user", "name": "noop"},
+                {"type": "group", "name": "group1"},
+                {"type": "organization", "name": "missing-group"},
+                {"type": "organization", "name": "group1"},
             ]
         ),
         "public": {"inherit": False, "value": "true"},
@@ -242,8 +251,8 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
     assert calls["clear_users"] == 1
     assert calls["clear_groups"] == 1
     assert calls["add_user"] == 1
-    assert calls["add_group"] == 1
-    assert calls["groups"] == ["org-root"]
+    assert calls["add_group"] == 2
+    assert calls["groups"] == ["org-root", "group1"]
     assert calls["change"] >= 1
     assert calls["commit"] == 1
     assert calls["update_ws"] >= 1

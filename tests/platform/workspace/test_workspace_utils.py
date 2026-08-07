@@ -563,6 +563,15 @@ async def test_get_global_workspace_data_paths(monkeypatch, db_session):
     assert organization_data.users[-1].username == "Acme"
     assert organization_data.users[-1].organization is True
 
+    async def _missing_related_object():
+        return None
+
+    monkeypatch.setattr(utils, "get_user_with_all_info", lambda *_args, **_kwargs: _missing_related_object())
+    monkeypatch.setattr(utils, "get_group_by_id", lambda *_args, **_kwargs: _missing_related_object())
+    missing_related_data = await utils._get_global_workspace_data(db_session, req, ws, user)
+    assert missing_related_data.users == []
+    assert missing_related_data.groups == []
+
     async def _catalogue_not_available(_db, _vendor, _name, _version):
         info = SimpleNamespace(
             variables=SimpleNamespace(

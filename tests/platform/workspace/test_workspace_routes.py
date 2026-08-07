@@ -113,6 +113,13 @@ async def test_workspace_collection_routes(app_client, db_session, monkeypatch, 
     dry = await app_client.post("/api/workspaces/", json={**payload, "dry_run": True})
     assert dry.status_code == 204
 
+    async def _name_conflict(*_args, **_kwargs):
+        return True
+
+    monkeypatch.setattr(routes, "is_a_workspace_with_that_name", _name_conflict)
+    dry_conflict = await app_client.post("/api/workspaces/", json={**payload, "dry_run": True})
+    assert dry_conflict.status_code == 409
+
     async def _empty_none(*_args, **_kwargs):
         return None
 
