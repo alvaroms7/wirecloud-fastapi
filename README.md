@@ -26,14 +26,28 @@
   <a href="docs/development.md">Contributing</a>
 </p>
 
-WireCloud is an open-source, web-based platform for creating custom dashboards
-without building every interface from scratch. Place visual **widgets** in a
-workspace, connect them to data-processing **operators** in the wiring editor,
-and turn heterogeneous services and data sources into a coherent application.
+WireCloud builds on cutting-edge end-user development, RIA and semantic
+technologies to offer a next-generation end-user centred web application mashup
+platform aimed at leveraging the long tail of the Internet of Services.
 
-The application combines a FastAPI backend with a TypeScript/JavaScript
-frontend, stores application data in MongoDB, and uses Elasticsearch for
-search. WireCloud is part of the [FIWARE](https://www.fiware.org/) ecosystem.
+WireCloud builds on cutting-edge end-user (software) development, RIA and
+semantic technologies to offer a next-generation end-user centred web
+application mashup platform aimed at allowing end users without programming
+skills to easily create web applications and dashboards/cockpits (e.g. to
+visualize their data of interest or to control their domotized home or
+environment). Web application mashups integrate heterogeneous data, application
+logic, and UI components (widgets) sourced from the Web to create new coherent
+and value-adding composite applications. They are targeted at leveraging the
+"long tail" of the Web of Services (a.k.a. the Programmable Web) by exploiting
+rapid development, DIY, and shareability. They typically serve a specific
+situational (i.e. immediate, short-lived, customized) need, frequently with high
+potential for reuse. Is this "situational" character which precludes them to be
+offered as 'off-the-shelf' functionality by solution providers, and therefore
+creates the need for a tool like WireCloud.
+
+This project is part of [FIWARE](https://www.fiware.org/). For more information
+check the FIWARE Catalogue entry for
+[Context Processing, Analysis and Visualization](https://github.com/Fiware/catalogue/tree/master/processing).
 
 ## Quick start
 
