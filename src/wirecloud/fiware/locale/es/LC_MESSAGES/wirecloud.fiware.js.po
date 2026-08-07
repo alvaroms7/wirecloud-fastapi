@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -21,15 +21,17 @@ msgstr ""
 
 #: ../../../static/js/NGSI/NGSIManager.js:79
 msgid "Error connecting to the WireCloud's proxy"
-msgstr ""
+msgstr "Error conectando con el proxy de WireCloud"
 
 #: ../../../static/js/NGSI/NGSIManager.js:90
 msgid "Unexpected response from WireCloud's proxy"
-msgstr ""
+msgstr "Respuesta inesperada del proxy de WireCloud"
 
 #: ../../../static/js/NGSI/NGSIManager.js:84
 msgid ""
 "You aren't allowed to use the WireCloud's proxy. Have you signed off from "
 "WireCloud?"
 msgstr ""
+"No tienes permisos para usar el proxy de WireCloud. ¿Has cerrado la sesión "
+"con WireCloud?"
 

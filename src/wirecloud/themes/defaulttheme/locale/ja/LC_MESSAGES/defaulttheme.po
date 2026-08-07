@@ -1,0 +1,447 @@
+# Japanese translations for WireCloud.
+# Copyright (C) 2026 Future Internet Consulting and Development Solutions S.L.
+# This file is distributed under the same license as the WireCloud project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WireCloud VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../../../templates/wirecloud/catalogue/modals/upload.html:8
+msgid "- or -"
+msgstr "- または -"
+
+#: ../../../../templates/wirecloud/landing_page.html:45
+#, python-format
+msgid "100% FIWARE"
+msgstr "100% FIWARE"
+
+#: templates/wirecloud/landing_page.html:48
+#, python-format
+msgid "100%% FIWARE"
+msgstr "100%% FIWARE"
+
+#: ../../../../templates/wirecloud/landing_page.html:47
+msgid "1st OSS reference implementation of the Application Mashup GE"
+msgstr "Application Mashup GE の最初の OSS リファレンス実装"
+
+#: ../../../../templates/registration/login.html:35
+msgid "<h4>Your username and password didn't match.</h4><p>Please try again.</p>"
+msgstr "<h4>ユーザー名とパスワードが一致しませんでした。</h4><p>もう一度お試しください</p>"
+
+#: ../../../../templates/wirecloud/workspace/missing_widget.html:13
+msgid ""
+"<h5>Suggestions:</h5>\n"
+"            <ul>\n"
+"                <li>Remove this widget from the dashboard</li>\n"
+"                <li>Reinstall the appropiated version of the widget</li>\n"
+"                <li>Install another version of the widget and use the "
+"<em>Upgrade/Downgrade</em> option</li>\n"
+"            </ul>"
+msgstr ""
+"<h5>対処:</h5>\n"
+"            <ul>\n"
+"                <li>このウィジェットをダッシュボードから削除します</li>\n"
+"                <li>ウィジェットの適切なバージョンをインストールしてください</li>\n"
+"                "
+"<li>別のバージョンのウィジェットをインストールし、<em>アップグレード/ダウングレード</em>・オプションを使用します</li>\n"
+"            </ul>"
+
+#: ../../../../templates/wirecloud/workspace/empty_tab_message.html:4
+msgid ""
+"Add some widgets using the add widget button (<t:button/>) available on the "
+"top right part of the workspace view."
+msgstr "ワークスペース・ビューの右上にある追加ウィジェットボタン (<t:button/>) を使用して、いくつかのウィジェットを追加します。"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:21
+msgid "Advanced operations"
+msgstr "高度な操作"
+
+#: ../../../../templates/401.html:6
+msgid "Authentication required"
+msgstr "認証が必要"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:13
+msgid "Author(s)"
+msgstr "作者"
+
+#: ../../../../__init__.py:22
+msgid "Basic"
+msgstr "基本"
+
+#: ../../../../templates/wirecloud/wiring/behaviour_sidebar.html:5
+msgid "Behaviours"
+msgstr "ビヘイビア"
+
+#: ../../../../templates/wirecloud/views/base_plain.html:28
+#: ../../../../templates/wirecloud/views/header.html:3
+msgid "Breadcrumb"
+msgstr "ブレッドクラム"
+
+#: ../../../../templates/wirecloud/modals/upgrade_downgrade_component.html:3
+msgid "Change Log"
+msgstr "変更ログ"
+
+#: ../../../../templates/wirecloud/modals/base.html:3
+#: ../../../../templates/wirecloud/workspace/widget.html:3
+msgid "Close"
+msgstr "クローズ"
+
+#: ../../../../templates/wirecloud/component_sidebar.html:5
+#: ../../../../templates/wirecloud/component_sidebar.html:7
+msgid "Components"
+msgstr "コンポーネント"
+
+#: ../../../../templates/wirecloud/wiring/footer.html:7
+msgid "Connections"
+msgstr "接続"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:15
+msgid "Contributor(s)"
+msgstr "コントリビュータ"
+
+#: ../../../../templates/wirecloud/catalogue/order_by_template.html:2
+msgid "Creation date"
+msgstr "作成日"
+
+#: ../../../../templates/wirecloud/modals/upgrade_downgrade_component.html:2
+msgid "Current version"
+msgstr "現行バージョン"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:3
+msgid "Description"
+msgstr "説明"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:9
+msgid "Detailed data"
+msgstr "詳細データ"
+
+#: ../../../../templates/wirecloud/catalogue/modals/upload.html:5
+msgid ""
+"Do you have a widget, operator or mashup stored in a wgt file? Then you can "
+"upload it to the catalogue by means of this dialog."
+msgstr ""
+"wgt ファイルにウィジェット、オペレータ、またはマッシュアップが格納されていますか？ "
+"次に、このダイアログを使用してカタログにアップロードすることができます。"
+
+#: ../../../../templates/wirecloud/catalogue/modals/upload.html:7
+msgid "Drag files here"
+msgstr "ここにファイルをドラッグ"
+
+#: ../../../../templates/wirecloud/workspace/widget.html:3
+msgid "Error"
+msgstr "エラー"
+
+#: ../../../../templates/400.html:4
+#: ../../../../templates/wirecloud/widget_error.html:6
+msgid "Error 400 - Bad request"
+msgstr "Error 400 - 不正なリクエスト"
+
+#: ../../../../templates/401.html:4
+msgid "Error 401 - Unauthorized"
+msgstr "Error 401 - 認証されていません"
+
+#: ../../../../templates/403.html:2
+msgid "Error 403 - Forbidden"
+msgstr "エラー 403 - アクセス禁止"
+
+#: ../../../../templates/404.html:2
+msgid "Error 404 - Not Found"
+msgstr "エラー 404 - 見つかりません"
+
+#: ../../../../templates/500.html:2
+msgid "Error 500 - Internal Server Error"
+msgstr "エラー 500 - サーバー内部エラー"
+
+#: ../../../../templates/wirecloud/logs/details.html:2
+msgid "Exception details"
+msgstr "例外の詳細"
+
+#: ../../../../templates/wirecloud/component_sidebar.html:10
+msgid "Filter component types"
+msgstr "フィルターコンポーネントタイプ"
+
+#: ../../../../templates/wirecloud/landing_page.html:49
+msgid "Full integration with FIWARE's:"
+msgstr "FIWARE との完全統合:"
+
+#: ../../../../templates/wirecloud/landing_page.html:24
+msgid "Generic Features"
+msgstr "汎用機能"
+
+#: ../../../../templates/wirecloud/workspace/empty_tab_message.html:3
+msgid "Hey! This tab is empty"
+msgstr "このタブは空です"
+
+#: ../../../../templates/wirecloud/landing_page.html:17
+msgid ""
+"Innovate through experimentation by choosing the best suited widgets and "
+"prefab mashup-lets for your devised mashup from a vast, ever-growing "
+"distributed catalogue"
+msgstr "最適なウィジェットを選択し、膨大な成長を遂げている分散カタログからマッシュアップを作成して実験的にイノベートしてください"
+
+#: ../../../../templates/wirecloud/landing_page.html:16
+msgid "Innovation"
+msgstr "イノベーション"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:11
+msgid "Internal ID"
+msgstr "内部 ID"
+
+#: ../../../../templates/wirecloud/landing_page.html:26
+msgid "JavaScript pub/sub API for event-driven widgets"
+msgstr "イベント・ドリブン・ウィジェットの JavaScript pub/sub API"
+
+#: ../../../../templates/wirecloud/catalogue/search_interface.html:17
+msgid "Keywords:"
+msgstr "キーワード:"
+
+#: ../../../../templates/wirecloud/modals/embed_code.html:4
+msgid "Language"
+msgstr "言語"
+
+#: ../../../../templates/wirecloud/catalogue/resource_details.html:22
+msgid "Last Updated"
+msgstr "最終更新"
+
+#: ../../../../templates/wirecloud/catalogue/resource_details.html:20
+msgid "License"
+msgstr "ライセンス"
+
+#: ../../../../templates/wirecloud/views/base.html:27
+msgid "Loading WireCloud"
+msgstr "WireCloud のロード中"
+
+#: ../../../../templates/wirecloud/workspace/widget.html:3
+msgid "Minimize"
+msgstr "最小化"
+
+#: ../../../../templates/wirecloud/workspace/missing_widget.html:11
+msgid "Missing widget"
+msgstr "ウィジェットがありません"
+
+#: ../../../../templates/wirecloud/landing_page.html:27
+msgid "NGSI API compatible with FIWARE's Orion Context Broker Generic Enabler"
+msgstr "FIWARE Orion Context Broker Generic Enabler と互換性のある NGSI API"
+
+#: ../../../../templates/wirecloud/modals/upgrade_downgrade_component.html:2
+msgid "New version"
+msgstr "新バージョン"
+
+#: ../../../../templates/wirecloud/wiring/footer.html:10
+msgid "Operators"
+msgstr "オペレータ"
+
+#: ../../../../templates/wirecloud/catalogue/modals/upload.html:4
+msgid "Package"
+msgstr "パッケージ"
+
+#: ../../../../templates/registration/login.html:41
+msgid "Password"
+msgstr "パスワード"
+
+#: ../../../../templates/wirecloud/landing_page.html:38
+msgid ""
+"Piping links your widgets to back-end services or data sources through an "
+"extendable set of operators, including filters, aggregators, adapters, etc."
+msgstr ""
+"パイピング (piping) "
+"は、フィルター、アグリゲーター、アダプターなどの拡張可能なオペレータを使用して、ウィジェットをバックエンド・サービスまたはデータ・ソースにリンクします。"
+
+#: ../../../../templates/wirecloud/catalogue/order_by_template.html:1
+msgid "Popularity"
+msgstr "人気"
+
+#: ../../../../templates/wirecloud/views/base.html:31
+msgid "Retrieving WireCloud code"
+msgstr "WireCloud コードの取得"
+
+#: ../../../../templates/wirecloud/component_sidebar.html:9
+msgid "Search components"
+msgstr "コンポーネントの検索"
+
+#: ../../../../templates/wirecloud/catalogue/search_interface.html:18
+msgid "Search keywords"
+msgstr "検索キーワード"
+
+#: ../../../../templates/wirecloud/landing_page.html:28
+msgid "Server-side state persistence for widgets and mashups"
+msgstr "ウィジェットとマッシュアップのサーバ・サイド・ステートの永続化"
+
+#: ../../../../templates/wirecloud/catalogue/order_by_template.html:3
+msgid "Short name"
+msgstr "短い名前"
+
+#: ../../../../templates/registration/login.html:42
+#: ../../../../templates/wirecloud/signin.html:2
+msgid "Sign in"
+msgstr "サインイン"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:17
+msgid "Size"
+msgstr "サイズ"
+
+#: ../../../../templates/wirecloud/logs/details.html:4
+msgid "Stacktrace"
+msgstr "スタック・トレース"
+
+#: ../../../../templates/wirecloud/landing_page.html:48
+msgid "Support for linked-USDL"
+msgstr "linked-USDL のサポート"
+
+#: ../../../../templates/wirecloud/catalogue/main_resource_details.html:6
+msgid "Tags"
+msgstr "タグ"
+
+#: ../../../../templates/404.html:4
+#, python-format
+msgid "The requested URL \"%(request_path)s\" was not found on this server."
+msgstr "要求されたURL \"%(request_path)s\" がこのサーバ上に見つかりませんでした。"
+
+#: ../../../../templates/wirecloud/modals/embed_code.html:3
+msgid "Theme"
+msgstr "テーマ"
+
+#: templates/401.html:6
+#, python-format
+msgid ""
+"This server could not verify that you are authorized to access the document "
+"you requested (%(request_path)s). Either you supplied the wrong credentials "
+"(e.g., bad password), or your browser/application does not understand how to "
+"supply the credentials required."
+msgstr ""
+"このサーバは、要求したドキュメント (%(request_path)s) にアクセスする権限があることを確認できませんでした。 間違った資格情報 "
+"(パスワードが間違っているなど)を入力したか、ブラウザ/アプリケーションが必要な資格情報の入力方法を理解していません。"
+
+#: ../../../../templates/401.html:5
+#, python-format
+msgid ""
+"This server could not verify that you are authorized to access the document "
+"you requested (%(request_path)s). Either you supplied the wrong credentials "
+"(e.g., bad password), or your browser/application does not understand how to "
+"supply the credentials required.{% endblocktrans"
+msgstr ""
+"このサーバーは、要求したドキュメント (%(request_path)s) へのアクセスが許可されていることを確認できませんでした。間違った認証情報 "
+"(間違ったパスワードなど) を入力したか、ブラウザ/アプリケーションが必要な認証情報の入力方法を理解していません。{% endblocktrans"
+
+#: ../../../../templates/wirecloud/workspace/missing_widget.html:12
+msgid ""
+"This widget is currently not available. Probably you or an administrator "
+"uninstalled it."
+msgstr "このウィジェットは現在利用できません。あなたまたは管理者がアンインストールした可能性があります。"
+
+#: ../../../../templates/wirecloud/workspace/widget.html:3
+msgid "Toggle title visibility"
+msgstr "タイトルの表示/非表示を切り替えます"
+
+#: ../../../../templates/wirecloud/catalogue/search_interface.html:23
+msgid "Type"
+msgstr "タイプ"
+
+#: ../../../../templates/wirecloud/catalogue/search_interface.html:22
+msgid "Type:"
+msgstr "タイプ:"
+
+#: ../../../../templates/wirecloud/catalogue/modals/upload.html:9
+msgid "Upload file"
+msgstr "ファイルをアップロードする"
+
+#: ../../../../templates/wirecloud/views/base_plain.html:27
+#: ../../../../templates/wirecloud/views/header.html:2
+msgid "User menu"
+msgstr "ユーザーメニュー"
+
+#: ../../../../templates/registration/login.html:39
+msgid "Username"
+msgstr "ユーザ名"
+
+#: ../../../../templates/wirecloud/catalogue/order_by_template.html:4
+#: ../../../../templates/wirecloud/catalogue/resource_details.html:16
+msgid "Vendor"
+msgstr "ベンダー"
+
+#: ../../../../templates/wirecloud/catalogue/resource_details.html:18
+msgid "Version"
+msgstr "バージョン"
+
+#: ../../../../templates/registration/login.html:26
+#: ../../../../templates/wirecloud/views/base.html:38
+msgid ""
+"We recommend you to upgrade your browser to the newest version of either <a "
+"href=\"https://www.mozilla.org/firefox\">Firefox</a> or <a "
+"href=\"https://www.google.com/chrome\">Google Chrome</a> as these are the "
+"browsers currently supported by WireCloud."
+msgstr ""
+"WireCloud で現在サポートされているブラウザの <a "
+"href=\"https://www.mozilla.org/firefox\">Firefox</a> または <a "
+"href=\"https://www.google.com/chrome\">Google Chrome</a> "
+"の最新バージョンにアップグレードすることをおすすめします。"
+
+#: ../../../../templates/wirecloud/landing_page.html:3
+msgid "Welcome to WireCloud!"
+msgstr "WireCloud へようこそ！"
+
+#: ../../../../templates/wirecloud/landing_page.html:10
+msgid ""
+"Welcome to the next-generation application mashup platform aimed at "
+"leveraging the long tail of the Internet of Services."
+msgstr "インターネット・サービスのロングテールを活用するための、次世代アプリケーション・マッシュアップ・プラットフォームへようこそ。"
+
+#: ../../../../templates/wirecloud/wiring/footer.html:13
+msgid "Widgets"
+msgstr "ウィジェット"
+
+#: ../../../../templates/wirecloud/views/base_plain.html:4
+#: ../../../../templates/wirecloud/views/classic.html:3
+#: ../../../../templates/wirecloud/views/embedded.html:3
+#: ../../../../templates/wirecloud/views/smartphone.html:3
+msgid "WireCloud Platform"
+msgstr "WireCloud プラットフォーム"
+
+#: ../../../../templates/registration/login.html:5
+msgid "WireCloud Platform - Sign in"
+msgstr "WireCloud Platform - サインイン"
+
+#: ../../../../templates/wirecloud/landing_page.html:2
+msgid "WireCloud · Build application mashups"
+msgstr "WireCloud · アプリケーション・マッシュアップの構築"
+
+#: ../../../../templates/wirecloud/landing_page.html:36
+msgid "Wiring &amp; Piping"
+msgstr "ワイヤーリング &amp; パイピング"
+
+#: ../../../../templates/wirecloud/landing_page.html:37
+msgid ""
+"Wiring allows you to easily connect widgets in a mashup to create a full-"
+"fledged dashboard with RIA functionality."
+msgstr "ワイヤーリング (wiring) を使用すると、マッシュアップ内のウィジェットを簡単に接続して、RIA 機能を備えた本格的なダッシュボードを作成できます。"
+
+#: ../../../../templates/403.html:4
+#, python-format
+msgid "You don't have permission to access the requested URL \"%(request_path)s\"."
+msgstr "要求された URL \"%(request_path)s\" にアクセスする権限がありません。"
+
+#: ../../../../templates/registration/login.html:25
+#: ../../../../templates/wirecloud/views/base.html:37
+msgid "Your browser seems to lack some required features"
+msgstr "ブラウザはいくつかの必要な機能を欠いているようです"
+
+#: ../../../../templates/400.html:2
+msgid "error400"
+msgstr "error400"
+
+#: ../../../../templates/401.html:2
+msgid "error401"
+msgstr "error401"

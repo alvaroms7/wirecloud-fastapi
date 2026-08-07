@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr "Pasarela incorrecta"
 msgid "Connection Error"
 msgstr "Error de conexión"
 
-#: ../../../routes.py:444 ../../../routes.py:483
+#: ../../../routes.py:449 ../../../routes.py:493
 #, python-format
 msgid "Error processing proxy request: %s"
 msgstr "Error procesando la petición del proxy: %s"
@@ -36,24 +36,27 @@ msgstr "Error procesando la petición del proxy: %s"
 msgid "Gateway Timeout"
 msgstr "Tiempo de espera agotado"
 
-#: ../../../routes.py:421 ../../../routes.py:459
+#: ../../../routes.py:420 ../../../routes.py:463
 #, python-format
 msgid "Invalid protocol: %s"
 msgstr "Protocolo inválido: %s"
 
-#: ../../../routes.py:426 ../../../routes.py:465
+#: ../../../routes.py:423 ../../../routes.py:426 ../../../routes.py:431
+#: ../../../routes.py:466 ../../../routes.py:469 ../../../routes.py:475
 msgid "Invalid request"
 msgstr "Petición inválida"
 
 #: ../../../routes.py:349 ../../../routes.py:351
 msgid "SSL error"
-msgstr ""
+msgstr "error de SSL"
 
 #: ../../../processors.py:152
 msgid ""
 "X-WireCloud-Secure-Data: The \"data\" action is not supported for WebSocket "
 "requests."
 msgstr ""
+"X-WireCloud-Secure-Data: la acción \"datos\" no se admite para las "
+"solicitudes WebSocket."
 
 #: ../../../processors.py:71
 #, python-format
@@ -61,6 +64,8 @@ msgid ""
 "X-WireCloud-Secure-Data: The following required parameters are invalid: "
 "%(params)s"
 msgstr ""
+"X-WireCloud-Secure-Data: Los siguientes parámetros requeridos no son válidos:"
+" %(params)s"
 
 #: ../../../processors.py:59
 #, python-format
@@ -68,13 +73,15 @@ msgid ""
 "X-WireCloud-Secure-Data: The following required parameters are missing: "
 "%(params)s"
 msgstr ""
+"X-WireCloud-Secure-Data: Faltan los siguientes parámetros requeridos: "
+"%(params)s"
 
 #: ../../../processors.py:109
 msgid "X-WireCloud-Secure-Data: The request does not contain any data to process."
-msgstr ""
+msgstr "X-WireCloud-Secure-Data: La solicitud no contiene ningún dato para procesar."
 
 #: ../../../processors.py:154
 #, python-format
 msgid "X-WireCloud-Secure-Data: Unknown action \"%(action)s\"."
-msgstr ""
+msgstr "X-WireCloud-Secure-Data: Acción desconocida \"%(action)s\"."
 

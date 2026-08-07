@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -19,71 +19,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../../plugins.py:116
+#: ../../../plugins.py:120
 msgid "FIWARE token available"
-msgstr ""
+msgstr "Token de FIWARE disponible"
 
-#: ../../../plugins.py:106 ../../../plugins.py:112
+#: ../../../plugins.py:110 ../../../plugins.py:116
 msgid "FIWARE version"
-msgstr ""
+msgstr "Versión de FIWARE"
 
-#: ../../../plugins.py:107 ../../../plugins.py:113
+#: ../../../plugins.py:111 ../../../plugins.py:117
 msgid "FIWARE version of the platform"
-msgstr ""
+msgstr "La versión de FIWARE de la plataforma"
 
-#: ../../../proxy.py:169
+#: ../../../proxy.py:180
 msgid "Failed to get token from IdM"
-msgstr ""
+msgstr "No se pudo obtener el token de IdM"
 
 #: ../../../proxy.py:136
 msgid "IdM support not enabled"
-msgstr ""
+msgstr "Integración con el IdM no activado"
 
-#: ../../../plugins.py:118
+#: ../../../plugins.py:122
 msgid ""
 "Indicates if the current user has associated a FIWARE auth token that can be "
 "used for accessing other FIWARE resources"
 msgstr ""
+"Indica si el usuario actual tiene asociado un token de autenticación de "
+"FIWARE que puede ser usado para acceder a otros servicios de FIWARE"
 
 #: ../../../proxy.py:148
 msgid "Invalid FIWARE OAuth token source"
-msgstr ""
+msgstr "Token OAuth de FIWARE inválido"
 
 #: ../../../proxy.py:99
 msgid "No body data to replace pattern"
-msgstr ""
+msgstr "No hay datos corporales para reemplazar el patrón"
 
-#: ../../../plugins.py:253
+#: ../../../plugins.py:257
 msgid ""
 "OIDC provider has not returned a valid response: missing access_token or "
 "refresh_token"
 msgstr ""
+"OIDC el proveedor no ha devuelto una respuesta válida: falta el token_acceso "
+"o el token_actualización"
 
-#: ../../../plugins.py:272
+#: ../../../plugins.py:276
 msgid "OIDC provider has not returned a valid response: missing username"
 msgstr ""
+"El proveedor OIDC no ha devuelto una respuesta válida: falta el nombre de "
+"usuario"
 
-#: ../../../plugins.py:326
+#: ../../../plugins.py:330
 msgid "The FIWARE App ID must be configured when using the OIDC plugin with FIWARE."
 msgstr ""
+"El ID de la aplicación FIWARE se debe configurar cuando se utiliza el "
+"complemento OIDC con FIWARE."
 
-#: ../../../plugins.py:329
+#: ../../../plugins.py:333
 msgid ""
 "The FIWARE App Secret must be configured when using the OIDC plugin with "
 "FIWARE."
 msgstr ""
+"El secreto de la aplicación FIWARE debe configurarse cuando se utiliza el "
+"complemento OIDC con FIWARE."
 
-#: ../../../plugins.py:323
+#: ../../../plugins.py:327
 msgid ""
 "The FIWARE IDM server must be configured when using the OIDC plugin with "
 "FIWARE."
 msgstr ""
+"El servidor IDM FIWARE debe configurarse cuando se utiliza el complemento "
+"OIDC con FIWARE."
 
 #: ../../../proxy.py:152
 msgid "User has not an active FIWARE profile"
-msgstr ""
+msgstr "El usuario no tiene un perfil FIWARE activo"
 
-#: ../../../proxy.py:155
+#: ../../../proxy.py:166
 msgid "Workspace owner does not have permission to give their token to other users"
 msgstr ""
+"El propietario del entorno de trabajo no tiene permiso para dar su token a "
+"otros usuarios"
 

@@ -1,0 +1,76 @@
+# Japanese translations for WireCloud.
+# Copyright (C) 2026 Future Internet Consulting and Development Solutions S.L.
+# This file is distributed under the same license as the WireCloud project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WireCloud VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../../routes.py:355 ../../../routes.py:357 ../../../routes.py:362
+msgid "Connection Error"
+msgstr "接続エラー"
+
+#: ../../../routes.py:449 ../../../routes.py:493
+#, python-format
+msgid "Error processing proxy request: %s"
+msgstr "プロキシ要求の処理中にエラーが発生しました: %s"
+
+#: ../../../routes.py:343 ../../../routes.py:345
+msgid "Gateway Timeout"
+msgstr "ゲートウェイのタイムアウト"
+
+#: ../../../routes.py:420 ../../../routes.py:463
+#, python-format
+msgid "Invalid protocol: %s"
+msgstr "無効なプロトコル: %s"
+
+#: ../../../routes.py:423 ../../../routes.py:426 ../../../routes.py:431
+#: ../../../routes.py:466 ../../../routes.py:469 ../../../routes.py:475
+msgid "Invalid request"
+msgstr "無効なリクエスト"
+
+#: ../../../routes.py:349 ../../../routes.py:351
+msgid "SSL error"
+msgstr "SSLエラー"
+
+#: ../../../processors.py:152
+msgid ""
+"X-WireCloud-Secure-Data: The \"data\" action is not supported for WebSocket "
+"requests."
+msgstr "X-WireCloud-Secure-Data: 「データ」アクションは、WebSocket リクエストではサポートされていません。"
+
+#: ../../../processors.py:71
+#, python-format
+msgid ""
+"X-WireCloud-Secure-Data: The following required parameters are invalid: "
+"%(params)s"
+msgstr "X-WireCloud-Secure-Data: 次の必須パラメータが無効です: %(params)s"
+
+#: ../../../processors.py:59
+#, python-format
+msgid ""
+"X-WireCloud-Secure-Data: The following required parameters are missing: "
+"%(params)s"
+msgstr "X-WireCloud-Secure-Data: 次の必須パラメータが欠落しています: %(params)s"
+
+#: ../../../processors.py:109
+msgid "X-WireCloud-Secure-Data: The request does not contain any data to process."
+msgstr "X-WireCloud-Secure-Data: リクエストには処理するデータが含まれていません。"
+
+#: ../../../processors.py:154
+#, python-format
+msgid "X-WireCloud-Secure-Data: Unknown action \"%(action)s\"."
+msgstr "X-WireCloud-Secure-Data: 不明なアクション「%(action)s」。"

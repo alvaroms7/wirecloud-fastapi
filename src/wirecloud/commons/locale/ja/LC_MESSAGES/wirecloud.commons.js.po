@@ -1,0 +1,250 @@
+# Japanese translations for WireCloud.
+# Copyright (C) 2026 Future Internet Consulting and Development Solutions S.L.
+# This file is distributed under the same license as the WireCloud project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WireCloud VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../../static/js/StyledElements/PaginationInterface.js:65
+msgid ""
+"<div class=\"se-input-group\"><t:firstBtn/><t:prevBtn/><div class=\"se-"
+"box\">Page: "
+"<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></div>"
+msgstr ""
+"<div class=\"se-input-group\"><t:firstBtn/><t:prevBtn/><div class=\"se-"
+"box\">ページ: "
+"<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></div>"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:136
+#, python-format
+msgid ""
+"<p>Currently, you do not have access to any %(scope)s component. You can get "
+"components using the Marketplace view or by uploading components manually "
+"using the Upload button on the My Resources view.</p>"
+msgstr ""
+"<p>現在、%(scope)s "
+"のコンポーネントにもアクセスすることはできません。マーケットプレイス・ビューを使用するか、マイリソース・ビューのアップロード・ボタンを使用してコンポーネントを手動でアップロードしてコンポーネントを取得できます。</p>"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:139
+msgid ""
+"<p>Currently, you do not have access to any component. You can get components"
+" using the Marketplace view or by uploading components manually using the "
+"Upload button on the My Resources view.</p>"
+msgstr "<p>現在、どのコンポーネントにもアクセスすることはできません。マーケットプレイス・ビューを使用するか、マイリソース・ビューのアップロード・ボタンを使用してコンポーネントを手動でアップロードしてコンポーネントを取得できます。</p>"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:116
+msgid "<p>Showing results for <b><t:corrected_query/></b></p>"
+msgstr "<p><b><t:corrected_query/></b> の結果を表示</p>"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:133
+#, python-format
+msgid ""
+"<p>We couldn't find anything for your search - "
+"<b>%(keywords)s.</b></p><p>Suggestions:</p><ul><li>Make sure all words are "
+"spelled correctly.</li><li>Try different keywords.</li><li>Try more general "
+"keywords.</li></ul>"
+msgstr ""
+"<p>検索で何も見つかりませんでした - "
+"<b>%(keywords)s.</b></p><p>対処:</p><ul><li>すべての単語のスペルが正しいことを確認してください。</li><li>異なるキーワードを試してみてください。</li><li>より一般的なキーワードを試してください。</li></ul>"
+
+#: ../../../static/js/StyledElements/Form.js:243
+#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:44
+msgid "Accept"
+msgstr "同意"
+
+#: ../../../static/js/StyledElements/Notebook.js:165
+#: ../../../static/js/StyledElements/Notebook.js:168
+msgid "Add Tab"
+msgstr "タブを追加"
+
+#: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:52
+msgid "Available tutorials"
+msgstr "利用可能なチュートリアル"
+
+#: ../../../static/js/StyledElements/Form.js:254
+#: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:136
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: ../../../static/js/wirecloud/ui/MACField.js:85
+msgid "Clear current selection"
+msgstr "現在の選択をクリア"
+
+#: ../../../static/js/wirecloud/ui/HTMLWindowMenu.js:41
+#: ../../../static/js/wirecloud/ui/MACSelectionWindowMenu.js:44
+#: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:176
+#: ../../../static/js/wirecloud/ui/WindowMenu.js:123
+msgid "Close"
+msgstr "クローズ"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:46
+msgid "Connection error: No resource retrieved"
+msgstr "接続エラー: 検索されたリソースがありません"
+
+#: ../../../static/js/StyledElements/PaginationInterface.js:93
+msgid "Current page number"
+msgstr "現在のページ番号"
+
+#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:26
+msgid "Error"
+msgstr "エラー"
+
+#: ../../../static/js/StyledElements/CodeArea.js:47
+msgid "Exit full screen"
+msgstr "全画面を終了"
+
+#: ../../../static/js/StyledElements/CodeArea.js:47
+#: ../../../static/js/StyledElements/CodeArea.js:99
+msgid "Full screen"
+msgstr "全画面"
+
+#: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:49
+msgid "If you prefer, you can follow some of these tutorials:"
+msgstr "必要に応じて、これらのチュートリアルのいくつかに従うことができます:"
+
+#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:26
+msgid "Info"
+msgstr "情報"
+
+#: ../../../static/js/wirecloud/ui/MACSearch.js:179
+msgid "Keywords..."
+msgstr "キーワード..."
+
+#: ../../../static/js/StyledElements/Utils.js:506
+msgid "N/A"
+msgstr "N/A"
+
+#: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:119
+msgid "Next"
+msgstr "次"
+
+#: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:74
+msgid "No"
+msgstr "いいえ"
+
+#: ../../../static/js/StyledElements/ModelTable.js:455
+msgid "No data available"
+msgstr "データなし"
+
+#: ../../../static/js/StyledElements/Typeahead.js:85
+msgid "No results found for <em><t:query/></em>"
+msgstr "<em><t:query/></em> の結果は見つかりませんでした"
+
+#: ../../../static/js/StyledElements/Form.js:231
+msgid "Reset"
+msgstr "リセット"
+
+#: ../../../static/js/wirecloud/ui/MACField.js:99
+msgid "Search"
+msgstr "検索"
+
+#: ../../../static/js/StyledElements/FileField.js:100
+#: ../../../static/js/wirecloud/ui/MACSelectionWindowMenu.js:34
+msgid "Select"
+msgstr "選択"
+
+#: ../../../static/js/StyledElements/FileField.js:98
+msgid "Select file"
+msgstr "ファイルを選択"
+
+#: ../../../static/js/wirecloud/ui/MACField.js:95
+msgid "Selected component"
+msgstr "選択したコンポーネント"
+
+#: ../../../static/js/StyledElements/FileField.js:91
+msgid "Selected file name"
+msgstr "選択したファイル名"
+
+#: ../../../static/js/StyledElements/Form.js:220
+msgid "Set Defaults"
+msgstr "デフォルト設定"
+
+#: ../../../static/js/StyledElements/ModelTable.js:56
+#, python-format
+msgid "Sort by %(column_name)s"
+msgstr "%(column_name)s でソート"
+
+#: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:59
+#, python-format
+msgid "Start %(tutorial)s tutorial"
+msgstr "%(tutorial)s チュートリアルを開始する"
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:78
+#, python-format
+msgid "The following field do not contain a valid version number: %(fields)s."
+msgstr "次のフィールドには有効なバージョン番号が含まれていません: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:81
+#, python-format
+msgid "The following fields contain invalid characters: %(fields)s."
+msgstr "次のフィールドには無効な文字が含まれています: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:75
+#, python-format
+msgid "The following fields do not contain a valid E-Mail address: %(fields)s."
+msgstr "次のフィールドには有効なEメールアドレスが含まれていません: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:72
+#, python-format
+msgid "The following fields do not contain a valid URL: %(fields)s."
+msgstr "次のフィールドには有効な URL は含まれていません: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:84
+#, python-format
+msgid "The following fields do not contain a valid color value: %(fields)s."
+msgstr "次のフィールドには有効なカラー値が含まれていません: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:87
+#, python-format
+msgid "The following fields does contain an out of range value: %(fields)s."
+msgstr "次のフィールドには範囲外の値が含まれています: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:69
+#, python-format
+msgid "The following required fields are empty: %(fields)s."
+msgstr "次の必須フィールドは空です: %(fields)s."
+
+#: ../../../static/js/StyledElements/InputInterfaces.js:90
+msgid ""
+"The sceen sizes are not correct. They must cover the whole range of possible "
+"screen sizes without gaps or overlaps."
+msgstr "シーンのサイズが正しくありません。隙間や重なりがなく、可能な画面サイズの全範囲をカバーする必要があります。"
+
+#: ../../../static/js/StyledElements/PaginationInterface.js:101
+msgid "Total items count"
+msgstr "総アイテム数"
+
+#: ../../../static/js/StyledElements/PaginationInterface.js:97
+msgid "Total pages"
+msgstr "総ページ数"
+
+#: ../../../static/js/wirecloud/ui/Tutorial.js:76
+msgid "Tutorial instructions"
+msgstr "チュートリアルの説明"
+
+#: ../../../static/js/wirecloud/ui/TutorialSubMenu.js:29
+msgid "Tutorials"
+msgstr "チュートリアル"
+
+#: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:81
+#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:26
+msgid "Warning"
+msgstr "警告"
+
+#: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:73
+msgid "Yes"
+msgstr "はい"

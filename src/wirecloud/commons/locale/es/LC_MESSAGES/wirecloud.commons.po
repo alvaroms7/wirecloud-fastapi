@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -25,6 +25,9 @@ msgid ""
 "box\">Page: "
 "<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></div>"
 msgstr ""
+"<div class=\"se-input-group\"><t:firstBtn/><t:prevBtn/><div class=\"se-"
+"box\">Página: "
+"<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></div>"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:140
 #, python-format
@@ -33,6 +36,9 @@ msgid ""
 "components using the Marketplace view or by uploading components manually "
 "using the Upload button on the My Resources view.</p>"
 msgstr ""
+"<p>Actualmente no tienes acceso a ningún componente de tipo %(scope)s. Puedes"
+" obtener componentes usando la vista de Marketplace o subiendo recursos de "
+"forma manual usando el botón Subir en la vista de Mis Recursos.</p>"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:143
 msgid ""
@@ -40,10 +46,13 @@ msgid ""
 " using the Marketplace view or by uploading components manually using the "
 "Upload button on the My Resources view.</p>"
 msgstr ""
+"<p>Actualmente no tienes acceso a ningún componente. Puedes obtener "
+"componentes usando la vista de Marketplace o subiendo recursos de forma "
+"manual usando el botón Subir en la vista de Mis Recursos.</p>"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:120
 msgid "<p>Showing results for <b><t:corrected_query/></b></p>"
-msgstr ""
+msgstr "<p>Mostrando los resultados para <b><t:corrected_query/></b></p>"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:137
 #, python-format
@@ -53,56 +62,82 @@ msgid ""
 "spelled correctly.</li><li>Try different keywords.</li><li>Try more general "
 "keywords.</li></ul>"
 msgstr ""
+"<p>No hemos podido encontrar resultados que coincidan con tu búsqueda "
+"(<b>%(keywords)s</b>).</p><p>Sugerencias:</p><ul><li>Asegúrate de que todas "
+"las palabras estén escritas correctamente.</li><li>Prueba con otras palabras "
+"clave.</li><li>Inténtalo con palabras clave más generales.</li></ul>"
+
+#: ../../../auth/routes.py:803 ../../../auth/routes.py:908
+#: ../../../auth/routes.py:1007
+msgid "A group with that name already exists"
+msgstr "Ya existe un grupo con ese nombre."
+
+#: ../../../auth/routes.py:610 ../../../auth/routes.py:710
+msgid "A user with that username already exists"
+msgstr "Ya existe un usuario con ese nombre de usuario"
 
 #: ../../../static/js/StyledElements/Form.js:246
 #: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:45
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: ../../../static/js/StyledElements/Notebook.js:168
 #: ../../../static/js/StyledElements/Notebook.js:171
 msgid "Add Tab"
-msgstr ""
+msgstr "Añadir pestaña"
 
 #: ../../../routes.py:82
 msgid "An unexpected error occurred"
-msgstr ""
+msgstr "Ocurrió un error inesperado"
 
 #: ../../../routes.py:143
 msgid "Authentication required"
-msgstr ""
+msgstr "Se requiere autenticación"
 
 #: ../../../static/js/StyledElements/Form.js:257
 #: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:140
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
+
+#: ../../../auth/routes.py:1111
+msgid "Cannot set this parent: it would create a circular reference"
+msgstr "No se puede establecer este padre: crearía una referencia circular"
 
 #: ../../../static/js/wirecloud/ui/MACField.js:89
 msgid "Clear current selection"
-msgstr ""
+msgstr "Borrar la seleccion actual"
 
 #: ../../../static/js/wirecloud/ui/HTMLWindowMenu.js:45
 #: ../../../static/js/wirecloud/ui/MACSelectionWindowMenu.js:48
 #: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:180
 #: ../../../static/js/wirecloud/ui/WindowMenu.js:127
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:50
 msgid "Connection error: No resource retrieved"
-msgstr ""
+msgstr "Problema de conexión: No se ha recibido ningún recurso"
 
 #: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:29
 msgid "Error"
-msgstr ""
+msgstr "Error"
+
+#: ../../../auth/routes.py:800 ../../../auth/routes.py:900
+msgid "Group name and codename cannot be empty"
+msgstr "El nombre del grupo y el nombre en clave no pueden estar vacíos"
+
+#: ../../../auth/routes.py:847 ../../../auth/routes.py:904
+#: ../../../auth/routes.py:957 ../../../auth/routes.py:1095
+msgid "Group not found"
+msgstr "Grupo no encontrado"
 
 #: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:52
 msgid "If you prefer, you can follow some of these tutorials:"
-msgstr ""
+msgstr "Si lo prefieres, puedes seguir alguno de los siguientes tutoriales:"
 
 #: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:29
 msgid "Info"
-msgstr ""
+msgstr "Detalles"
 
 #: ../../../utils/template/parsers/rdf.py:546
 #: ../../../utils/template/parsers/rdf.py:554
@@ -136,7 +171,7 @@ msgstr "Namespace inválido: "
 
 #: ../../../routes.py:146
 msgid "Invalid orderby value"
-msgstr ""
+msgstr "Valor de orden no válido"
 
 #: ../../../utils/template/parsers/xml.py:136
 #, python-format
@@ -171,17 +206,17 @@ msgstr "Tipo de plantilla inválido"
 msgid "Invalid template: %s"
 msgstr "Plantilla inválida: %s"
 
-#: ../../../auth/routes.py:96
+#: ../../../auth/routes.py:105
 msgid "Invalid user"
-msgstr ""
+msgstr "Usuario no válido"
 
-#: ../../../auth/routes.py:226
+#: ../../../auth/routes.py:236
 msgid "Invalid username or password"
 msgstr "Nombre de usuario o contraseña inválidos"
 
 #: ../../../routes.py:73
 msgid "Invalid value"
-msgstr ""
+msgstr "Valor no válido"
 
 #: ../../../utils/template/writers/json.py:30
 #: ../../../utils/template/writers/json.py:41
@@ -196,7 +231,7 @@ msgstr "Versión de wiring inválida: %s"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:183
 msgid "Keywords..."
-msgstr ""
+msgstr "Texto de búsqueda…"
 
 #: ../../../utils/template/parsers/xml.py:156
 #, python-format
@@ -245,40 +280,42 @@ msgstr "Campo requerido no encontrado: target"
 
 #: ../../../static/js/StyledElements/Utils.js:510
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:123
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:78
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: ../../../static/js/StyledElements/ModelTable.js:453
 msgid "No data available"
-msgstr ""
+msgstr "No hay datos disponibles"
 
 #: ../../../static/js/StyledElements/Typeahead.js:89
 msgid "No results found for <em><t:query/></em>"
-msgstr ""
+msgstr "No se han encontrado resultados para <em><t:query/></em>"
 
-#: ../../../auth/utils.py:191 ../../../auth/utils.py:200
+#: ../../../auth/utils.py:237 ../../../auth/utils.py:246
 msgid "OIDC provider has not returned a valid response"
-msgstr ""
+msgstr "El proveedor OIDC no ha devuelto una respuesta válida"
 
-#: ../../../auth/routes.py:65 ../../../auth/routes.py:68
-#: ../../../auth/routes.py:401
+#: ../../../auth/routes.py:74 ../../../auth/routes.py:77
+#: ../../../auth/routes.py:411
 msgid "OIDC provider is not configured correctly! Contact your administrator."
 msgstr ""
+"¡El proveedor OIDC no está configurado correctamente! Póngase en contacto con"
+" su administrador."
 
-#: ../../../auth/routes.py:62
+#: ../../../auth/routes.py:71
 msgid "OIDC provider is not enabled"
-msgstr ""
+msgstr "El proveedor OIDC no está habilitado"
 
-#: ../../../auth/utils.py:187
+#: ../../../auth/utils.py:233
 msgid "OIDC provider is not reachable"
-msgstr ""
+msgstr "El proveedor OIDC no es accesible"
 
 #: ../../../utils/template/parsers/rdf.py:329
 #: ../../../utils/template/parsers/xml.py:356
@@ -289,9 +326,21 @@ msgstr ""
 "Sólo se soporta la versión 2.0 de wiring. La versión antigua 1.0 ya no se "
 "soporta."
 
+#: ../../../auth/routes.py:1004
+msgid "Organization name and codename cannot be empty"
+msgstr "El nombre de la organización y el nombre en clave no pueden estar vacíos"
+
+#: ../../../auth/routes.py:1046 ../../../auth/routes.py:1148
+msgid "Organization not found"
+msgstr "Organización no encontrada"
+
+#: ../../../auth/routes.py:1104
+msgid "Parent group not found"
+msgstr "Grupo de padres no encontrado"
+
 #: ../../../routes.py:47
 msgid "Permission denied"
-msgstr ""
+msgstr "Permiso denegado"
 
 #: ../../../utils/template/parsers/rdf.py:108
 msgid "RDF document does not describe a widget, operator or mashup component"
@@ -299,64 +348,68 @@ msgstr "El documento RDF no describe un componente de widget, operador o mashup"
 
 #: ../../../static/js/StyledElements/Form.js:234
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: ../../../routes.py:52
 msgid "Resource not found"
-msgstr ""
+msgstr "Recurso no encontrado"
 
 #: ../../../static/js/wirecloud/ui/MACField.js:100
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: ../../../static/js/StyledElements/FileField.js:101
 #: ../../../static/js/wirecloud/ui/MACSelectionWindowMenu.js:38
 msgid "Select"
-msgstr ""
+msgstr "Seleccionar"
 
 #: ../../../static/js/StyledElements/Form.js:223
 msgid "Set Defaults"
-msgstr ""
+msgstr "Valores por defecto"
 
 #: ../../../static/js/StyledElements/ModelTable.js:58
 #, python-format
 msgid "Sort by %(column_name)s"
-msgstr ""
+msgstr "Ordenar por %(column_name)s"
+
+#: ../../../auth/routes.py:501
+msgid "Target user not found"
+msgstr "Usuario objetivo no encontrado"
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:82
 #, python-format
 msgid "The following field do not contain a valid version number: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos no continen un número de versión válido: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:85
 #, python-format
 msgid "The following fields contain invalid characters: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos contienen carácteres inválidos: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:79
 #, python-format
 msgid "The following fields do not contain a valid E-Mail address: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos no continene un e-mail válido: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:76
 #, python-format
 msgid "The following fields do not contain a valid URL: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos no contienen una URL válida: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:88
 #, python-format
 msgid "The following fields do not contain a valid color value: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos no contienen un valor de color válido: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:91
 #, python-format
 msgid "The following fields does contain an out of range value: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos contienen un valor fuera de rango: %(fields)s."
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:73
 #, python-format
 msgid "The following required fields are empty: %(fields)s."
-msgstr ""
+msgstr "Los siguientes campos obligatorios están vacíos: %(fields)s."
 
 #: ../../../utils/template/schemas/macdschemas.py:133
 #, python-format
@@ -396,7 +449,7 @@ msgstr ""
 msgid "The macversion is invalid. Currently only macversion 1 or 2 are supported."
 msgstr "La macversion es inválida. Actualmente sólo se soportan las macversion 1 o 2."
 
-#: ../../../utils/http.py:293
+#: ../../../utils/http.py:291
 msgid ""
 "The requested resource is only capable of generating content not acceptable "
 "according to the Accept headers sent in the request"
@@ -409,6 +462,16 @@ msgid ""
 "The sceen sizes are not correct. They must cover the whole range of possible "
 "screen sizes without gaps or overlaps."
 msgstr ""
+"Los tamaños de pantalla no son correctos. Deben cubrir toda la gama de "
+"tamaños de pantalla posibles sin espacios ni superposiciones."
+
+#: ../../../auth/routes.py:1150
+msgid "The specified group is not the root group of an organization"
+msgstr "El grupo especificado no es el grupo raíz de una organización."
+
+#: ../../../auth/routes.py:1107
+msgid "The specified parent group is not an organization"
+msgstr "El grupo principal especificado no es una organización."
 
 #: ../../../utils/template/parsers/xml.py:441
 msgid "The use of the script element is not allowed in version 1.0 widgets"
@@ -425,20 +488,29 @@ msgstr ""
 
 #: ../../../static/js/wirecloud/ui/TutorialSubMenu.js:33
 msgid "Tutorials"
-msgstr ""
+msgstr "Tutoriales"
 
-#: ../../../utils/http.py:320
+#: ../../../utils/http.py:318
 msgid "Unsupported request media type"
 msgstr "Tipo de medio de petición no soportado"
 
+#: ../../../auth/routes.py:647 ../../../auth/routes.py:703
+#: ../../../auth/routes.py:756
+msgid "User not found"
+msgstr "Usuario no encontrado"
+
+#: ../../../auth/routes.py:607 ../../../auth/routes.py:706
+msgid "Username cannot be empty"
+msgstr "El nombre de usuario no puede estar vacío"
+
 #: ../../../routes.py:67
 msgid "Validation error"
-msgstr ""
+msgstr "Error de validación"
 
 #: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:85
 #: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:29
 msgid "Warning"
-msgstr ""
+msgstr "Atención"
 
 #: ../../../utils/template/parsers/rdf.py:83
 msgid "XML document does not contain a valid rdf namespace"
@@ -446,11 +518,68 @@ msgstr "El documento XML no contiene un namespace RDF válido"
 
 #: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:77
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
-#: ../../../auth/routes.py:353 ../../../auth/routes.py:397
+#: ../../../auth/routes.py:363 ../../../auth/routes.py:407
+#: ../../../auth/routes.py:493
 msgid "You are not logged in"
-msgstr ""
+msgstr "No has iniciado sesión"
+
+#: ../../../auth/routes.py:960
+msgid "You cannot delete the root group of an organization"
+msgstr "No se puede eliminar el grupo raíz de una organización"
+
+#: ../../../auth/routes.py:496
+msgid "You do not have permission to switch users"
+msgstr "No tienes permiso para cambiar de usuario"
+
+#: ../../../auth/routes.py:797
+msgid "You don't have permissions to create groups"
+msgstr "No tienes permisos para crear grupos."
+
+#: ../../../auth/routes.py:1001
+msgid "You don't have permissions to create organizations"
+msgstr "No tienes permisos para crear organizaciones."
+
+#: ../../../auth/routes.py:604
+msgid "You don't have permissions to create users"
+msgstr "No tienes permisos para crear usuarios."
+
+#: ../../../auth/routes.py:953
+msgid "You don't have permissions to delete groups"
+msgstr "No tienes permisos para eliminar grupos"
+
+#: ../../../auth/routes.py:1144
+msgid "You don't have permissions to delete organizations"
+msgstr "No tienes permisos para eliminar organizaciones"
+
+#: ../../../auth/routes.py:752
+msgid "You don't have permissions to delete users"
+msgstr "No tienes permisos para eliminar usuarios"
+
+#: ../../../auth/routes.py:897
+msgid "You don't have permissions to edit groups"
+msgstr "No tienes permisos para editar grupos"
+
+#: ../../../auth/routes.py:699
+msgid "You don't have permissions to edit users"
+msgstr "No tienes permisos para editar usuarios"
+
+#: ../../../auth/routes.py:1091
+msgid "You don't have permissions to update organizations"
+msgstr "No tienes permisos para actualizar organizaciones"
+
+#: ../../../auth/routes.py:843
+msgid "You don't have permissions to view groups"
+msgstr "No tienes permisos para ver grupos"
+
+#: ../../../auth/routes.py:1042
+msgid "You don't have permissions to view organizations"
+msgstr "No tienes permisos para ver organizaciones"
+
+#: ../../../auth/routes.py:643
+msgid "You don't have permissions to view users"
+msgstr "No tienes permisos para ver usuarios."
 
 #: ../../../utils/template/parsers/rdf.py:437
 msgid "missing required field: hasSourceEndpoint"
@@ -459,4 +588,3 @@ msgstr "Campo requerido no encontrado: hasSourceEndpoint"
 #: ../../../utils/template/parsers/rdf.py:446
 msgid "missing required field: hasTargetEndpoint"
 msgstr "Campo requerido no encontrado: hasTargetEndpoint"
-
