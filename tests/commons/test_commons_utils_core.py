@@ -134,13 +134,13 @@ async def test_db_save_alternative_and_tab(db_session, monkeypatch):
         await db.save_alternative_tab(db_session, tab)
 
 
-def test_downloader_and_encoding(monkeypatch, tmp_path):
+async def test_downloader_and_encoding(monkeypatch, tmp_path):
     path = tmp_path / "a.txt"
     path.write_bytes(b"hello")
     assert downloader.download_local_file(str(path)) == b"hello"
 
     with pytest.raises(Exception):
-        downloader.download_http_content("ftp://example.com/file")
+        await downloader.download_http_content("ftp://example.com/file")
 
     captured = {}
 
@@ -150,14 +150,25 @@ def test_downloader_and_encoding(monkeypatch, tmp_path):
         def raise_for_status(self):
             return None
 
-    def _get(url, headers):
-        captured["url"] = url
-        captured["headers"] = headers
-        return _Resp()
+    class _Client:
+        def __init__(self, **kwargs):
+            captured["client_options"] = kwargs
 
-    monkeypatch.setattr(downloader.requests, "get", _get)
-    assert downloader.download_http_content("https://example.com") == b"payload"
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *_args):
+            return None
+
+        async def get(self, url, headers):
+            captured["url"] = url
+            captured["headers"] = headers
+            return _Resp()
+
+    monkeypatch.setattr(downloader.httpx, "AsyncClient", _Client)
+    assert await downloader.download_http_content("https://example.com") == b"payload"
     assert "Wirecloud/" in captured["headers"]["User-Agent"]
+    assert captured["client_options"]["follow_redirects"] is True
 
     encoder = encoding.LazyEncoderXHTML()
     encoded = encoder.encode({"x": "&<>"})

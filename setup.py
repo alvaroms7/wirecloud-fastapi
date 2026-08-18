@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import os
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -24,15 +23,14 @@ class _FrontendBuildMixin:
             _NPM_BUILD_DONE = True
             return
 
-        npm = shutil.which("npm")
-        if not npm:
-            raise RuntimeError("npm is required to build Wirecloud frontend assets")
-
         project_root = Path(__file__).resolve().parent
         self.announce("Running frontend build: npm run build", level=2)
+        npm = "npm.cmd" if os.name == "nt" else "npm"
 
         try:
             subprocess.check_call([npm, "run", "build"], cwd=str(project_root), env=os.environ.copy())
+        except FileNotFoundError as exc:
+            raise RuntimeError("npm is required to build Wirecloud frontend assets") from exc
         except subprocess.CalledProcessError as exc:
             raise RuntimeError(f"npm run build failed with exit code {exc.returncode}") from exc
 

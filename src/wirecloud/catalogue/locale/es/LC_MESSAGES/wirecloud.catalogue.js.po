@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -19,27 +19,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:150
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:151
 msgid "Add more files"
 msgstr "Añadir más ficheros"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:223
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:226
 msgid "Add to workspace"
 msgstr "Añadir al entorno de trabajo"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:174
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:176
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:99
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:101
 msgid "Change Log"
 msgstr "Registro de cambios"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:263
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:111
+msgid "Component changelog"
+msgstr "Registro de cambios de componentes"
+
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:89
+msgid "Component documentation"
+msgstr "Documentación de componentes"
+
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:266
 msgid "Delete"
 msgstr "Borrar"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:272
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:275
 msgid "Delete all versions"
 msgstr "Borrar todas las versiones"
 
@@ -61,7 +69,7 @@ msgstr "Documentación"
 msgid "Doing catalogue search"
 msgstr "Buscando en el servidor"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:214
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:217
 msgid "Download"
 msgstr "Descargar"
 
@@ -69,7 +77,12 @@ msgstr "Descargar"
 msgid "Error uploading the following components:"
 msgstr "Error subiendo los siguientes componentes:"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:120
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:318
+#, python-format
+msgid "Filter by tag: %(tag)s"
+msgstr "Filtrar por etiqueta: %(tag)s"
+
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:122
 msgid "Home page"
 msgstr "Página web"
 
@@ -78,11 +91,11 @@ msgstr "Página web"
 msgid "Installing component from %(url)s"
 msgstr "Instalando componente desde %(url)s"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:136
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:138
 msgid "Issue tracker"
 msgstr "Seguimiento de incidencias"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:153
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:155
 msgid "License details"
 msgstr "Detalles de la licencia"
 
@@ -90,11 +103,11 @@ msgstr "Detalles de la licencia"
 msgid "Main Info"
 msgstr "General"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:326
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:348
 msgid "N/A"
 msgstr "N/A"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:128
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:129
 msgid "Name"
 msgstr "Nombre"
 
@@ -102,19 +115,29 @@ msgstr "Nombre"
 msgid "No image available"
 msgstr "Imagen no disponible"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:235
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:238
 msgid "Publish"
 msgstr "Publicar"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:142
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:377
+#, python-format
+msgid "Rating: %(rating)s out of 5 stars"
+msgstr "Calificación: %(rating)s de 5 estrellas"
+
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:143
 msgid "Remove this file"
 msgstr "Eliminar este fichero"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:113
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:99
+#, python-format
+msgid "Resource type: %(type)s"
+msgstr "Tipo de recurso: %(type)s"
+
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:114
 msgid "Select files from your computer"
 msgstr "Selecionar archivos del equipo"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:133
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:134
 msgid "Size"
 msgstr "Tamaño"
 
@@ -123,19 +146,27 @@ msgstr "Tamaño"
 msgid "Unexpected response from server"
 msgstr "Respuesta inesperada del servidor"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:245
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:248
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: ../../../static/js/wirecloud/ui/ResourcePainter.js:254
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:257
 msgid "Uninstall all versions"
 msgstr "Desinstalar todas las versiones"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:160
+#: ../../../static/js/wirecloud/ui/ResourcePainter.js:291
+msgid "Update all resource versions"
+msgstr "Actualizar todas las versiones de recursos"
+
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:161
 msgid "Upload"
 msgstr "Subir"
 
-#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:105
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:57
+msgid "Upload errors"
+msgstr "Errores de carga"
+
+#: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:106
 msgid "Upload mashable application components"
 msgstr "Subir componentes de aplicación mashable"
 

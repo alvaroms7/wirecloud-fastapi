@@ -146,6 +146,9 @@ async def test_create_workspace_validation_and_dry_run(monkeypatch):
         def __init__(self, _payload):
             self.payload = _payload
 
+        def get_resource_processed_info(self, process_urls=False):
+            return SimpleNamespace(name="template-name", title="Template Title")
+
     async def _build_json(*_args, **_kwargs):
         return SimpleNamespace(model_dump=lambda: {"k": "v"})
 
@@ -162,10 +165,45 @@ async def test_create_workspace_validation_and_dry_run(monkeypatch):
     monkeypatch.setattr(parser, "check_mashup_dependencies", _check_dependencies)
     monkeypatch.setattr(parser, "build_workspace_from_template", _build_workspace)
     monkeypatch.setattr(crud, "TemplateParser", _TemplateParser)
+    monkeypatch.setattr(crud, "is_a_workspace_with_that_name", lambda *_args, **_kwargs: _false())
+
+    async def _false():
+        return False
 
     source_workspace = _workspace_model(name="source")
-    dry_run = await crud.create_workspace(db, None, owner, source_workspace, dry_run=True)
-    assert dry_run is None
+    dry_run = await crud.create_workspace(
+        db, None, owner, source_workspace, new_name="copy", dry_run=True
+    )
+    assert dry_run is not None
+    assert dry_run.name == "copy"
+
+    template_named = await crud.create_workspace(
+        db, None, owner, source_workspace, dry_run=True
+    )
+    assert template_named.name == "template-name"
+    assert template_named.title == "Template Title"
+
+    title_named = await crud.create_workspace(
+        db, None, owner, source_workspace, new_name="", new_title="My Copy", dry_run=True
+    )
+    assert title_named.name == "my-copy"
+    assert title_named.title == "My Copy"
+
+    explicitly_named = await crud.create_workspace(
+        db, None, owner, source_workspace, new_name="copy-2", new_title="Copy 2", dry_run=True
+    )
+    assert explicitly_named.name == "copy-2"
+    assert explicitly_named.title == "Copy 2"
+
+    monkeypatch.setattr(crud, "is_a_workspace_with_that_name", lambda *_args, **_kwargs: _true())
+
+    async def _true():
+        return True
+
+    conflict = await crud.create_workspace(
+        db, None, owner, source_workspace, new_name="copy", dry_run=True
+    )
+    assert conflict is None
 
 
 async def test_workspace_change_delete_and_tab_helpers(db_session, monkeypatch):
@@ -291,7 +329,10 @@ async def test_clear_and_add_workspace_access_and_create_workspace_wgt_paths(db_
     called = {"install": 0}
 
     monkeypatch.setattr(crud, "TemplateParser", _TemplateMashup)
-    monkeypatch.setattr(crud, "download_http_content", lambda *_args, **_kwargs: b"data")
+    async def _download(*_args, **_kwargs):
+        return b"data"
+
+    monkeypatch.setattr(crud, "download_http_content", _download)
 
     async def _install(*_args, **_kwargs):
         called["install"] += 1

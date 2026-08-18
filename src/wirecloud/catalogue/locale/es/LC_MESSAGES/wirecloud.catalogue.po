@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -30,63 +30,63 @@ msgstr ""
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:154
 msgid "Add more files"
-msgstr ""
+msgstr "Añadir más ficheros"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:226
 msgid "Add to workspace"
-msgstr ""
+msgstr "Añadir al entorno de trabajo"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:178
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:103
 msgid "Change Log"
-msgstr ""
+msgstr "Registro de cambios"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:266
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:275
 msgid "Delete all versions"
-msgstr ""
+msgstr "Borrar todas las versiones"
 
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:279
 #, python-format
 msgid "Deleting %(title)s (%(uri)s)"
-msgstr ""
+msgstr "Borrando %(title)s (%(uri)s)"
 
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:272
 #, python-format
 msgid "Deleting all versions of %(title)s (%(group_id)s)"
-msgstr ""
+msgstr "Eliminando todas las versiones de %(title)s (%(group_id)s)"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:82
 msgid "Documentation"
-msgstr ""
+msgstr "Documentación"
 
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:148
 msgid "Doing catalogue search"
-msgstr ""
+msgstr "Buscando en el servidor"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:217
 msgid "Download"
-msgstr ""
+msgstr "Descargar"
 
-#: ../../../routes.py:390
+#: ../../../routes.py:408
 msgid "Error opening the changelog file"
 msgstr "Error abriendo el archivo de registro de cambios"
 
-#: ../../../routes.py:466
+#: ../../../routes.py:490
 msgid "Error opening the userguide file"
 msgstr "Error abriendo el archivo de guía de usuario"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:59
 msgid "Error uploading the following components:"
-msgstr ""
+msgstr "Error subiendo los siguientes componentes:"
 
-#: ../../../routes.py:118
+#: ../../../routes.py:121
 msgid ""
 "Error writing the resource into the filesystem. Please, contact the server "
 "administrator."
@@ -96,35 +96,35 @@ msgstr ""
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:123
 msgid "Home page"
-msgstr ""
+msgstr "Página web"
 
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:223
 #, python-format
 msgid "Installing component from %(url)s"
-msgstr ""
+msgstr "Instalando componente desde %(url)s"
 
 #: ../../../utils.py:155
 #, python-format
 msgid "Invalid embedded file: %s"
 msgstr "Archivo embebido inválido: %s"
 
-#: ../../../routes.py:166
+#: ../../../routes.py:169
 msgid "Invalid orderby value"
-msgstr ""
+msgstr "Valor de orden no válido"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:139
 msgid "Issue tracker"
-msgstr ""
+msgstr "Seguimiento de incidencias"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:156
 msgid "License details"
-msgstr ""
+msgstr "Detalles de la licencia"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/ResourceDetailsView.js:78
 msgid "Main Info"
-msgstr ""
+msgstr "General"
 
-#: ../../../routes.py:99
+#: ../../../routes.py:102
 msgid "Missing component file in the request"
 msgstr "Archivo de componente faltante en la petición"
 
@@ -135,37 +135,37 @@ msgstr "Archivo embebido no encontrado: %s"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:329
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:132
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:30
 msgid "No image available"
-msgstr ""
+msgstr "Imagen no disponible"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:238
 msgid "Publish"
-msgstr ""
+msgstr "Publicar"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:146
 msgid "Remove this file"
-msgstr ""
+msgstr "Eliminar este fichero"
 
-#: ../../../routes.py:115
+#: ../../../routes.py:118
 msgid "Resource already exists"
 msgstr "El recurso ya existe"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:117
 msgid "Select files from your computer"
-msgstr ""
+msgstr "Selecionar archivos del equipo"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:137
 msgid "Size"
-msgstr ""
+msgstr "Tamaño"
 
-#: ../../../routes.py:109
+#: ../../../routes.py:112
 msgid "The uploaded file is not a zip file"
 msgstr "El archivo subido no es un archivo zip"
 
@@ -181,34 +181,34 @@ msgstr "No se puede procesar el archivo de descripción del componente: %s"
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:133
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:246
 msgid "Unexpected response from server"
-msgstr ""
+msgstr "Respuesta inesperada del servidor"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:248
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstalar"
 
 #: ../../../static/js/wirecloud/ui/ResourcePainter.js:257
 msgid "Uninstall all versions"
-msgstr ""
+msgstr "Desinstalar todas las versiones"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:164
 msgid "Upload"
-msgstr ""
+msgstr "Subir"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:109
 msgid "Upload mashable application components"
-msgstr ""
+msgstr "Subir componentes de aplicación mashable"
 
 #: ../../../static/js/wirecloud/WirecloudCatalogue.js:203
 #, python-format
 msgid "Uploading packaged component %(filename)s"
-msgstr ""
+msgstr "Subiendo el componente empaquetado %(filename)s"
 
 #: ../../../static/js/wirecloud/ui/WirecloudCatalogue/UploadWindowMenu.js:45
 msgid "Uploading packaged components"
-msgstr ""
+msgstr "Subiendo los componentes empaquetados"
 
-#: ../../../routes.py:447
+#: ../../../routes.py:471
 #, python-format
 msgid ""
 "You can find the userguide of this component in this external <a "
@@ -216,6 +216,23 @@ msgid ""
 msgstr ""
 "Puede encontrar la guía de usuario de este componente en este <a "
 "target=\"_blank\" href=\"%s\">enlace</a> externo"
+
+#: ../../../routes.py:238
+msgid "You do not have permission to delete components"
+msgstr "No tienes permiso para eliminar componentes"
+
+#: ../../../routes.py:94
+msgid "You do not have permission to install components"
+msgstr "No tienes permiso para instalar componentes"
+
+#: ../../../routes.py:330
+msgid "You do not have permission to uninstall components"
+msgstr "No tienes permiso para desinstalar componentes"
+
+#: ../../../routes.py:292 ../../../routes.py:387 ../../../routes.py:463
+#: ../../../routes.py:540
+msgid "You do not have permission to view resource"
+msgstr "No tienes permiso para ver el recurso."
 
 #: ../../../utils.py:112
 #, python-format
@@ -237,7 +254,7 @@ msgstr "archivo no encontrado: %s"
 msgid "missing image file: %s"
 msgstr "archivo de imagen no encontrado: %s"
 
-#: ../../../routes.py:239 ../../../routes.py:324
+#: ../../../routes.py:244 ../../../routes.py:336
 #, python-format
 msgid "user %(username)s is not the owner of the resource %(resource_id)s"
 msgstr "el usuario %(username)s no es el propietario del recurso %(resource_id)s"

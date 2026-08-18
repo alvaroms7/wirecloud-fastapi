@@ -16,8 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# FIXME This was using regex and not re, make sure it works
-import re as regex
+import re
 from typing import Union, Optional
 from pydantic import BaseModel, Field
 
@@ -32,11 +31,11 @@ class Contact(BaseModel):
 
 __all__ = ('is_valid_name', 'is_valid_vendor', 'is_valid_version')
 
-SEPARATOR_RE = regex.compile(r'\s*,\s*')
-NAME_RE = regex.compile(r'^[^/]+$')
-VENDOR_RE = regex.compile(r'^[^/]+$')
-VERSION_RE = regex.compile(r'^(?:[1-9]\d*\.|0\.)*(?:[1-9]\d*|0)(?:(?:a|b|rc)[1-9]\d*)?(-dev.*)?$')
-CONTACT_RE = regex.compile(r'([^<(\s]+(?:\s+[^<()\s]+)*)(?:\s*<([^>]*)>)?(?:\s*\(([^)]*)\))?')
+SEPARATOR_RE = re.compile(r'\s*,\s*')
+NAME_RE = re.compile(r'^[^/]+$')
+VENDOR_RE = re.compile(r'^[^/]+$')
+VERSION_RE = re.compile(r'^(?:[1-9]\d*\.|0\.)*(?:[1-9]\d*|0)(?:(?:a|b|rc)[1-9]\d*)?(-dev.*)?$')
+CONTACT_RE = re.compile(r'([^<(\s]+(?:\s+[^<()\s]+)*)(?:\s*<([^>]*)>)?(?:\s*\(([^)]*)\))?')
 
 
 class TemplateParseException(Exception):
@@ -65,19 +64,19 @@ class UnsupportedFeature(Exception):
 
 
 def is_valid_name(name: str) -> bool:
-    return bool(regex.match(NAME_RE, name))
+    return bool(re.match(NAME_RE, name))
 
 
 def is_valid_vendor(vendor: str) -> bool:
-    return bool(regex.match(VENDOR_RE, vendor))
+    return bool(re.match(VENDOR_RE, vendor))
 
 
 def is_valid_version(version: str) -> bool:
-    return bool(regex.match(VERSION_RE, version))
+    return bool(re.match(VERSION_RE, version))
 
 
 def parse_contact_info(text: str) -> Contact:
-    result = regex.match(CONTACT_RE, text)
+    result = re.match(CONTACT_RE, text)
     if result is None:
         return Contact(name='')
 
@@ -96,7 +95,7 @@ def parse_contacts_info(info: Union[str, list[str], tuple[str, ...], list[dict]]
     contacts = []
 
     if isinstance(info, str):
-        info = regex.split(SEPARATOR_RE, info)
+        info = re.split(SEPARATOR_RE, info)
 
     for contact in info:
         if isinstance(contact, str):

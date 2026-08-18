@@ -149,7 +149,7 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
 
     monkeypatch.setattr(routes, "is_owner_or_has_permission", lambda _user, _ws, perm: perm in ("WORKSPACE.PREFERENCES.EDIT", "WORKSPACE.SHARE"))
 
-    calls = {"clear_users": 0, "clear_groups": 0, "add_user": 0, "add_group": 0, "change": 0, "commit": 0, "update_ws": 0}
+    calls = {"clear_users": 0, "clear_groups": 0, "add_user": 0, "add_group": 0, "groups": [], "change": 0, "commit": 0, "update_ws": 0}
 
     async def _clear_users(_db, _ws):
         calls["clear_users"] += 1
@@ -165,13 +165,19 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
     async def _get_group(_db, name):
         if name == "missing-group":
             return None
-        return SimpleNamespace(name=name)
+        return SimpleNamespace(name=name, is_organization=name == "org1")
+
+    async def _get_top_organization(_db, group):
+        if not group.is_organization:
+            return None
+        return SimpleNamespace(name="org-root", is_organization=True)
 
     async def _add_user(_db, _ws, _user):
         calls["add_user"] += 1
 
-    async def _add_group(_db, _ws, _group):
+    async def _add_group(_db, _ws, group):
         calls["add_group"] += 1
+        calls["groups"].append(group.name)
 
     async def _change_ws(_db, _ws, _user):
         calls["change"] += 1
@@ -186,6 +192,7 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
     monkeypatch.setattr(routes, "clear_workspace_groups", _clear_groups)
     monkeypatch.setattr(routes, "get_user_by_username", _get_user)
     monkeypatch.setattr(routes, "get_group_by_name", _get_group)
+    monkeypatch.setattr(routes, "get_top_group_organization", _get_top_organization)
     monkeypatch.setattr(routes, "add_user_to_workspace", _add_user)
     monkeypatch.setattr(routes, "add_group_to_workspace", _add_group)
     monkeypatch.setattr(routes, "change_workspace", _change_ws)
@@ -207,6 +214,12 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
             return SimpleNamespace(type=routes.ShareListEnum.organization, name="org1")
         if call_index["n"] == 5:
             return SimpleNamespace(type="skip", name="noop")
+        if call_index["n"] == 6:
+            return SimpleNamespace(type=routes.ShareListEnum.group, name="group1")
+        if call_index["n"] == 7:
+            return SimpleNamespace(type=routes.ShareListEnum.organization, name="missing-group")
+        if call_index["n"] == 8:
+            return SimpleNamespace(type=routes.ShareListEnum.organization, name="group1")
         return original_validate(item)
 
     monkeypatch.setattr(routes.ShareListPreference, "model_validate", staticmethod(_validate))
@@ -219,6 +232,9 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
                 {"type": "group", "name": "missing-group"},
                 {"type": "organization", "name": "org1"},
                 {"type": "user", "name": "noop"},
+                {"type": "group", "name": "group1"},
+                {"type": "organization", "name": "missing-group"},
+                {"type": "organization", "name": "group1"},
             ]
         ),
         "public": {"inherit": False, "value": "true"},
@@ -235,7 +251,8 @@ async def test_create_workspace_preferences_route(app_client, monkeypatch):
     assert calls["clear_users"] == 1
     assert calls["clear_groups"] == 1
     assert calls["add_user"] == 1
-    assert calls["add_group"] == 1
+    assert calls["add_group"] == 2
+    assert calls["groups"] == ["org-root", "group1"]
     assert calls["change"] >= 1
     assert calls["commit"] == 1
     assert calls["update_ws"] >= 1

@@ -257,15 +257,35 @@ async def test_platform_context_definitions_and_values(monkeypatch, db_session):
     assert values["username"] == "alice"
     assert values["fullname"] == "Alice Doe"
     assert values["groups"] == ("dev", "ops")
+    assert values["organizations"] == ()
     assert values["realuser"] == "root"
     assert values["mode"] == "classic"
     assert values["theme"] == "wirecloud.defaulttheme"
     assert values["version_hash"] == "hash"
 
+    root = SimpleNamespace(id="root", name="Acme", is_organization=True, path=["root"])
+    child = SimpleNamespace(id="child", name="Acme/dev", is_organization=True, path=["root", "child"])
+    duplicate = SimpleNamespace(id="other", name="Acme/ops", is_organization=True, path=["root", "other"])
+    orphan = SimpleNamespace(id="orphan", name="Missing/dev", is_organization=True, path=["missing", "orphan"])
+    no_path = SimpleNamespace(id="empty", name="Empty", is_organization=True, path=[])
+    regular = SimpleNamespace(id="regular", name="Regular", is_organization=False, path=["regular"])
+
+    async def _organization_groups():
+        return [regular, no_path, root, child, duplicate, orphan]
+
+    async def _root_group(_db, group_id):
+        return root if group_id == "root" else None
+
+    monkeypatch.setattr(core_plugins, "get_user_groups", lambda *_args: _organization_groups())
+    monkeypatch.setattr(core_plugins, "get_group_by_id", _root_group)
+    organization_values = await plugin.get_platform_context_current_values(db_session, _request(), user, session)
+    assert organization_values["organizations"] == ("Acme",)
+
     anon = await plugin.get_platform_context_current_values(db_session, None, None, None)
     assert anon["username"] == "anonymous"
     assert anon["isanonymous"] is True
     assert anon["groups"] == ()
+    assert anon["organizations"] == ()
     assert anon["mode"] is None
     assert anon["theme"] is None
 

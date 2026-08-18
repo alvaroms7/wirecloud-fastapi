@@ -43,7 +43,7 @@ class UserDetails(UserBase):
     is_superuser: bool = Field(description=docs.user_is_superuser_description)
     is_staff: bool = Field(description=docs.user_is_staff_description)
     is_active: bool = Field(description=docs.user_is_active_description)
-    idm_data: dict[str, dict[str, Optional[Any]]] = {} # FIXME Docs?? Why this has docs if it's not returned by the API? Was I dumb and wrote useless docs? Yeah, working at 3 am is not a good idea
+    idm_data: dict[str, dict[str, Optional[Any]]] = {} # FIXME Docs?? Why this has docs if it's not returned by the API?
 
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}".strip()

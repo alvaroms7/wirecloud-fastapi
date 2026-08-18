@@ -358,7 +358,7 @@ async def fill_workspace_using_template(db: DBSession, request: Request, user_fu
             mashup_description.wiring.visualdescription.behaviours) != 0:
         if len(workspace.wiring_status.visualdescription.behaviours) == 0 and not is_empty_wiring(
                 workspace.wiring_status.visualdescription):
-            # TODO flag to check if the user is really want to merge both workspaces
+            # Preserve both global descriptions by naming the original one explicitly.
             _create_new_behaviour(workspace.wiring_status.visualdescription, _("Original wiring"),
                                   _("This is the wiring description of the original workspace"))
         if len(mashup_description.wiring.visualdescription.behaviours) == 0:

@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# TODO Add translations in pydantic error on version 1.0
-
 from pydantic import BaseModel, Field, StringConstraints, model_validator, field_serializer
 from typing import Any, Optional, Union, Annotated
 from enum import Enum
@@ -161,7 +159,8 @@ class Wiring(BaseModel):
 
 class WiringInout(BaseModel):
     name: str = Field(description=docs.wiring_inout_name_description)
-    type: str = Field(description=docs.wiring_inout_type_description)  # TODO: Add enum
+    # Endpoint types are extensible strings; third-party components may define custom types.
+    type: str = Field(description=docs.wiring_inout_type_description)
     label: str = Field(description=docs.wiring_inout_label_description, default='')
     description: str = Field(description=docs.wiring_inout_description_description, default='')
     friendcode: str = Field(description=docs.wiring_inout_friendcode_description, default='')

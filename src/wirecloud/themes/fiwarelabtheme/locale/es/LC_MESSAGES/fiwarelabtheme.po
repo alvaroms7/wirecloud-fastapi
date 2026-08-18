@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,30 +22,34 @@ msgstr ""
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:136
 #, python-format
 msgid "Become %(user)s again"
-msgstr ""
+msgstr "Conviértete en %(user)s nuevamente"
 
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:105
 msgid "Django Admin panel"
-msgstr ""
+msgstr "Panel de administración de Django"
 
 #: ../../../../__init__.py:22
 msgid "FIWARE Lab"
-msgstr ""
+msgstr "Laboratorio FIWARE"
 
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:97
 msgid "Settings"
-msgstr ""
+msgstr "Configurar"
 
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:142
 msgid "Sign out"
-msgstr ""
+msgstr "Salir"
 
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:118
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:119
 msgid "Switch User"
-msgstr ""
+msgstr "Cambiar usuario"
 
 #: ../../../../static/js/wirecloud/ui/WirecloudHeader.js:119
 msgid "User"
-msgstr ""
+msgstr "Usuario"
+
+#: ../../../../templates/wirecloud/views/base_plain.html:4
+msgid "WireCloud Platform"
+msgstr "Plataforma WireCloud"
 

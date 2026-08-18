@@ -234,7 +234,7 @@ async def get_operator_html(db: DBDep, request: Request,
     return cached_response.get_response()
 
 
-# TODO Check this, why is it needed?
+# Resolve the forward reference used by WiringOperatorVariables after both models are loaded.
 from wirecloud.platform.workspace.schemas import CacheVariableData
 
 WiringOperatorVariables.model_rebuild()

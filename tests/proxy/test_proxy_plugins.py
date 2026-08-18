@@ -10,9 +10,13 @@ from wirecloud.proxy import plugins
 class _FakeFastAPI:
     def __init__(self):
         self.calls = []
+        self.exception_handlers = []
 
     def include_router(self, *args, **kwargs):
         self.calls.append((args, kwargs))
+
+    def add_exception_handler(self, *args):
+        self.exception_handlers.append(args)
 
 
 async def test_proxy_plugin_init_urls_and_router_registration():
@@ -23,6 +27,7 @@ async def test_proxy_plugin_init_urls_and_router_registration():
     plugins.WirecloudProxyPlugin(app)
     assert len(app.calls) == 1
     assert app.calls[0][1]["prefix"] == "/cdp"
+    assert app.exception_handlers == [(plugins.ValidationError, plugins.validation_error_handler)]
 
 
 async def test_proxy_plugin_validator_happy_path_and_warnings(monkeypatch):

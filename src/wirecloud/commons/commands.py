@@ -15,14 +15,15 @@
 
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
-# TODO Migrate maybe teams
 import argparse
 import sys
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from io import BytesIO
 from pathlib import Path
-from typing import Callable, Any
+from typing import Callable, Any, Optional
 import json
+import re
 from bson import ObjectId
 import traceback
 
@@ -233,7 +234,7 @@ async def migrate_cmd(args: argparse.Namespace) -> None:
             print(f"✓ Authenticated as {args.admin_user}")
 
             # Check if user is an administrator
-            with db_connection.cursor() as cursor:
+            with _db_cursor(db_connection) as cursor:
                 cursor.execute(_adapt_sql_query("""SELECT is_superuser FROM auth_user WHERE username = %s""", args.db_type), (args.admin_user,))
                 is_superuser = cursor.fetchone()['is_superuser']
                 if not is_superuser:
@@ -282,9 +283,9 @@ async def migrate_cmd(args: argparse.Namespace) -> None:
 
     except Exception as e:
         print(f"\n✗ Migration failed: {e}")
-        import traceback
         traceback.print_exc()
         print("Migration cancelled.")
+        raise
 
 
 def _adapt_sql_query(query: str, db_type: str) -> str:
@@ -293,6 +294,23 @@ def _adapt_sql_query(query: str, db_type: str) -> str:
         # SQLite uses ? as placeholder instead of %s
         return query.replace('%s', '?')
     return query
+
+
+def _sql_identifier(name: str, db_type: str) -> str:
+    """Quote legacy camel-case columns without relying on backend SQL modes."""
+    if db_type == "mysql":
+        return f"`{name}`"
+    return f'"{name}"'
+
+
+@contextmanager
+def _db_cursor(db_connection):
+    """Yield and reliably close cursors for sqlite, psycopg, and pymysql."""
+    cursor = db_connection.cursor()
+    try:
+        yield cursor
+    finally:
+        cursor.close()
 
 
 def _dict_from_row(row, db_type: str):
@@ -315,6 +333,118 @@ def _table_exists(cursor, table_name: str, db_type: str) -> bool:
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table_name,))
         return cursor.fetchone() is not None
     return False
+
+
+def _as_bool(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _as_datetime(value: Any) -> Optional[datetime]:
+    """Normalize Django database datetime values across supported SQL backends."""
+    if value is None:
+        return None
+    if isinstance(value, datetime):
+        result = value
+    elif isinstance(value, (int, float)):
+        # WireCloud v2 stores some dates as JavaScript timestamps in milliseconds.
+        timestamp = float(value)
+        if abs(timestamp) >= 100_000_000_000:
+            timestamp /= 1000
+        result = datetime.fromtimestamp(timestamp, timezone.utc)
+    elif isinstance(value, str):
+        normalized = value.strip()
+        if not normalized:
+            return None
+        if re.fullmatch(r"-?\d+(?:\.\d+)?", normalized):
+            return _as_datetime(float(normalized))
+        result = datetime.fromisoformat(normalized.replace("Z", "+00:00"))
+    else:
+        raise TypeError(f"Unsupported datetime value: {value!r}")
+
+    if result.tzinfo is None:
+        result = result.replace(tzinfo=timezone.utc)
+    return result
+
+
+def _group_codename(name: str) -> str:
+    codename = re.sub(r"[^a-z0-9]+", "_", name.strip().lower()).strip("_")
+    return codename or "group"
+
+
+_LEGACY_PERMISSION_MAP = {
+    ("auth", "user", "add_user"): "USER.CREATE",
+    ("auth", "user", "change_user"): "USER.EDIT",
+    ("auth", "user", "delete_user"): "USER.DELETE",
+    ("auth", "user", "view_user"): "USER.VIEW",
+    ("auth", "group", "add_group"): "GROUP.CREATE",
+    ("auth", "group", "change_group"): "GROUP.EDIT",
+    ("auth", "group", "delete_group"): "GROUP.DELETE",
+    ("auth", "group", "view_group"): "GROUP.VIEW",
+    ("commons", "organization", "add_organization"): "ORGANIZATION.CREATE",
+    ("commons", "organization", "change_organization"): "ORGANIZATION.EDIT",
+    ("commons", "organization", "delete_organization"): "ORGANIZATION.DELETE",
+    ("commons", "organization", "view_organization"): "ORGANIZATION.VIEW",
+    ("commons", "team", "add_team"): "GROUP.CREATE",
+    ("commons", "team", "change_team"): "GROUP.EDIT",
+    ("commons", "team", "delete_team"): "GROUP.DELETE",
+    ("commons", "team", "view_team"): "GROUP.VIEW",
+    ("platform", "workspace", "add_workspace"): "WORKSPACE.CREATE",
+    ("platform", "workspace", "change_workspace"): "WORKSPACE.*",
+    ("platform", "workspace", "delete_workspace"): "WORKSPACE.DELETE",
+    ("platform", "workspace", "view_workspace"): "WORKSPACE.VIEW",
+    ("platform", "tab", "add_tab"): "WORKSPACE.TAB.CREATE",
+    ("platform", "tab", "change_tab"): "WORKSPACE.TAB.*",
+    ("platform", "tab", "delete_tab"): "WORKSPACE.TAB.DELETE",
+    ("platform", "iwidget", "add_iwidget"): "WORKSPACE.WIDGET.CREATE",
+    ("platform", "iwidget", "change_iwidget"): "WORKSPACE.WIDGET.*",
+    ("platform", "iwidget", "delete_iwidget"): "WORKSPACE.WIDGET.DELETE",
+    ("platform", "iwidget", "view_iwidget"): "WORKSPACE.WIDGET.VIEW",
+    ("platform", "widget", "add_widget"): "WORKSPACE.WIDGET.CREATE",
+    ("platform", "widget", "change_widget"): "WORKSPACE.WIDGET.*",
+    ("platform", "widget", "delete_widget"): "WORKSPACE.WIDGET.DELETE",
+    ("platform", "widget", "view_widget"): "WORKSPACE.WIDGET.VIEW",
+    ("platform", "workspacepreference", "change_workspacepreference"): "WORKSPACE.PREFERENCES.EDIT",
+    ("platform", "userworkspace", "change_userworkspace"): "WORKSPACE.SHARE",
+    ("platform", "market", "add_market"): "MARKETPLACE.CREATE",
+    ("platform", "market", "change_market"): "MARKETPLACE.PUBLISH",
+    ("platform", "market", "delete_market"): "MARKETPLACE.DELETE",
+    ("platform", "market", "view_market"): "MARKETPLACE.VIEW",
+    ("catalogue", "catalogueresource", "add_catalogueresource"): "COMPONENT.INSTALL",
+    ("catalogue", "catalogueresource", "change_catalogueresource"): "COMPONENT.MASSIVE_UPDATE",
+    ("catalogue", "catalogueresource", "delete_catalogueresource"): "COMPONENT.DELETE",
+    ("catalogue", "catalogueresource", "view_catalogueresource"): "COMPONENT.VIEW",
+}
+
+
+def _map_legacy_permission(app_label: str, model: str, codename: str) -> str:
+    key = (app_label.lower(), model.lower(), codename.lower())
+    return _LEGACY_PERMISSION_MAP.get(key, f"{app_label}.{codename}")
+
+
+def _load_legacy_permissions(cursor, relation_table: str, owner_column: str,
+                             db_type: str) -> dict[int, list[str]]:
+    if not _table_exists(cursor, relation_table, db_type):
+        return {}
+
+    cursor.execute(f"""
+        SELECT relation.{owner_column} AS owner_id,
+               content_type.app_label AS app_label,
+               content_type.model AS model,
+               permission.codename AS codename
+        FROM {relation_table} relation
+        JOIN auth_permission permission ON permission.id = relation.permission_id
+        JOIN django_content_type content_type ON content_type.id = permission.content_type_id
+        ORDER BY relation.{owner_column}, permission.id
+    """)
+    permissions: dict[int, list[str]] = {}
+    for row in cursor.fetchall():
+        permission = _map_legacy_permission(row["app_label"], row["model"], row["codename"])
+        permissions.setdefault(row["owner_id"], [])
+        if permission not in permissions[row["owner_id"]]:
+            permissions[row["owner_id"]].append(permission)
+    return permissions
 
 
 async def _login_old_wirecloud(session: aiohttp.ClientSession, url: str, username: str, password: str) -> str:
@@ -360,7 +490,7 @@ async def _login_old_wirecloud(session: aiohttp.ClientSession, url: str, usernam
 
 
 async def _migrate_constants(db_connection, new_db_session, db_type: str) -> int:
-    with db_connection.cursor() as cursor:
+    with _db_cursor(db_connection) as cursor:
         cursor.execute(_adapt_sql_query("""
                                         SELECT concept, value
                                         FROM wirecloud_constant
@@ -369,26 +499,49 @@ async def _migrate_constants(db_connection, new_db_session, db_type: str) -> int
         constants = cursor.fetchall()
 
         for constant in constants:
-            await new_db_session.client.constants.update_one({"_id": Id()},
-                                                             {"$set": {"concept": constant['concept'],
-                                                                       "value": constant['value']}}, upsert=True)
+            await new_db_session.client.constants.update_one(
+                {"concept": constant['concept']},
+                {
+                    "$set": {"value": constant['value']},
+                    "$setOnInsert": {"_id": Id()},
+                },
+                upsert=True,
+            )
 
     await commit(new_db_session)
 
     return len(constants)
 
 
-# TODO Migrate permissions
-# TODO Migrate organizations
 async def _migrate_users_and_groups(db_connection, new_db_session, db_type: str) -> tuple[dict[int, str], dict[int, str]]:
-    from wirecloud.commons.auth.crud import create_user_db, create_group_if_not_exists
-    from wirecloud.commons.auth.schemas import UserCreate
+    from wirecloud.commons.auth.crud import create_user_db, create_group_if_not_exists, get_group_by_name
+    from wirecloud.commons.auth.schemas import Permission, UserCreate
     from wirecloud.commons.auth.models import Group
 
     user_id_mapping = {}  # old_id -> new_id
     group_id_mapping = {}  # old_id -> new_id
 
-    with db_connection.cursor() as cursor:
+    with _db_cursor(db_connection) as cursor:
+        organizations_by_group: dict[int, dict[str, Any]] = {}
+        organizations_by_id: dict[int, dict[str, Any]] = {}
+        if _table_exists(cursor, "wirecloud_organization", db_type):
+            cursor.execute("""
+                SELECT id, user_id, group_id
+                FROM wirecloud_organization
+                ORDER BY id
+            """)
+            for organization in cursor.fetchall():
+                organization = _dict_from_row(organization, db_type)
+                organizations_by_group[organization["group_id"]] = organization
+                organizations_by_id[organization["id"]] = organization
+
+        user_permissions = _load_legacy_permissions(
+            cursor, "auth_user_user_permissions", "user_id", db_type
+        )
+        group_permissions = _load_legacy_permissions(
+            cursor, "auth_group_permissions", "group_id", db_type
+        )
+
         # Migrate groups first
         cursor.execute(_adapt_sql_query("""
             SELECT id, name
@@ -398,21 +551,44 @@ async def _migrate_users_and_groups(db_connection, new_db_session, db_type: str)
         groups = cursor.fetchall()
 
         for group in groups:
+            group = _dict_from_row(group, db_type)
+            group_id = Id(str(ObjectId()))
+            is_organization = group["id"] in organizations_by_group
             group_obj = Group(
-                _id=Id(str(ObjectId())),
+                _id=group_id,
                 name=group['name'],
-                codename=group['name'].lower().replace(' ', '_')
+                codename=_group_codename(group['name']),
+                is_organization=is_organization,
+                path=[group_id],
+                group_permissions=[
+                    Permission(codename=codename)
+                    for codename in group_permissions.get(group["id"], [])
+                ],
             )
             await create_group_if_not_exists(new_db_session, group_obj)
 
             # Retrieve the created/existing group to get its ID
-            from wirecloud.commons.auth.crud import get_group_by_name
             new_group = await get_group_by_name(new_db_session, group['name'])
             if new_group:
                 group_id_mapping[group['id']] = str(new_group.id)
+                await new_db_session.client.groups.update_one(
+                    {"_id": ObjectId(new_group.id)},
+                    {"$set": {
+                        "codename": group_obj.codename,
+                        "is_organization": is_organization,
+                        "path": [ObjectId(new_group.id)],
+                        "group_permissions": [
+                            permission.model_dump()
+                            for permission in group_obj.group_permissions
+                        ],
+                    }},
+                )
             await commit(new_db_session)
 
         # Migrate users
+        organization_user_ids = {
+            organization["user_id"] for organization in organizations_by_id.values()
+        }
         cursor.execute(_adapt_sql_query("""
             SELECT id, password, last_login, is_superuser, username, first_name, last_name,
                    email, is_staff, is_active, date_joined
@@ -422,46 +598,74 @@ async def _migrate_users_and_groups(db_connection, new_db_session, db_type: str)
         users = cursor.fetchall()
 
         for user in users:
+            user = _dict_from_row(user, db_type)
+            # Organizations were represented by synthetic, non-login users in v2.
+            # Their replacement is the organization root group created above.
+            if user["id"] in organization_user_ids:
+                continue
             user_data = UserCreate(
                 username=user['username'],
                 email=user['email'] or '',
                 first_name=user['first_name'] or '',
                 last_name=user['last_name'] or '',
-                is_superuser=user['is_superuser'] if type(user['is_superuser']) == bool else (str(user['is_superuser']).lower() == "true" or str(user['is_superuser']).lower() == "1"),
-                is_staff=user['is_staff'] if type(user['is_staff']) == bool else (str(user['is_staff']).lower() == "true" or str(user['is_staff']).lower() == "1"),
-                is_active=user['is_active'] if type(user['is_active']) == bool else (str(user['is_active']).lower() == "true" or str(user['is_active']).lower() == "1"),
+                is_superuser=_as_bool(user['is_superuser']),
+                is_staff=_as_bool(user['is_staff']),
+                is_active=_as_bool(user['is_active']),
                 idm_data={},
                 password=user['password'] or '!'
             )
 
-            await create_user_db(new_db_session, user_data)
             new_user = await get_user_by_username(new_db_session, user['username'])
+            if new_user is None:
+                await create_user_db(new_db_session, user_data)
+                new_user = await get_user_by_username(new_db_session, user['username'])
             if new_user is None:
                 print(f"  ✗ Failed to migrate user {user['username']}")
                 continue
 
             user_id_mapping[user['id']] = str(new_user.id)
 
-            # Update last_login and date_joined
-            if user['last_login']:
-                await new_db_session.client.users.update_one(
-                    {"_id": ObjectId(new_user.id)},
-                    {"$set": {"last_login": user['last_login']}}
-                )
+            user_updates = {
+                "password": user_data.password,
+                "username": user_data.username,
+                "email": user_data.email,
+                "first_name": user_data.first_name,
+                "last_name": user_data.last_name,
+                "is_superuser": user_data.is_superuser,
+                "is_staff": user_data.is_staff,
+                "is_active": user_data.is_active,
+            }
+            last_login = _as_datetime(user['last_login'])
+            date_joined = _as_datetime(user['date_joined'])
+            if last_login is not None:
+                user_updates["last_login"] = last_login
+            if date_joined is not None:
+                user_updates["date_joined"] = date_joined
 
-            if user['date_joined']:
+            await new_db_session.client.users.update_one(
+                {"_id": ObjectId(new_user.id)},
+                {"$set": user_updates},
+            )
+
+            legacy_permissions = [
+                {"codename": codename}
+                for codename in user_permissions.get(user["id"], [])
+            ]
+            if legacy_permissions:
                 await new_db_session.client.users.update_one(
                     {"_id": ObjectId(new_user.id)},
-                    {"$set": {"date_joined": user['date_joined']}}
+                    {"$addToSet": {"user_permissions": {"$each": legacy_permissions}}},
                 )
 
             # Migrate user preferences
-            cursor.execute(_adapt_sql_query("""
-                SELECT name, value
-                FROM wirecloud_platformpreference
-                WHERE user_id = %s
-            """, db_type), (user['id'],))
-            preferences = cursor.fetchall()
+            preferences = []
+            if _table_exists(cursor, "wirecloud_platformpreference", db_type):
+                cursor.execute(_adapt_sql_query("""
+                    SELECT name, value
+                    FROM wirecloud_platformpreference
+                    WHERE user_id = %s
+                """, db_type), (user['id'],))
+                preferences = cursor.fetchall()
 
             if preferences:
                 pref_list = [{"name": p['name'], "value": p['value'] or ""} for p in preferences]
@@ -472,31 +676,143 @@ async def _migrate_users_and_groups(db_connection, new_db_session, db_type: str)
 
             await commit(new_db_session)
 
-        # Migrate user-group relationships
-        cursor.execute("""
-            SELECT user_id, group_id
-            FROM auth_user_groups
-        """)
-        user_groups = cursor.fetchall()
+        async def add_memberships(group_id: ObjectId, user_ids: list[ObjectId]) -> None:
+            if not user_ids:
+                return
+            await new_db_session.client.groups.update_one(
+                {"_id": group_id},
+                {"$addToSet": {"users": {"$each": user_ids}}},
+            )
+            await new_db_session.client.users.update_many(
+                {"_id": {"$in": user_ids}},
+                {"$addToSet": {"groups": group_id}},
+            )
 
-        for ug in user_groups:
-            old_user_id = ug['user_id']
-            old_group_id = ug['group_id']
+        # Organization groups contain all members in v2, while the new model reserves
+        # root-group users for organization owners. Preserve direct members in a child
+        # group so they inherit access without accidentally gaining owner privileges.
+        organization_members: dict[int, list[ObjectId]] = {}
+        if _table_exists(cursor, "auth_user_groups", db_type):
+            cursor.execute("""
+                SELECT user_id, group_id
+                FROM auth_user_groups
+                ORDER BY group_id, user_id
+            """)
+            for relation in cursor.fetchall():
+                old_user_id = relation['user_id']
+                old_group_id = relation['group_id']
+                if old_user_id not in user_id_mapping or old_group_id not in group_id_mapping:
+                    continue
 
-            if old_user_id in user_id_mapping and old_group_id in group_id_mapping:
                 new_user_id = ObjectId(user_id_mapping[old_user_id])
-                new_group_id = ObjectId(group_id_mapping[old_group_id])
+                if old_group_id in organizations_by_group:
+                    organization_members.setdefault(old_group_id, []).append(new_user_id)
+                else:
+                    await add_memberships(
+                        ObjectId(group_id_mapping[old_group_id]),
+                        [new_user_id],
+                    )
 
-                # Add user to group
+        team_groups: dict[tuple[int, str], ObjectId] = {}
+        organization_owners: dict[int, list[ObjectId]] = {}
+        if _table_exists(cursor, "wirecloud_team", db_type):
+            cursor.execute("""
+                SELECT id, name, organization_id
+                FROM wirecloud_team
+                ORDER BY organization_id, id
+            """)
+            teams = cursor.fetchall()
+            for team in teams:
+                organization = organizations_by_id.get(team["organization_id"])
+                if organization is None or organization["group_id"] not in group_id_mapping:
+                    continue
+
+                root_group_id = ObjectId(group_id_mapping[organization["group_id"]])
+                root_group = await new_db_session.client.groups.find_one(
+                    {"_id": root_group_id}, {"name": 1}
+                )
+                if root_group is None:
+                    continue
+
+                team_name = f"{root_group['name']}/{team['name']}"
+                team_id = Id(str(ObjectId()))
+                team_obj = Group(
+                    _id=team_id,
+                    name=team_name,
+                    codename=_group_codename(team_name),
+                    is_organization=True,
+                    path=[root_group_id, team_id],
+                )
+                await create_group_if_not_exists(new_db_session, team_obj)
+                new_team = await get_group_by_name(new_db_session, team_name)
+                if new_team is None:
+                    continue
+
                 await new_db_session.client.groups.update_one(
-                    {"_id": new_group_id},
-                    {"$addToSet": {"users": new_user_id}}
+                    {"_id": ObjectId(new_team.id)},
+                    {"$set": {
+                        "codename": team_obj.codename,
+                        "is_organization": True,
+                        "path": [root_group_id, ObjectId(new_team.id)],
+                    }},
                 )
+                team_groups[(team["organization_id"], team["name"].lower())] = ObjectId(new_team.id)
 
-                await new_db_session.client.users.update_one(
-                    {"_id": new_user_id},
-                    {"$addToSet": {"groups": new_group_id}}
+                cursor.execute(_adapt_sql_query("""
+                    SELECT user_id
+                    FROM wirecloud_team_users
+                    WHERE team_id = %s
+                    ORDER BY user_id
+                """, db_type), (team["id"],))
+                team_user_ids = [
+                    ObjectId(user_id_mapping[row["user_id"]])
+                    for row in cursor.fetchall()
+                    if row["user_id"] in user_id_mapping
+                ]
+                await add_memberships(ObjectId(new_team.id), team_user_ids)
+                if team["name"].lower() == "owners":
+                    organization_owners[organization["group_id"]] = team_user_ids
+
+        for old_group_id, members in organization_members.items():
+            organization = organizations_by_group[old_group_id]
+            member_group_id = team_groups.get((organization["id"], "members"))
+            if member_group_id is None:
+                root_group_id = ObjectId(group_id_mapping[old_group_id])
+                root_group = await new_db_session.client.groups.find_one(
+                    {"_id": root_group_id}, {"name": 1}
                 )
+                if root_group is None:
+                    continue
+                member_name = f"{root_group['name']}/members"
+                new_member_id = Id(str(ObjectId()))
+                member_obj = Group(
+                    _id=new_member_id,
+                    name=member_name,
+                    codename=_group_codename(member_name),
+                    is_organization=True,
+                    path=[root_group_id, new_member_id],
+                )
+                await create_group_if_not_exists(new_db_session, member_obj)
+                member_group = await get_group_by_name(new_db_session, member_name)
+                if member_group is None:
+                    continue
+                member_group_id = ObjectId(member_group.id)
+                await new_db_session.client.groups.update_one(
+                    {"_id": member_group_id},
+                    {"$set": {
+                        "codename": member_obj.codename,
+                        "is_organization": True,
+                        "path": [root_group_id, member_group_id],
+                    }},
+                )
+            await add_memberships(member_group_id, members)
+
+        for old_group_id, owners in organization_owners.items():
+            root_group_id = ObjectId(group_id_mapping[old_group_id])
+            await new_db_session.client.groups.update_one(
+                {"_id": root_group_id},
+                {"$set": {"users": owners}},
+            )
 
         await commit(new_db_session)
 
@@ -504,7 +820,8 @@ async def _migrate_users_and_groups(db_connection, new_db_session, db_type: str)
 
 
 async def _migrate_markets(db_connection, new_db_session, user_id_mapping: dict[int, str], db_type: str) -> int:
-    with db_connection.cursor() as cursor:
+    migrated_count = 0
+    with _db_cursor(db_connection) as cursor:
         cursor.execute(_adapt_sql_query("""
             SELECT name, public, options, user_id
             FROM wirecloud_market
@@ -513,18 +830,27 @@ async def _migrate_markets(db_connection, new_db_session, user_id_mapping: dict[
         markets = cursor.fetchall()
 
         for market in markets:
+            if market['user_id'] not in user_id_mapping:
+                print(f"  ⚠ Skipping market '{market['name']}' - owner not found")
+                continue
+
+            user_id = Id(user_id_mapping[market['user_id']])
             market_data = {
-                "_id": Id(),
                 "name": market['name'],
-                "public": market['public'] if type(market['public']) == bool else (str(market['public']).lower() == "true" or str(market['public']).lower() == "1"),
+                "public": _as_bool(market['public']),
                 "options": json.loads(market['options']) if market['options'] else {},
-                "user_id": Id(user_id_mapping[market['user_id']]) if market['user_id'] in user_id_mapping else None
+                "user_id": user_id,
             }
 
-            await new_db_session.client.markets.insert_one(market_data)
+            await new_db_session.client.markets.update_one(
+                {"name": market['name'], "user_id": user_id},
+                {"$set": market_data, "$setOnInsert": {"_id": Id()}},
+                upsert=True,
+            )
+            migrated_count += 1
 
     await commit(new_db_session)
-    return len(markets)
+    return migrated_count
 
 
 async def _migrate_catalogue_resources(
@@ -532,7 +858,7 @@ async def _migrate_catalogue_resources(
     old_url: str, token: str, user_id_mapping: dict[int, str],
     group_id_mapping: dict[int, str], db_type: str
 ) -> dict[int, str]:
-    from wirecloud.catalogue.crud import create_catalogue_resource
+    from wirecloud.catalogue.crud import create_catalogue_resource, get_catalogue_resource
     from wirecloud.catalogue.schemas import CatalogueResourceCreate, CatalogueResourceType
     from wirecloud.commons.auth.crud import get_user_by_id
     import settings
@@ -545,7 +871,7 @@ async def _migrate_catalogue_resources(
     # Create catalogue media directory if it doesn't exist
     catalogue_media_path.mkdir(parents=True, exist_ok=True)
 
-    with db_connection.cursor() as cursor:
+    with _db_cursor(db_connection) as cursor:
         # Get all catalogue resources
         cursor.execute(_adapt_sql_query("""
             SELECT cr.id, cr.vendor, cr.short_name, cr.version, cr.type,
@@ -585,14 +911,21 @@ async def _migrate_catalogue_resources(
                     version=resource['version'],
                     type=CatalogueResourceType(resource['type']),
                     public=resource['public'] if type(resource['public']) == bool else (str(resource['public']).lower() == "true" or str(resource['public']).lower() == "1"),
-                    creation_date=resource['creation_date'] or datetime.now(timezone.utc),
+                    creation_date=_as_datetime(resource['creation_date']) or datetime.now(timezone.utc),
                     template_uri=resource['template_uri'],
                     popularity=float(resource['popularity'] or 0.0),
                     description=description,
                     creator=creator
                 )
 
-                new_resource = await create_catalogue_resource(new_db_session, resource_data)
+                new_resource = await get_catalogue_resource(
+                    new_db_session,
+                    resource_data.vendor,
+                    resource_data.short_name,
+                    resource_data.version,
+                )
+                if new_resource is None:
+                    new_resource = await create_catalogue_resource(new_db_session, resource_data)
                 resource_id_mapping[resource['id']] = str(new_resource.id)
 
                 # Migrate resource-user relationships
@@ -629,7 +962,10 @@ async def _migrate_catalogue_resources(
                 try:
                     wgt_url = None
                     wgt_type = None
-                    resource_info_url = f"{old_url.rstrip('/')}/catalogue/resource/{resource['vendor']}/{resource['short_name']}/{resource['version']}"
+                    resource_info_url = (
+                        f"{old_url.rstrip('/')}/api/resource/{resource['vendor']}/"
+                        f"{resource['short_name']}/{resource['version']}/description"
+                    )
                     async with http_session.get(resource_info_url) as resp:
                         if resp.status != 200:
                             print(f"  ✓ {resource['vendor']}/{resource['short_name']}/{resource['version']} (metadata only)")
@@ -705,15 +1041,19 @@ async def _migrate_workspaces(
     from wirecloud.platform.workspace.crud import create_empty_workspace
     from wirecloud.platform.workspace.utils import create_tab
     from wirecloud.commons.auth.crud import get_user_by_id
+    from wirecloud.platform.iwidget.models import WidgetInstance
 
     workspace_count = 0
 
-    with db_connection.cursor() as cursor:
+    with _db_cursor(db_connection) as cursor:
         # Get all workspaces
-        cursor.execute(_adapt_sql_query("""
+        forced_values_column = _sql_identifier("forcedValues", db_type)
+        wiring_status_column = _sql_identifier("wiringStatus", db_type)
+        cursor.execute(_adapt_sql_query(f"""
             SELECT w.id, w.name, w.title, w.creation_date, w.creator_id, w.last_modified,
                    w.description, w.longdescription, w.public, w.searchable,
-                   w.requireauth, w."wiringStatus"
+                   w.requireauth, w.{forced_values_column} AS forced_values,
+                   w.{wiring_status_column} AS wiring_status
             FROM wirecloud_workspace w
             ORDER BY w.creation_date
         """, db_type))
@@ -746,25 +1086,19 @@ async def _migrate_workspaces(
                     print(f"  ⚠ Could not create workspace '{workspace['name']}' - name conflict")
                     continue
 
-                # Parse creation_date if it is not already a datetime object
-                workspace['creation_date'] = datetime.strptime(workspace['creation_date'], '%Y-%m-%d %H:%M:%S.%f') if type(workspace['creation_date']) == str else workspace['creation_date']
-                if workspace['creation_date'] is None:
-                    workspace['creation_date'] = datetime.now(timezone.utc)
-
-                new_workspace.creation_date = workspace['creation_date']
-
-                # Parse last_modified if it is not already a datetime object
-                workspace['last_modified'] = datetime.strptime(workspace['last_modified'], '%Y-%m-%d %H:%M:%S.%f') if type(workspace['last_modified']) == str else workspace['last_modified']
-                if workspace['last_modified'] is None:
-                    workspace['last_modified'] = workspace['creation_date']
-
-                new_workspace.last_modified = workspace['last_modified']
+                new_workspace.creation_date = (
+                    _as_datetime(workspace['creation_date']) or datetime.now(timezone.utc)
+                )
+                legacy_last_modified = (
+                    _as_datetime(workspace['last_modified']) or new_workspace.creation_date
+                )
+                new_workspace.last_modified = legacy_last_modified
 
                 new_workspace.description = workspace['description'] or ''
                 new_workspace.longdescription = workspace['longdescription'] or ''
-                new_workspace.public = workspace['public'] if type(workspace['public']) == bool else (str(workspace['public']).lower() == "true" or str(workspace['public']).lower() == "1")
-                new_workspace.searchable = workspace['searchable'] if type(workspace['searchable']) == bool else (str(workspace['searchable']).lower() == "true" or str(workspace['searchable']).lower() == "1")
-                new_workspace.requireauth = workspace['requireauth'] if type(workspace['requireauth']) == bool else (str(workspace['requireauth']).lower() == "true" or str(workspace['requireauth']).lower() == "1")
+                new_workspace.public = _as_bool(workspace['public'])
+                new_workspace.searchable = _as_bool(workspace['searchable'])
+                new_workspace.requireauth = _as_bool(workspace['requireauth'])
 
                 # Update workspace metadata
                 await new_db_session.client.workspaces.update_one(
@@ -817,7 +1151,7 @@ async def _migrate_workspaces(
                     if wg['group_id'] in group_id_mapping:
                         group_perm = {
                             "id": ObjectId(group_id_mapping[wg['group_id']]),
-                            "accesslevel": wg[column_name] or 1
+                            "accesslevel": (wg[column_name] or 1) if column_name else 1
                         }
 
                         new_workspace.groups.append(WorkspaceAccessPermissions(**group_perm))
@@ -900,9 +1234,11 @@ async def _migrate_workspaces(
                         )
 
                     # Migrate widget instances (IWidgets)
-                    cursor.execute(_adapt_sql_query("""
+                    read_only_column = _sql_identifier("readOnly", db_type)
+                    cursor.execute(_adapt_sql_query(f"""
                         SELECT iw.id, iw.name, iw.widget_uri, iw.layout,
-                            iw.positions, iw."readOnly", iw.variables, iw.permissions,
+                            iw.positions, iw.{read_only_column} AS read_only,
+                            iw.variables, iw.permissions,
                             w.resource_id
                         FROM wirecloud_iwidget iw JOIN wirecloud_widget w ON iw.widget_id = w.id
                         WHERE iw.tab_id = %s
@@ -970,7 +1306,7 @@ async def _migrate_workspaces(
                             "widget_uri": iwidget['widget_uri'],
                             "title": iwidget['name'],
                             "layout": iwidget['layout'],
-                            "read_only": iwidget['readOnly'] if type(iwidget['readOnly']) == bool else (str(iwidget['readOnly']).lower() == "true" or str(iwidget['readOnly']).lower() == "1"),
+                            "read_only": _as_bool(iwidget['read_only']),
                             "variables": variables,
                             "positions": positions,
                             "permissions": permissions
@@ -980,15 +1316,47 @@ async def _migrate_workspaces(
 
                         iwidget_id += 1
 
+                        # Keep the in-memory model synchronized. Creating a later tab
+                        # replaces the whole workspace document and would otherwise
+                        # discard widgets written only through the field update below.
+                        tab.widgets[widget_instance['id']] = WidgetInstance.model_validate(widget_instance)
+
                         # Add widget to tab
                         await new_db_session.client.workspaces.update_one(
                             {"_id": ObjectId(new_workspace.id)},
                             {"$set": {f"tabs.{tab.id}.widgets.{widget_instance['id']}": widget_instance}}
                         )
 
+                # Migrate workspace forced values after widget IDs are known.
+                try:
+                    forced_values = json.loads(workspace['forced_values']) if workspace['forced_values'] else {}
+                    migrated_widget_values = {}
+                    for old_widget_id, values in forced_values.get("iwidget", {}).items():
+                        try:
+                            new_widget_id = iwidget_mapping.get(int(old_widget_id), old_widget_id)
+                        except (TypeError, ValueError):
+                            new_widget_id = old_widget_id
+                        migrated_widget_values[str(new_widget_id)] = values
+
+                    migrated_forced_values = {
+                        "extra_prefs": forced_values.get("extra_prefs", []),
+                        "operator": forced_values.get("ioperator", {}),
+                        "widget": migrated_widget_values,
+                        "empty_params": [],
+                    }
+                    new_workspace.forced_values = new_workspace.forced_values.model_validate(
+                        migrated_forced_values
+                    )
+                    await new_db_session.client.workspaces.update_one(
+                        {"_id": ObjectId(new_workspace.id)},
+                        {"$set": {"forced_values": new_workspace.forced_values.model_dump()}},
+                    )
+                except Exception as e:
+                    print(f"    ⚠ Could not migrate forced values: {e}")
+
                 # Migrate wiring configuration
                 try:
-                    wiring_status = json.loads(workspace['wiringStatus']) if workspace['wiringStatus'] else {}
+                    wiring_status = json.loads(workspace['wiring_status']) if workspace['wiring_status'] else {}
 
                     if not 'version' in wiring_status or wiring_status['version'] != '2.0':
                         print(f"    ⚠ Unsupported wiring configuration version for workspace '{workspace['name']}', skipping wiring migration")
@@ -1022,10 +1390,10 @@ async def _migrate_workspaces(
                             wiring_status['visualdescription']['connections'] = []
 
                         for behaviour in wiring_status['visualdescription']['behaviours']:
-                            if 'widgets' not in behaviour['components']:
+                            if 'widget' not in behaviour['components']:
                                 behaviour['components']['widget'] = {}
 
-                            if 'operators' not in behaviour['components']:
+                            if 'operator' not in behaviour['components']:
                                 behaviour['components']['operator'] = {}
 
                             new_behaviour_widgets = {}
@@ -1035,10 +1403,10 @@ async def _migrate_workspaces(
 
                             behaviour['components']['widget'] = new_behaviour_widgets
 
-                        if not 'operators' in wiring_status['visualdescription']['components']:
+                        if 'operator' not in wiring_status['visualdescription']['components']:
                             wiring_status['visualdescription']['components']['operator'] = {}
 
-                        if not 'widgets' in wiring_status['visualdescription']['components']:
+                        if 'widget' not in wiring_status['visualdescription']['components']:
                             wiring_status['visualdescription']['components']['widget'] = {}
 
                         new_components_widgets = {}
@@ -1063,6 +1431,13 @@ async def _migrate_workspaces(
                 except Exception as e:
                     print(f"    ⚠ Could not migrate wiring configuration: {e}")
 
+                # Tab creation updates last_modified; restore the v2 timestamp once
+                # the workspace has been fully reconstructed.
+                new_workspace.last_modified = legacy_last_modified
+                await new_db_session.client.workspaces.update_one(
+                    {"_id": ObjectId(new_workspace.id)},
+                    {"$set": {"last_modified": new_workspace.last_modified}},
+                )
 
                 await commit(new_db_session)
                 workspace_count += 1

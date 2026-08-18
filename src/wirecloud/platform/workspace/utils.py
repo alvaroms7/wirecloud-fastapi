@@ -231,7 +231,7 @@ class VariableValueCacheManager:
     def _process_entry(self, entry: CacheEntry):
         if entry.secure:
             value = decrypt_value(entry.value)
-            return parse_value_from_text(entry.model_dump(), value)  # TODO types of parameters are missing
+            return parse_value_from_text(entry.model_dump(), value)
         else:
             return entry.value
 
@@ -419,7 +419,8 @@ async def _get_global_workspace_data(db: DBSession, request: Request, workspace:
     if user and workspace.creator == user.id:
         for u in workspace.users:
             u_all = await get_user_with_all_info(db, u.id)
-            # TODO: organization
+            if u_all is None:
+                continue
             data_ret.users.append(UserWorkspaceData(
                 fullname=u_all.get_full_name(),
                 username=u_all.username,
@@ -427,13 +428,22 @@ async def _get_global_workspace_data(db: DBSession, request: Request, workspace:
             ))
 
         for g in workspace.groups:
-            # TODO: organization
             group = await get_group_by_id(db, g.id)
-            data_ret.groups.append(GroupWorkspaceData(
-                name=group.name,
-                organization=group.is_organization,
-                accesslevel="read"
-            ))
+            if group is None:
+                continue
+            if group.is_organization:
+                data_ret.users.append(UserWorkspaceData(
+                    fullname=group.name,
+                    username=group.name,
+                    accesslevel="read",
+                    organization=True,
+                ))
+            else:
+                data_ret.groups.append(GroupWorkspaceData(
+                    name=group.name,
+                    organization=False,
+                    accesslevel="read"
+                ))
 
     concept_values = await get_context_values(db, workspace, request, user)
     forced_values = process_forced_values(workspace, user, concept_values, preferences)

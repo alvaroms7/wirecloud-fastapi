@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,629 +22,761 @@ msgstr ""
 #: ../../../iwidget/utils.py:75
 #, python-format
 msgid "%(uri)s is not a widget"
-msgstr ""
+msgstr "%(uri)s no es un widget"
 
-#: ../../../workspace/routes.py:370 ../../../workspace/routes.py:468
+#: ../../../workspace/routes.py:380 ../../../workspace/routes.py:481
 msgid "A tab with the given name already exists"
-msgstr ""
+msgstr "Ya existe una pestaña con el nombre de pila"
 
-#: ../../../workspace/routes.py:127 ../../../workspace/routes.py:151
-#: ../../../workspace/routes.py:258
+#: ../../../workspace/routes.py:132 ../../../workspace/routes.py:157
+#: ../../../workspace/routes.py:264
 msgid "A workspace with the given name already exists"
-msgstr ""
+msgstr "Ya existe un entorno de trabajo con el nombre indicado"
 
-#: ../../../core/plugins.py:313
+#: ../../../core/plugins.py:344
 msgid "Allow any user to open this workspace (in read-only mode). (default: disabled)"
 msgstr ""
+"Permite a cualquier usuario acceder a este entorno de trabajo (en modo de "
+"solo lectura). (valor por defecto: deshabilitado)"
 
-#: ../../../core/plugins.py:193
+#: ../../../core/plugins.py:323
+msgid "Allow external token use"
+msgstr "Permitir el uso de tokens externos"
+
+#: ../../../core/plugins.py:325
+msgid ""
+"Allow other users to use your token to authenticate in external services. The"
+" token will not be directly exposed to these users. Necessary for features "
+"like \"Use workspace owner token\"."
+msgstr ""
+"Permita que otros usuarios utilicen su token para autenticarse en servicios "
+"externos. El token no estará expuesto directamente a estos usuarios. "
+"Necesario para funciones como \"Usar token de propietario del entorno de "
+"trabajo\"."
+
+#: ../../../core/plugins.py:196
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
-#: ../../../core/plugins.py:358
+#: ../../../core/plugins.py:389
 msgid "Base layout"
-msgstr ""
+msgstr "Distribución base"
 
-#: ../../../core/plugins.py:202
+#: ../../../core/plugins.py:205
 msgid "Boolean. Designates whether current user can access the admin site."
 msgstr ""
+"Boleano. Indica cuando el usuario actual puede acceder al panel de "
+"administración."
 
-#: ../../../core/plugins.py:206
+#: ../../../core/plugins.py:209
 msgid "Boolean. Designates whether current user is a super user."
-msgstr ""
+msgstr "Booleano. Indica cuando el usuario actualmente registrado es un super usuario."
 
-#: ../../../core/plugins.py:198
+#: ../../../core/plugins.py:201
 msgid "Boolean. Designates whether current user is logged in the system."
-msgstr ""
+msgstr "Boleano. Indica cuando hay un usuario registrado actualmente en el sistema."
 
-#: ../../../core/plugins.py:282
+#: ../../../core/plugins.py:295
 msgid "Boolean. Designates whether the workspace is in editing mode."
-msgstr ""
+msgstr "Booleano. Designa si el entorno de trabajo está en modo de edición."
 
-#: ../../../localcatalogue/routes.py:200
+#: ../../../localcatalogue/routes.py:203
 msgid "Content cannot be downloaded from the specified url"
-msgstr ""
+msgstr "El contenido no pudo ser descargado desde la URL especificada"
 
-#: ../../../core/plugins.py:182
+#: ../../../core/plugins.py:185
 msgid "Current language used in the platform"
-msgstr ""
+msgstr "Idioma actualmente utilizado en la plataforma"
+
+#: ../../../core/plugins.py:303
+msgid "Current name of the workspace"
+msgstr "Nombre actual del entorno de trabajo"
+
+#: ../../../core/plugins.py:229
+msgid "Current screen orientation"
+msgstr "Orientación actual de la plataforma"
+
+#: ../../../core/plugins.py:299
+msgid "Current title of the workspace"
+msgstr "Título actual del entorno de trabajo"
+
+#: ../../../core/plugins.py:371
+msgid "Default layout for the new widgets."
+msgstr "Distribución por defecto para los nuevos widgets."
 
 #: ../../../core/plugins.py:290
-msgid "Current name of the workspace"
-msgstr ""
-
-#: ../../../core/plugins.py:222
-msgid "Current screen orientation"
-msgstr ""
-
-#: ../../../core/plugins.py:286
-msgid "Current title of the workspace"
-msgstr ""
-
-#: ../../../core/plugins.py:340
-msgid "Default layout for the new widgets."
-msgstr ""
-
-#: ../../../core/plugins.py:277
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
-#: ../../../core/plugins.py:298
+#: ../../../core/plugins.py:311
 msgid "Detailed workspace's description. This description can contain formatting."
-msgstr ""
+msgstr "Descripción detallada del workspace. Esta descripción puede contener formato."
 
-#: ../../../core/plugins.py:302
+#: ../../../core/plugins.py:315
 msgid "Dictionary with the parameters of the workspace"
-msgstr ""
+msgstr "Diccionario con los parámetros del entorno de trabajo."
 
-#: ../../../core/plugins.py:281
+#: ../../../core/plugins.py:294
 msgid "Editing mode"
-msgstr ""
+msgstr "Modo de edición"
 
-#: ../../../widget/utils.py:262
+#: ../../../widget/utils.py:263
 msgid "Error processing widget code"
-msgstr ""
+msgstr "Error procesando el código del widget"
 
-#: ../../../localcatalogue/routes.py:245
+#: ../../../localcatalogue/routes.py:248
 msgid ""
 "Error writing the resource into the filesystem. Please, contact the server "
 "administrator."
 msgstr ""
+"Error guardando el recurso en el sistema de ficheros. Por favor, contacta con"
+" el administrador del servidor."
 
-#: ../../../wiring/routes.py:158
+#: ../../../core/plugins.py:330
+msgid "External token domain whitelist"
+msgstr "Lista blanca de dominios de token externos"
+
+#: ../../../wiring/routes.py:176
 msgid "Failed to apply patch"
-msgstr ""
+msgstr "Fallo al aplicar el parche"
 
-#: ../../../iwidget/utils.py:120
+#: ../../../iwidget/utils.py:121
 #, python-format
 msgid "Field %(data_field)s must contain a number value"
-msgstr ""
+msgstr "El campo %(data_field)s debe contener un valor numérico"
 
-#: ../../../iwidget/utils.py:150
+#: ../../../iwidget/utils.py:151
 #, python-format
 msgid "Field %(field)s must contain a boolean value"
-msgstr ""
+msgstr "El campo %(field)s tiene que contener un valor booleado"
 
-#: ../../../iwidget/utils.py:103 ../../../iwidget/utils.py:135
+#: ../../../iwidget/utils.py:104 ../../../iwidget/utils.py:136
 #, python-format
 msgid "Field %(field)s must contain a number value"
-msgstr ""
+msgstr "El campo %(field)s tiene que contener un valor númerico"
 
-#: ../../../core/plugins.py:189
+#: ../../../core/plugins.py:192
 msgid "Full name"
-msgstr ""
+msgstr "Nombre completo"
 
-#: ../../../core/plugins.py:190
+#: ../../../core/plugins.py:193
 msgid "Full name of the logged user"
-msgstr ""
+msgstr "Nombre completo del usuario actual"
 
-#: ../../../core/plugins.py:209
+#: ../../../core/plugins.py:212
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
-#: ../../../core/plugins.py:238
+#: ../../../core/plugins.py:245
 msgid ""
 "Hash for the current version of the platform. This hash changes when the "
 "platform is updated or when an addon is added or removed"
 msgstr ""
+"Hash asignado a la versión actual de la plataforma. Este bash cambia cuando "
+"la plataforma se actualiza o cuando un adán es activado o desactivado"
 
-#: ../../../iwidget/routes.py:244 ../../../iwidget/routes.py:347
-#: ../../../iwidget/routes.py:408 ../../../iwidget/routes.py:479
-#: ../../../iwidget/routes.py:544 ../../../iwidget/routes.py:606
+#: ../../../iwidget/routes.py:256 ../../../iwidget/routes.py:360
+#: ../../../iwidget/routes.py:422 ../../../iwidget/routes.py:495
+#: ../../../iwidget/routes.py:560 ../../../iwidget/routes.py:627
 msgid "IWidget not found"
-msgstr ""
+msgstr "Widget no encontrado"
 
-#: ../../../core/plugins.py:334
+#: ../../../core/plugins.py:365
 msgid "Initial layout"
-msgstr ""
+msgstr "Diseño inicial"
 
-#: ../../../wiring/routes.py:160
+#: ../../../wiring/routes.py:178
 msgid "Invalid JSON patch"
-msgstr ""
+msgstr "Parche JSON inválido"
 
-#: ../../../workspace/crud.py:121 ../../../workspace/routes.py:585
+#: ../../../workspace/crud.py:132 ../../../workspace/routes.py:600
 msgid "Invalid mashup id"
-msgstr ""
+msgstr "ID de mashup no válido"
 
-#: ../../../workspace/routes.py:689
+#: ../../../workspace/routes.py:709
 msgid "Invalid name"
-msgstr ""
+msgstr "Nombre inválido"
 
-#: ../../../iwidget/utils.py:123
+#: ../../../iwidget/utils.py:124
 #, python-format
 msgid "Invalid value for %(data_field)s field"
-msgstr ""
+msgstr "Valor no válido para el campo %(data_field)s"
 
-#: ../../../iwidget/utils.py:106 ../../../iwidget/utils.py:138
+#: ../../../iwidget/utils.py:107 ../../../iwidget/utils.py:139
 #, python-format
 msgid "Invalid value for %(field)s field"
-msgstr ""
+msgstr "Valor no válido para el campo %(field)s"
 
-#: ../../../workspace/routes.py:686
+#: ../../../workspace/routes.py:706
 msgid "Invalid vendor"
-msgstr ""
+msgstr "Distribuidor inválido"
 
-#: ../../../workspace/routes.py:692
+#: ../../../workspace/routes.py:712
 msgid "Invalid version number"
-msgstr ""
+msgstr "Número de versión inválido"
 
-#: ../../../core/plugins.py:197
+#: ../../../core/plugins.py:200
 msgid "Is Anonymous"
-msgstr ""
+msgstr "Es anónimo"
 
-#: ../../../core/plugins.py:201
+#: ../../../core/plugins.py:204
 msgid "Is Staff"
-msgstr ""
+msgstr "Es personal"
 
-#: ../../../core/plugins.py:205
+#: ../../../core/plugins.py:208
 msgid "Is Superuser"
-msgstr ""
+msgstr "Es superusuario"
 
-#: ../../../iwidget/routes.py:353
+#: ../../../iwidget/routes.py:367
 msgid "Iwidget cannot be deleted"
-msgstr ""
+msgstr "El widget no se puede eliminar"
 
-#: ../../../core/plugins.py:181
+#: ../../../core/plugins.py:184
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
-#: ../../../core/plugins.py:210
+#: ../../../core/plugins.py:332
+msgid ""
+"List of domains separated by commas that can be used to authenticate in "
+"external services. Use * to allow any domain (DANGEROUS, since that could "
+"expose it to non-authorised services)."
+msgstr ""
+"Lista de dominios separados por comas que se pueden utilizar para "
+"autenticarse en servicios externos. Utilice * para permitir cualquier dominio"
+" (PELIGROSO, ya que podría exponerlo a servicios no autorizados)."
+
+#: ../../../core/plugins.py:213
 msgid "List of groups the user belongs to"
-msgstr ""
+msgstr "Lista de grupos a los que pertenece el usuario"
 
-#: ../../../core/plugins.py:346
+#: ../../../core/plugins.py:217
+msgid "List of permissions the user has"
+msgstr "Lista de permisos que tiene el usuario"
+
+#: ../../../core/plugins.py:377
 msgid ""
 "List of screen sizes supported by the workspace. Each screen size is defined "
 "by a range of screen widths and different widget configurations are "
 "associated with it."
 msgstr ""
+"Lista de tamaños de pantalla admitidos por el entorno de trabajo. Cada tamaño"
+" de pantalla está definido por un rango de anchos de pantalla y se le asocian"
+" diferentes configuraciones de widgets."
 
-#: ../../../core/plugins.py:218
+#: ../../../core/plugins.py:225
 msgid "List of the organizations the user belongs to."
-msgstr ""
+msgstr "Listado de las organizaciones a las que pertenece el usuario."
 
-#: ../../../core/plugins.py:329
+#: ../../../core/plugins.py:360
 msgid "List of users with access to this workspace. (default: [])"
 msgstr ""
+"Lista de usuarios con acceso a este entorno de trabajo. (valor por defecto: "
+"[])"
 
-#: ../../../core/plugins.py:297
+#: ../../../core/plugins.py:310
 msgid "Long description"
-msgstr ""
+msgstr "Descripción larga"
 
-#: ../../../workspace/routes.py:682
+#: ../../../workspace/routes.py:702
 #, python-format
 msgid "Malformed JSON. The following field(s) are missing %(missing_fields)s"
-msgstr ""
+msgstr "JSON con formato incorrecto. Faltan los siguientes campos %(missing_fields)s"
 
-#: ../../../workspace/routes.py:360
+#: ../../../workspace/routes.py:369
 msgid "Malformed tab JSON: expecting tab name or title"
-msgstr ""
+msgstr "Pestaña con formato incorrecto JSON: se espera nombre o título de pestaña"
 
 #: ../../../markets/routes.py:128
 msgid "Market name already in use"
-msgstr ""
+msgstr "Nombre de mercado ya en uso"
 
-#: ../../../markets/routes.py:174
+#: ../../../markets/routes.py:173
 msgid "Market not found"
-msgstr ""
+msgstr "Mercado no encontrado"
 
-#: ../../../workspace/crud.py:126
+#: ../../../workspace/crud.py:138
 #, python-format
 msgid "Mashup not found %(mashup)s"
-msgstr ""
+msgstr "Mashup no encontrado %(mashup)s"
 
-#: ../../../workspace/mashupTemplateParser.py:364
+#: ../../../workspace/mashupTemplateParser.py:365
 msgid "Merged wiring"
-msgstr ""
+msgstr "Wiring mezclado"
 
-#: ../../../localcatalogue/routes.py:158
+#: ../../../localcatalogue/routes.py:161
 msgid "Missing component file in the request"
-msgstr ""
+msgstr "Falta el fichero con los contenidos en la petición"
 
-#: ../../../workspace/mashupTemplateParser.py:56 ../../../workspace/routes.py:624
+#: ../../../workspace/mashupTemplateParser.py:56 ../../../workspace/routes.py:639
 msgid "Missing dependencies"
-msgstr ""
+msgstr "Dependencias incumplidas"
 
 #: ../../../workspace/schemas.py:98
 msgid "Missing name or title parameter"
-msgstr ""
+msgstr "Falta el parámetro name o title"
 
-#: ../../../wiring/routes.py:151
+#: ../../../wiring/routes.py:169
 msgid "Missing operators variables cannot be updated"
-msgstr ""
+msgstr "Las variables de los operadores ausentes no se pueden actualizar"
 
-#: ../../../workspace/routes.py:578
+#: ../../../workspace/routes.py:593
 msgid "Missing workspace or mashup parameter"
-msgstr ""
+msgstr "Falta o el parámetro workspace o el parámetro mashup"
 
-#: ../../../core/plugins.py:213
+#: ../../../core/plugins.py:220
 msgid "Mode"
-msgstr ""
+msgstr "Modo"
 
-#: ../../../core/plugins.py:289
+#: ../../../core/plugins.py:302
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
-#: ../../../core/plugins.py:230
+#: ../../../core/plugins.py:237
 msgid "Name of the theme used by the platform"
-msgstr ""
+msgstr "Nombre del estilo usado por la plataforma"
 
-#: ../../../wiring/routes.py:146 ../../../wiring/routes.py:199
-#: ../../../wiring/routes.py:263 ../../../wiring/routes.py:271
+#: ../../../wiring/routes.py:164 ../../../wiring/routes.py:217
+#: ../../../wiring/routes.py:281 ../../../wiring/routes.py:289
 msgid "Operator not found"
-msgstr ""
+msgstr "Operador no encontrado"
 
-#: ../../../core/plugins.py:221
+#: ../../../core/plugins.py:228
 msgid "Orientation"
-msgstr ""
+msgstr "Orientación"
 
-#: ../../../workspace/mashupTemplateParser.py:361
+#: ../../../workspace/mashupTemplateParser.py:362
 msgid "Original wiring"
-msgstr ""
+msgstr "Wiring original"
 
-#: ../../../core/plugins.py:293
+#: ../../../core/plugins.py:306
 msgid "Owner"
-msgstr ""
+msgstr "Dueño"
 
 #: ../../../widget/routes.py:111
 msgid "Page not found"
-msgstr ""
+msgstr "Página no encontrada"
 
-#: ../../../core/plugins.py:301
+#: ../../../core/plugins.py:314
 msgid "Params"
-msgstr ""
+msgstr "parámetros"
 
-#: ../../../preferences/routes.py:64
+#: ../../../core/plugins.py:216
+msgid "Permissions"
+msgstr "Permisos"
+
+#: ../../../preferences/routes.py:65
 msgid "Platform preferences not found"
-msgstr ""
+msgstr "Preferencias de plataforma no encontradas"
 
-#: ../../../core/plugins.py:310
+#: ../../../core/plugins.py:341
 msgid "Public"
-msgstr ""
+msgstr "Público"
 
-#: ../../../wiring/utils.py:312
+#: ../../../wiring/utils.py:329
 msgid "Read only and hidden preferences cannot be created using this API"
-msgstr ""
+msgstr "No se pueden crear preferencias de solo lectura u ocultas usando esta API"
 
-#: ../../../wiring/utils.py:331
+#: ../../../wiring/utils.py:348
 msgid "Read only and hidden preferences cannot be removed"
-msgstr ""
+msgstr "Las preferencias de solo lectura y ocultas no se pueden eliminar"
 
-#: ../../../wiring/utils.py:364
+#: ../../../wiring/utils.py:387
 msgid "Read only and hidden properties cannot be created using this API"
 msgstr ""
+"No se pueden crear variables persistentes de solo lectura u ocultas usando "
+"esta API"
 
-#: ../../../wiring/utils.py:373
+#: ../../../wiring/utils.py:396
 msgid "Read only and hidden properties cannot be removed"
-msgstr ""
+msgstr "Las variables persistentes de solo lectura y ocultas no se pueden eliminar"
 
-#: ../../../wiring/utils.py:348 ../../../wiring/utils.py:391
+#: ../../../wiring/utils.py:365 ../../../wiring/utils.py:414
 msgid "Read only and hidden status cannot be changed using this API"
-msgstr ""
+msgstr "Los estados de solo lectura y oculto no se pueden cambiar usando esta API"
 
-#: ../../../wiring/utils.py:351
+#: ../../../wiring/utils.py:368
 msgid "Read only preferences cannot be updated"
-msgstr ""
+msgstr "Las preferencias de solo lectura no se pueden actualizar"
 
-#: ../../../wiring/utils.py:232 ../../../wiring/utils.py:394
+#: ../../../wiring/utils.py:242 ../../../wiring/utils.py:417
 msgid "Read only properties cannot be updated"
-msgstr ""
+msgstr "Las variables de solo lectura no se pueden actualizar"
 
-#: ../../../core/plugins.py:225
+#: ../../../core/plugins.py:232
 msgid "Real User Username"
-msgstr ""
+msgstr "Nombre de usuario de usuario real"
 
-#: ../../../core/plugins.py:214
+#: ../../../core/plugins.py:221
 msgid ""
 "Rendering mode used by the platform (available modes: classic, smartphone and"
 " embedded)"
 msgstr ""
+"Modo de funcionamiento usado por la plataforma (modos disponibles: classic, "
+"smartphone y embedded)"
 
-#: ../../../core/plugins.py:321
+#: ../../../core/plugins.py:352
 msgid ""
 "Require users to be logged in to access the workspace (This option has only "
 "effect if the workspace is public). (default: disabled)"
 msgstr ""
+"Requerir que los usuarios inicien sesión para acceder al entorno de trabajo "
+"(esta opción solo tiene efecto si el entorno de trabajo es público). "
+"(predeterminado: deshabilitado)"
 
-#: ../../../core/plugins.py:318
+#: ../../../core/plugins.py:349
 msgid "Required registered user"
-msgstr ""
+msgstr "Usuario registrado requerido"
 
-#: ../../../localcatalogue/routes.py:238
+#: ../../../localcatalogue/routes.py:241
 msgid "Resource already exists"
-msgstr ""
+msgstr "Ya existe el recurso"
 
 #: ../../../core/catalogue_manager.py:50
 #, python-format
 msgid "Resource already exists %(resource_id)s"
-msgstr ""
+msgstr "El recurso ya existe (%(resource_id)s)"
 
-#: ../../../iwidget/routes.py:412 ../../../iwidget/routes.py:489
-#: ../../../iwidget/routes.py:548 ../../../iwidget/routes.py:613
-#: ../../../widget/routes.py:114
+#: ../../../iwidget/routes.py:426 ../../../iwidget/routes.py:505
+#: ../../../iwidget/routes.py:564 ../../../iwidget/routes.py:634
+#: ../../../localcatalogue/routes.py:544 ../../../widget/routes.py:114
 msgid "Resource not found"
-msgstr ""
+msgstr "Recurso no encontrado"
 
-#: ../../../core/plugins.py:344
+#: ../../../core/plugins.py:375
 msgid "Screen sizes"
-msgstr ""
+msgstr "Tamaños de pantalla"
 
-#: ../../../core/plugins.py:326
+#: ../../../core/plugins.py:357
 msgid "Share list"
-msgstr ""
+msgstr "Lista de compartidos"
 
-#: ../../../core/plugins.py:278
+#: ../../../core/plugins.py:291
 msgid "Short description of the workspace without formating"
-msgstr ""
+msgstr "Descripción corta del dashboard sin formato"
+
+#: ../../../localcatalogue/routes.py:218
+msgid "Some groups do not exist"
+msgstr "Algunos grupos no existen"
 
 #: ../../../localcatalogue/routes.py:215
-msgid "Some groups do not exist"
-msgstr ""
-
-#: ../../../localcatalogue/routes.py:212
 msgid "Some users do not exist"
-msgstr ""
+msgstr "Algunos usuarios no existen"
 
 #: ../../../markets/routes.py:230 ../../../markets/routes.py:233
 msgid "Something went wrong (see details for more info)"
-msgstr ""
+msgstr "Algo ha ido mal (mira los detalles para más información)"
 
-#: ../../../workspace/crud.py:92 ../../../workspace/utils.py:450
+#: ../../../workspace/crud.py:101 ../../../workspace/utils.py:450
 msgid "Tab"
-msgstr ""
+msgstr "Pestaña"
 
-#: ../../../workspace/routes.py:523
+#: ../../../workspace/routes.py:537
 msgid "Tab cannot be deleted as it contains widgets that cannot be deleted"
 msgstr ""
+"La pestaña no se puede borrar ya que contiene widgets que no pueden ser "
+"borrados"
 
-#: ../../../workspace/routes.py:518
+#: ../../../workspace/routes.py:532
 msgid "Tab cannot be deleted as workspaces need at least one tab"
 msgstr ""
+"La pestaña no se puede borra dado que el entorno de trabajo necesita como "
+"mínimo una pestaña"
 
-#: ../../../iwidget/routes.py:70 ../../../iwidget/routes.py:126
-#: ../../../iwidget/routes.py:188 ../../../iwidget/routes.py:239
-#: ../../../iwidget/routes.py:293 ../../../iwidget/routes.py:342
-#: ../../../iwidget/routes.py:403 ../../../iwidget/routes.py:474
-#: ../../../iwidget/routes.py:539 ../../../iwidget/routes.py:601
-#: ../../../iwidget/utils.py:336 ../../../preferences/routes.py:257
-#: ../../../preferences/routes.py:301 ../../../workspace/routes.py:407
-#: ../../../workspace/routes.py:457 ../../../workspace/routes.py:512
+#: ../../../iwidget/routes.py:71 ../../../iwidget/routes.py:128
+#: ../../../iwidget/routes.py:192 ../../../iwidget/routes.py:251
+#: ../../../iwidget/routes.py:305 ../../../iwidget/routes.py:355
+#: ../../../iwidget/routes.py:417 ../../../iwidget/routes.py:490
+#: ../../../iwidget/routes.py:555 ../../../iwidget/routes.py:622
+#: ../../../iwidget/utils.py:337 ../../../preferences/routes.py:264
+#: ../../../preferences/routes.py:308 ../../../workspace/routes.py:418
+#: ../../../workspace/routes.py:470 ../../../workspace/routes.py:525
 msgid "Tab not found"
-msgstr ""
+msgstr "Pestaña no encontrada"
 
-#: ../../../localcatalogue/routes.py:205
+#: ../../../localcatalogue/routes.py:208
 msgid "The file downloaded from the marketplace is not a zip file"
-msgstr ""
+msgstr "El fichero descargado desde el marketplace no es un fichero zip"
 
-#: ../../../localcatalogue/routes.py:164 ../../../localcatalogue/routes.py:171
+#: ../../../localcatalogue/routes.py:167 ../../../localcatalogue/routes.py:174
 msgid "The provided file is not a valid zip file"
-msgstr ""
+msgstr "El archivo proporcionado no es un archivo zip válido"
 
-#: ../../../localcatalogue/routes.py:242
+#: ../../../localcatalogue/routes.py:547
+msgid "The resource type is not supported for massive updates"
+msgstr "El tipo de recurso no es compatible con actualizaciones masivas."
+
+#: ../../../localcatalogue/routes.py:245
 msgid "The uploaded file is not a valid zip file"
-msgstr ""
+msgstr "El fichero subido no es un fichero zip valido"
 
-#: ../../../core/plugins.py:229
+#: ../../../core/plugins.py:236
 msgid "Theme"
-msgstr ""
+msgstr "Estilo"
 
-#: ../../../workspace/mashupTemplateParser.py:365
+#: ../../../workspace/mashupTemplateParser.py:366
 msgid "This is the wiring description of the merged mashup"
-msgstr ""
+msgstr "Esta es la descripción del cableado del mashup fusionado."
 
-#: ../../../workspace/mashupTemplateParser.py:362
+#: ../../../workspace/mashupTemplateParser.py:363
 msgid "This is the wiring description of the original workspace"
-msgstr ""
+msgstr "Esta es la descripción del wiring del espacio de trabajo original"
 
-#: ../../../core/plugins.py:285
+#: ../../../workspace/crud.py:383
+msgid "This resource type is not supported for massive updates"
+msgstr "Este tipo de recurso no es compatible con actualizaciones masivas."
+
+#: ../../../core/plugins.py:298
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
-#: ../../../core/plugins.py:194
+#: ../../../core/plugins.py:197
 msgid "URL of the avatar"
-msgstr ""
+msgstr "URL del avatar"
 
 #: ../../../workspace/mashupTemplateParser.py:156
 #, python-format
 msgid "Unsupported resource type %(type)s"
-msgstr ""
+msgstr "Tipo de recurso no admitido %(type)s"
 
-#: ../../../core/plugins.py:217
+#: ../../../core/plugins.py:224
 msgid "User Organizations"
-msgstr ""
+msgstr "Organizaciones de usuarios"
 
-#: ../../../core/plugins.py:186
+#: ../../../core/plugins.py:189
 msgid "User name of the current logged user"
-msgstr ""
-
-#: ../../../core/plugins.py:226
-msgid "User name of the real logged user"
-msgstr ""
-
-#: ../../../markets/routes.py:169
-msgid "User not found"
-msgstr ""
-
-#: ../../../core/plugins.py:185
-msgid "Username"
-msgstr ""
+msgstr "Nombre de usuario del usuario actual"
 
 #: ../../../core/plugins.py:233
+msgid "User name of the real logged user"
+msgstr "Nombre de usuario del usuario real que ha iniciado sesión"
+
+#: ../../../markets/routes.py:168
+msgid "User not found"
+msgstr "Usuario no encontrado"
+
+#: ../../../core/plugins.py:188
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: ../../../core/plugins.py:240
 msgid "Version"
-msgstr ""
+msgstr "Versión"
 
-#: ../../../core/plugins.py:237
+#: ../../../core/plugins.py:244
 msgid "Version Hash"
-msgstr ""
+msgstr "Hash de la versión"
 
-#: ../../../core/plugins.py:234
+#: ../../../core/plugins.py:241
 msgid "Version of the platform"
-msgstr ""
+msgstr "Versión de la plataforma"
 
-#: ../../../iwidget/utils.py:318
+#: ../../../iwidget/utils.py:319
 msgid "Widget Instance not found"
-msgstr ""
+msgstr "Instancia de widget no encontrada"
 
-#: ../../../widget/utils.py:235
+#: ../../../widget/utils.py:236
 msgid "Widget code not found"
-msgstr ""
+msgstr "No se ha podido encontrar el código del widget"
 
 #: ../../../iwidget/utils.py:72
 msgid "Widget not available"
-msgstr ""
+msgstr "Reproductor no disponible"
 
 #: ../../../iwidget/utils.py:69
 msgid "Widget not found"
-msgstr ""
+msgstr "No se encontró el widget"
 
-#: ../../../workspace/routes.py:580 ../../../workspace/schemas.py:100
+#: ../../../workspace/routes.py:595 ../../../workspace/schemas.py:100
 msgid "Workspace and mashup parameters cannot be used at the same time"
-msgstr ""
+msgstr "No se pueden usar los parámetros workspace y mashup al mismo tiempo"
 
-#: ../../../iwidget/routes.py:65 ../../../iwidget/routes.py:122
-#: ../../../iwidget/routes.py:183 ../../../iwidget/routes.py:234
-#: ../../../iwidget/routes.py:288 ../../../iwidget/routes.py:337
-#: ../../../iwidget/routes.py:398 ../../../iwidget/routes.py:469
-#: ../../../iwidget/routes.py:534 ../../../iwidget/routes.py:593
-#: ../../../preferences/routes.py:127 ../../../preferences/routes.py:167
-#: ../../../preferences/routes.py:252 ../../../preferences/routes.py:296
-#: ../../../wiring/routes.py:82 ../../../wiring/routes.py:135
-#: ../../../wiring/routes.py:252 ../../../workspace/routes.py:134
-#: ../../../workspace/routes.py:250 ../../../workspace/routes.py:304
-#: ../../../workspace/routes.py:354 ../../../workspace/routes.py:399
-#: ../../../workspace/routes.py:450 ../../../workspace/routes.py:507
-#: ../../../workspace/routes.py:569 ../../../workspace/routes.py:599
-#: ../../../workspace/routes.py:696 ../../../workspace/utils.py:525
+#: ../../../iwidget/routes.py:66 ../../../iwidget/routes.py:124
+#: ../../../iwidget/routes.py:187 ../../../iwidget/routes.py:242
+#: ../../../iwidget/routes.py:300 ../../../iwidget/routes.py:350
+#: ../../../iwidget/routes.py:412 ../../../iwidget/routes.py:485
+#: ../../../iwidget/routes.py:550 ../../../iwidget/routes.py:614
+#: ../../../preferences/routes.py:128 ../../../preferences/routes.py:168
+#: ../../../preferences/routes.py:259 ../../../preferences/routes.py:303
+#: ../../../wiring/routes.py:82 ../../../wiring/routes.py:144
+#: ../../../wiring/routes.py:270 ../../../workspace/routes.py:139
+#: ../../../workspace/routes.py:256 ../../../workspace/routes.py:310
+#: ../../../workspace/routes.py:363 ../../../workspace/routes.py:410
+#: ../../../workspace/routes.py:461 ../../../workspace/routes.py:520
+#: ../../../workspace/routes.py:583 ../../../workspace/routes.py:614
+#: ../../../workspace/routes.py:716 ../../../workspace/utils.py:525
 msgid "Workspace not found"
-msgstr ""
+msgstr "Entorno de trabajo no encontrado"
 
-#: ../../../core/plugins.py:294
+#: ../../../core/plugins.py:307
 msgid "Workspace's owner username"
-msgstr ""
+msgstr "Nombre de usuario del dueño del entorno de trabajo"
 
-#: ../../../localcatalogue/routes.py:222
+#: ../../../localcatalogue/routes.py:225
 msgid "You are not allowed allow to install components to other users"
-msgstr ""
+msgstr "No tienes permisos para instalar componentes a otros usuarios"
 
-#: ../../../workspace/routes.py:363
+#: ../../../wiring/routes.py:156
+msgid "You are not allowed to add connections to this workspace"
+msgstr "No tienes permiso para agregar conexiones a este entorno de trabajo"
+
+#: ../../../wiring/routes.py:158
+msgid "You are not allowed to add operators to this workspace"
+msgstr "No tiene permiso para agregar operadores a este entorno de trabajo"
+
+#: ../../../workspace/routes.py:373
 msgid "You are not allowed to create new tabs for this workspace"
-msgstr ""
+msgstr "No tienes permisos para crear nuevas pestañas para este entorno de trabajo"
 
-#: ../../../localcatalogue/routes.py:325
+#: ../../../wiring/routes.py:91
+msgid "You are not allowed to delete connections from this workspace"
+msgstr "No tiene permiso para eliminar conexiones de este entorno de trabajo"
+
+#: ../../../wiring/routes.py:93
+msgid "You are not allowed to delete operators from this workspace"
+msgstr "No tiene permiso para eliminar operadores de este entorno de trabajo"
+
+#: ../../../localcatalogue/routes.py:326
 msgid "You are not allowed to delete resources"
-msgstr ""
+msgstr "No tienes permisos para borrar recursos"
 
-#: ../../../markets/routes.py:162
+#: ../../../markets/routes.py:161
 msgid "You are not allowed to delete this market"
-msgstr ""
+msgstr "No tienes permisos para eliminar este marketplace"
 
-#: ../../../workspace/routes.py:307
+#: ../../../workspace/routes.py:316
 msgid "You are not allowed to delete this workspace"
-msgstr ""
+msgstr "No tienes permisos para borrar este entorno de trabajo"
 
-#: ../../../localcatalogue/routes.py:230
+#: ../../../localcatalogue/routes.py:233
 msgid "You are not allowed to install components to non-owned organizations"
 msgstr ""
+"No tienes permisos para instalar componentes en organizaciones de las que no "
+"eres dueño"
 
-#: ../../../localcatalogue/routes.py:220
+#: ../../../localcatalogue/routes.py:223
 msgid "You are not allowed to make resources publicly available to all users"
-msgstr ""
+msgstr "No tienes permisos para hacer disponibles los recursos a todos los usuarios"
 
-#: ../../../workspace/routes.py:136
+#: ../../../workspace/routes.py:720
+msgid "You are not allowed to publish this workspace"
+msgstr "No tienes permiso para publicar este entorno de trabajo."
+
+#: ../../../workspace/routes.py:142
 msgid "You are not allowed to read from workspace"
-msgstr ""
+msgstr "No se le permite leer desde el entorno de trabajo"
 
-#: ../../../workspace/routes.py:602
+#: ../../../workspace/routes.py:617
 #, python-format
 msgid "You are not allowed to read from workspace %(workspace_id)s"
-msgstr ""
+msgstr "No tiene permiso para leer desde el entorno de trabajo %(workspace_id)s"
 
-#: ../../../preferences/routes.py:129 ../../../preferences/routes.py:260
-#: ../../../preferences/routes.py:304
+#: ../../../preferences/routes.py:130 ../../../preferences/routes.py:267
+#: ../../../preferences/routes.py:312
 msgid "You are not allowed to read this workspace"
-msgstr ""
+msgstr "No tienes permisos para leer este entorno de trabajo"
 
-#: ../../../wiring/utils.py:266 ../../../wiring/utils.py:271
+#: ../../../wiring/utils.py:276 ../../../wiring/utils.py:281
 msgid "You are not allowed to remove or update read only connections"
-msgstr ""
+msgstr "No tienes permisos para eliminar o actualizar conexiones de solo lectura"
 
-#: ../../../workspace/routes.py:515
+#: ../../../workspace/routes.py:529
 msgid "You are not allowed to remove this tab"
-msgstr ""
+msgstr "No tienes permiso para eliminar esta pestaña"
 
-#: ../../../localcatalogue/routes.py:312
+#: ../../../localcatalogue/routes.py:314 ../../../localcatalogue/routes.py:453
 msgid "You are not allowed to retrieve info about this resource"
-msgstr ""
+msgstr "No tienes permisos para obtener la información sobre este recurso"
 
-#: ../../../preferences/routes.py:169 ../../../wiring/routes.py:92
-#: ../../../wiring/routes.py:169 ../../../wiring/utils.py:177
-#: ../../../wiring/utils.py:209 ../../../wiring/utils.py:236
-#: ../../../workspace/routes.py:253 ../../../workspace/routes.py:452
-#: ../../../workspace/routes.py:572
+#: ../../../wiring/routes.py:101 ../../../wiring/routes.py:187
+#: ../../../wiring/utils.py:175 ../../../wiring/utils.py:214
+#: ../../../wiring/utils.py:246 ../../../workspace/routes.py:259
+#: ../../../workspace/routes.py:465 ../../../workspace/routes.py:587
 msgid "You are not allowed to update this workspace"
-msgstr ""
+msgstr "No tienes permisos para actualizar este entorno de trabajo"
 
-#: ../../../localcatalogue/routes.py:484
+#: ../../../preferences/routes.py:171
+msgid "You are not allowed to update workspace preferences"
+msgstr "No tienes permiso para actualizar las preferencias del entorno de trabajo"
+
+#: ../../../workspace/routes.py:112
+msgid "You do not have permission to create workspaces"
+msgstr "No tienes permiso para crear entornos de trabajo"
+
+#: ../../../wiring/utils.py:199 ../../../wiring/utils.py:324
+msgid "You do not have permission to edit operator preferences"
+msgstr "No tienes permiso para editar las preferencias del operador"
+
+#: ../../../wiring/utils.py:223 ../../../wiring/utils.py:382
+msgid "You do not have permission to edit operator properties"
+msgstr "No tienes permiso para editar las propiedades del operador"
+
+#: ../../../localcatalogue/routes.py:146
+msgid "You do not have permission to install components"
+msgstr "No tienes permiso para instalar componentes"
+
+#: ../../../localcatalogue/routes.py:540
+msgid "You do not have permission to perform massive updates on components"
+msgstr "No tienes permiso para realizar actualizaciones masivas de componentes"
+
+#: ../../../workspace/routes.py:694
+msgid "You do not have permission to publish workspaces"
+msgstr "No tienes permiso para publicar entornos de trabajo"
+
+#: ../../../preferences/routes.py:179 ../../../preferences/routes.py:206
+msgid "You do not have permission to share this workspace"
+msgstr "No tienes permiso para compartir este entorno de trabajo"
+
+#: ../../../localcatalogue/routes.py:488
 msgid "You don't have access to this workspace"
-msgstr ""
+msgstr "No tienes acceso a este entorno de trabajo"
 
-#: ../../../iwidget/routes.py:73 ../../../iwidget/routes.py:482
-#: ../../../iwidget/routes.py:596 ../../../wiring/routes.py:255
-#: ../../../workspace/routes.py:402 ../../../workspace/utils.py:528
+#: ../../../iwidget/routes.py:498 ../../../iwidget/routes.py:617
+#: ../../../wiring/routes.py:273 ../../../workspace/routes.py:413
+#: ../../../workspace/utils.py:528
 msgid "You don't have permission to access this workspace"
-msgstr ""
+msgstr "No tienes permisos para acceder a este entorno de trabajo"
+
+#: ../../../iwidget/routes.py:75 ../../../iwidget/routes.py:246
+msgid "You don't have permission to view the iwidgets of this workspace"
+msgstr "No tienes permiso para ver los iwidgets de este entorno de trabajo"
 
 #: ../../../markets/routes.py:115
 msgid "You don't have permissions for adding marketplaces in name of other user"
 msgstr ""
+"No tienes permisos suficientes para añadir marketplaces en nombre de otros "
+"usuarios"
 
-#: ../../../iwidget/routes.py:129
+#: ../../../iwidget/routes.py:132
 msgid "You have not enough permission for adding iwidgets to the workspace"
-msgstr ""
+msgstr "No tienes permisos suficientes para añadir nuevos widgets en el workspace"
 
-#: ../../../iwidget/routes.py:350
+#: ../../../iwidget/routes.py:364
 msgid "You have not enough permission for deleting this iwidget"
-msgstr ""
+msgstr "No tienes permiso suficiente para eliminar este iwidget"
 
-#: ../../../iwidget/routes.py:296
+#: ../../../iwidget/routes.py:309
 msgid "You have not enough permission for updating the iwidget"
-msgstr ""
+msgstr "No tienes suficientes permisos para actualizar está instancia de widget"
 
-#: ../../../iwidget/routes.py:192
+#: ../../../iwidget/routes.py:197
 msgid "You have not enough permission for updating the iwidgets of this workspace"
 msgstr ""
+"No tienes suficientes permisos para actualizar las instancias de los widgets "
+"de este entorno de trabajo"
 
-#: ../../../iwidget/routes.py:560 ../../../iwidget/routes.py:563
+#: ../../../iwidget/routes.py:581
 msgid ""
 "You have not enough permission for updating the persistent variables of this "
 "iwidget"
 msgstr ""
+"No tienes permiso suficiente para actualizar las variables persistentes de "
+"este iwidget"
 
-#: ../../../iwidget/routes.py:429 ../../../iwidget/routes.py:432
+#: ../../../iwidget/routes.py:448
 msgid "You have not enough permission for updating the preferences of the iwidget"
-msgstr ""
+msgstr "No tienes suficientes permisos para actualizar las preferencias del widget"
 
 #: ../../../markets/routes.py:112
 msgid "invalid user option"
-msgstr ""
+msgstr "opción user inválida"
 

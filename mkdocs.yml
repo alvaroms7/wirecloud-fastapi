@@ -1,0 +1,47 @@
+site_name: WireCloud
+site_description: Documentation for the WireCloud FastAPI platform
+site_url: https://wirecloud.readthedocs.io/
+repo_url: https://github.com/Wirecloud/wirecloud
+repo_name: Wirecloud/wirecloud
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - bash
+    - dockerfile
+    - javascript
+    - json
+    - python
+    - xml
+    - yaml
+
+nav:
+  - Introduction: index.md
+  - Getting started: getting-started.md
+  - User guide: user-guide.md
+  - Installation: installation.md
+  - Configuration: configuration.md
+  - Administration: administration.md
+  - Migrating from WireCloud 1: migration.md
+  - HTTP API: api.md
+  - Component development:
+      - Packaging components: components.md
+      - FIWARE Application Mashup - Widget API Specification: mashup-platform-api.md
+  - Advanced:
+      - Creating themes: themes.md
+      - Creating plugins: plugins.md
+  - Contributing: development.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+
+strict: true

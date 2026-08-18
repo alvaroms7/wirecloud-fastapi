@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# TODO Define types for the following methods
-
 from importlib import import_module
 from typing import Optional, Any
 from collections.abc import Callable

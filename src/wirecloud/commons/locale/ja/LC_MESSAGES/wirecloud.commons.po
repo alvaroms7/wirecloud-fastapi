@@ -1,0 +1,387 @@
+# Japanese translations for WireCloud.
+# Copyright (C) 2026 Future Internet Consulting and Development Solutions S.L.
+# This file is distributed under the same license as the WireCloud project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WireCloud VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../../auth/routes.py:803 ../../../auth/routes.py:908
+#: ../../../auth/routes.py:1007
+msgid "A group with that name already exists"
+msgstr "その名前のグループはすでに存在します"
+
+#: ../../../auth/routes.py:610 ../../../auth/routes.py:710
+msgid "A user with that username already exists"
+msgstr "そのユーザー名のユーザーはすでに存在します"
+
+#: ../../../routes.py:82
+msgid "An unexpected error occurred"
+msgstr "予期しないエラーが発生しました"
+
+#: ../../../routes.py:143
+msgid "Authentication required"
+msgstr "認証が必要"
+
+#: ../../../auth/routes.py:1111
+msgid "Cannot set this parent: it would create a circular reference"
+msgstr "この親を設定できません: 循環参照が作成されてしまいます"
+
+#: ../../../auth/routes.py:800 ../../../auth/routes.py:900
+msgid "Group name and codename cannot be empty"
+msgstr "グループ名とコード名を空にすることはできません"
+
+#: ../../../auth/routes.py:847 ../../../auth/routes.py:904
+#: ../../../auth/routes.py:957 ../../../auth/routes.py:1095
+msgid "Group not found"
+msgstr "グループが見つかりません"
+
+#: ../../../utils/template/parsers/rdf.py:546
+#: ../../../utils/template/parsers/rdf.py:554
+#, python-format
+msgid "Invalid code content type: %s"
+msgstr "無効なコード コンテンツ タイプ: %s"
+
+#: ../../../utils/template/parsers/rdf.py:394
+#, python-format
+msgid "Invalid component type in wiring: %s"
+msgstr "配線内のコンポーネント タイプが無効です: %s"
+
+#: ../../../utils/template/parsers/json.py:45
+#, python-format
+msgid "Invalid component type: %s"
+msgstr "無効なコンポーネントタイプ: %s"
+
+#: ../../../utils/template/parsers/rdf.py:124
+#, python-format
+msgid "Invalid content for field: %(field)s"
+msgstr "フィールドの内容が無効です: %(field)s"
+
+#: ../../../utils/template/parsers/json.py:39
+msgid "Invalid input data"
+msgstr "無効な入力データ"
+
+#: ../../../utils/template/parsers/rdf.py:86
+#: ../../../utils/template/parsers/xml.py:133
+msgid "Invalid namespace: "
+msgstr "無効な名前空間: "
+
+#: ../../../routes.py:146
+msgid "Invalid orderby value"
+msgstr "orderby値が無効です"
+
+#: ../../../utils/template/parsers/xml.py:136
+#, python-format
+msgid "Invalid root element (%s)"
+msgstr "無効なルート要素 (%s)"
+
+#: ../../../utils/template/parsers/rdf.py:89
+msgid "Invalid root element: "
+msgstr "無効なルート要素: "
+
+#: ../../../utils/downloader.py:45
+#, python-format
+msgid "Invalid schema: %(schema)s"
+msgstr "スキーマが無効です: %(schema)s"
+
+#: ../../../utils/template/parsers/rdf.py:745
+#: ../../../utils/template/parsers/xml.py:644
+msgid "Invalid screen sizes present in the template."
+msgstr "テンプレートに無効な画面サイズが存在します。"
+
+#: ../../../utils/template/parsers/json.py:71
+msgid "Invalid screen sizes range present in the template"
+msgstr "テンプレートに無効な画面サイズ範囲が存在します"
+
+#: ../../../utils/template/parsers/rdf.py:78
+msgid "Invalid template type"
+msgstr "無効なテンプレートタイプです"
+
+#: ../../../utils/template/parsers/rdf.py:766
+#: ../../../utils/template/parsers/xml.py:686
+#, python-format
+msgid "Invalid template: %s"
+msgstr "無効なテンプレート: %s"
+
+#: ../../../auth/routes.py:105
+msgid "Invalid user"
+msgstr "無効なユーザー"
+
+#: ../../../auth/routes.py:236
+msgid "Invalid username or password"
+msgstr "無効なユーザー名またはパスワード"
+
+#: ../../../routes.py:73
+msgid "Invalid value"
+msgstr "無効な値"
+
+#: ../../../utils/template/writers/json.py:30
+#: ../../../utils/template/writers/json.py:41
+#, python-format
+msgid "Invalid value for field %s"
+msgstr "フィールド %s の値が無効です"
+
+#: ../../../utils/template/parsers/xml.py:362
+#, python-format
+msgid "Invalid wiring version: %s"
+msgstr "無効な配線バージョン: %s"
+
+#: ../../../utils/template/parsers/xml.py:156
+#, python-format
+msgid "Missing %s element"
+msgstr "%s 要素がありません"
+
+#: ../../../utils/template/writers/xml.py:33
+#, python-format
+msgid "Missing %s option"
+msgstr "%s オプションがありません"
+
+#: ../../../utils/template/parsers/json.py:42
+msgid "Missing component type."
+msgstr "コンポーネントタイプがありません。"
+
+#: ../../../utils/template/parsers/xml.py:129
+msgid "Missing document namespace"
+msgstr "ドキュメントの名前空間がありません"
+
+#: ../../../utils/template/parsers/xml.py:551
+msgid "Missing layout in resource or rendering element"
+msgstr "リソースまたはレンダリング要素にレイアウトがありません"
+
+#: ../../../utils/template/parsers/xml.py:548
+msgid "Missing position/rendering or screensizes element"
+msgstr "位置/レンダリングまたは画面サイズ要素が欠落しています"
+
+#: ../../../utils/template/parsers/rdf.py:147
+#: ../../../utils/template/parsers/rdf.py:162
+#: ../../../utils/template/parsers/xml.py:195
+#, python-format
+msgid "Missing required field: %(field)s"
+msgstr "必須フィールドが欠落しています: %(field)s"
+
+#: ../../../utils/template/parsers/rdf.py:588
+msgid "Missing required field: Javascript files"
+msgstr "必須フィールドがありません: Javascript files"
+
+#: ../../../utils/template/parsers/rdf.py:569
+msgid "Missing required field: Main content"
+msgstr "必須フィールドが欠落しています: メインコンテンツ"
+
+#: ../../../utils/template/parsers/rdf.py:355
+msgid "Missing required field: target"
+msgstr "必須フィールドが欠落しています: ターゲット"
+
+#: ../../../auth/utils.py:237 ../../../auth/utils.py:246
+msgid "OIDC provider has not returned a valid response"
+msgstr "OIDC プロバイダーが有効な応答を返しませんでした"
+
+#: ../../../auth/routes.py:74 ../../../auth/routes.py:77
+#: ../../../auth/routes.py:411
+msgid "OIDC provider is not configured correctly! Contact your administrator."
+msgstr "OIDC プロバイダーが正しく構成されていません。管理者に連絡してください。"
+
+#: ../../../auth/routes.py:71
+msgid "OIDC provider is not enabled"
+msgstr "OIDC プロバイダーが有効になっていません"
+
+#: ../../../auth/utils.py:233
+msgid "OIDC provider is not reachable"
+msgstr "OIDC プロバイダーに到達できません"
+
+#: ../../../utils/template/parsers/rdf.py:329
+#: ../../../utils/template/parsers/xml.py:356
+msgid ""
+"Only wiring version 2.0 is supported. The old 1.0 version is no longer "
+"supported."
+msgstr "配線バージョン 2.0 のみがサポートされています。古い 1.0 バージョンはサポートされなくなりました。"
+
+#: ../../../auth/routes.py:1004
+msgid "Organization name and codename cannot be empty"
+msgstr "組織名とコード名を空にすることはできません"
+
+#: ../../../auth/routes.py:1046 ../../../auth/routes.py:1148
+msgid "Organization not found"
+msgstr "組織が見つかりません"
+
+#: ../../../auth/routes.py:1104
+msgid "Parent group not found"
+msgstr "親グループが見つかりません"
+
+#: ../../../routes.py:47
+msgid "Permission denied"
+msgstr "許可が拒否されました"
+
+#: ../../../utils/template/parsers/rdf.py:108
+msgid "RDF document does not describe a widget, operator or mashup component"
+msgstr "RDF ドキュメントにはウィジェット、オペレーター、またはマッシュアップ コンポーネントが記述されていません"
+
+#: ../../../routes.py:52
+msgid "Resource not found"
+msgstr "リソースが見つかりません"
+
+#: ../../../auth/routes.py:501
+msgid "Target user not found"
+msgstr "対象のユーザーが見つかりません"
+
+#: ../../../utils/template/schemas/macdschemas.py:133
+#, python-format
+msgid "The following translation indexes are not used: %(indexes)s."
+msgstr "次の変換インデックスは使用されません: %(indexes)s."
+
+#: ../../../utils/template/schemas/macdschemas.py:129
+#, python-format
+msgid "The following translation indexes need a default value: %(indexes)s."
+msgstr "次の変換インデックスにはデフォルト値が必要です: %(indexes)s."
+
+#: ../../../utils/template/parsers/rdf.py:216
+msgid "The format of the macversion is invalid. It must be an integer."
+msgstr "macversion の形式が無効です。整数でなければなりません。"
+
+#: ../../../utils/template/parsers/rdf.py:227
+msgid "The format of the name is invalid."
+msgstr "名前の形式が無効です。"
+
+#: ../../../utils/template/parsers/rdf.py:223
+msgid "The format of the vendor is invalid."
+msgstr "ベンダーのフォーマットが無効です。"
+
+#: ../../../utils/template/parsers/rdf.py:231
+msgid ""
+"The format of the version number is invalid. Format: X.X.X where X is an "
+"integer. Ex. \"0.1\", \"1.11\" NOTE: \"1.01\" should be changed to \"1.0.1\" "
+"or \"1.1\""
+msgstr ""
+"バージョン番号の形式が無効です。形式: X.X.X ここでの X は整数です例: \"0.1\", \"1.11\" 注: \"1.01\" "
+"は、\"1.0.1\" または \"1.1\" に変更するべきです\""
+
+#: ../../../utils/template/parsers/rdf.py:218
+msgid "The macversion is invalid. Currently only macversion 1 or 2 are supported."
+msgstr "mac バージョンが無効です。現在、macversion 1 または 2 のみがサポートされています。"
+
+#: ../../../utils/http.py:291
+msgid ""
+"The requested resource is only capable of generating content not acceptable "
+"according to the Accept headers sent in the request"
+msgstr "要求されたリソースは、要求で送信された Accept ヘッダーに従って受け入れられないコンテンツのみを生成することができます"
+
+#: ../../../auth/routes.py:1150
+msgid "The specified group is not the root group of an organization"
+msgstr "指定されたグループは組織のルート グループではありません"
+
+#: ../../../auth/routes.py:1107
+msgid "The specified parent group is not an organization"
+msgstr "指定された親グループは組織ではありません"
+
+#: ../../../utils/template/parsers/xml.py:441
+msgid "The use of the script element is not allowed in version 1.0 widgets"
+msgstr "script 要素の使用はバージョン 1.0 ウィジェットでは許可されていません"
+
+#: ../../../utils/template/schemas/macdschemas.py:125
+#, python-format
+msgid ""
+"There isn't a translation element for the default translation language: "
+"(%(default_lang)s)"
+msgstr "デフォルトの翻訳言語の翻訳要素がありません: (%(default_lang)s)"
+
+#: ../../../utils/http.py:318
+msgid "Unsupported request media type"
+msgstr "サポートされていない要求メディア・タイプ"
+
+#: ../../../auth/routes.py:647 ../../../auth/routes.py:703
+#: ../../../auth/routes.py:756
+msgid "User not found"
+msgstr "ユーザーが見つかりません"
+
+#: ../../../auth/routes.py:607 ../../../auth/routes.py:706
+msgid "Username cannot be empty"
+msgstr "ユーザー名を空にすることはできません"
+
+#: ../../../routes.py:67
+msgid "Validation error"
+msgstr "検証エラー"
+
+#: ../../../utils/template/parsers/rdf.py:83
+msgid "XML document does not contain a valid rdf namespace"
+msgstr "XML ドキュメントには有効な rdf 名前空間が含まれていません"
+
+#: ../../../auth/routes.py:363 ../../../auth/routes.py:407
+#: ../../../auth/routes.py:493
+msgid "You are not logged in"
+msgstr "ログインしていません"
+
+#: ../../../auth/routes.py:960
+msgid "You cannot delete the root group of an organization"
+msgstr "組織のルートグループは削除できません"
+
+#: ../../../auth/routes.py:496
+msgid "You do not have permission to switch users"
+msgstr "ユーザーを切り替える権限がありません"
+
+#: ../../../auth/routes.py:797
+msgid "You don't have permissions to create groups"
+msgstr "グループを作成する権限がありません"
+
+#: ../../../auth/routes.py:1001
+msgid "You don't have permissions to create organizations"
+msgstr "組織を作成する権限がありません"
+
+#: ../../../auth/routes.py:604
+msgid "You don't have permissions to create users"
+msgstr "ユーザーを作成する権限がありません"
+
+#: ../../../auth/routes.py:953
+msgid "You don't have permissions to delete groups"
+msgstr "グループを削除する権限がありません"
+
+#: ../../../auth/routes.py:1144
+msgid "You don't have permissions to delete organizations"
+msgstr "組織を削除する権限がありません"
+
+#: ../../../auth/routes.py:752
+msgid "You don't have permissions to delete users"
+msgstr "ユーザーを削除する権限がありません"
+
+#: ../../../auth/routes.py:897
+msgid "You don't have permissions to edit groups"
+msgstr "グループを編集する権限がありません"
+
+#: ../../../auth/routes.py:699
+msgid "You don't have permissions to edit users"
+msgstr "ユーザーを編集する権限がありません"
+
+#: ../../../auth/routes.py:1091
+msgid "You don't have permissions to update organizations"
+msgstr "組織を更新する権限がありません"
+
+#: ../../../auth/routes.py:843
+msgid "You don't have permissions to view groups"
+msgstr "グループを表示する権限がありません"
+
+#: ../../../auth/routes.py:1042
+msgid "You don't have permissions to view organizations"
+msgstr "組織を表示する権限がありません"
+
+#: ../../../auth/routes.py:643
+msgid "You don't have permissions to view users"
+msgstr "ユーザーを表示する権限がありません"
+
+#: ../../../utils/template/parsers/rdf.py:437
+msgid "missing required field: hasSourceEndpoint"
+msgstr "必須フィールドがありません: hasSourceEndpoint"
+
+#: ../../../utils/template/parsers/rdf.py:446
+msgid "missing required field: hasTargetEndpoint"
+msgstr "必須フィールドがありません: hasTargetEndpoint"

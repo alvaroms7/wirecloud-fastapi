@@ -47,6 +47,7 @@ class UserWorkspaceData(BaseModel):
     fullname: str
     username: str
     accesslevel: str
+    organization: bool = False
 
 
 class GroupWorkspaceData(BaseModel):

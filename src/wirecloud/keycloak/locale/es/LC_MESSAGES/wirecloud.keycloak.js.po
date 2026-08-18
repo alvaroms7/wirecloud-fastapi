@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -21,9 +21,9 @@ msgstr ""
 
 #: ../../../static/js/keycloak/sso.js:80
 msgid "Browser will be reloaded to accomodate to the new session info"
-msgstr ""
+msgstr "El navegador se recargará para adaptarse a la nueva información de la sesión."
 
 #: ../../../static/js/keycloak/sso.js:81
 msgid "User Session Updated"
-msgstr ""
+msgstr "Sesión de usuario actualizada"
 

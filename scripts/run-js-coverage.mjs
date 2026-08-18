@@ -28,6 +28,7 @@ const c8Args = [
     '--all',
     '--reporter=text',
     '--reporter=lcov',
+    '--reporter=json-summary',
     '--reports-dir',
     coverageRoot,
     '--temp-directory',

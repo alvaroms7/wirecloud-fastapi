@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# TODO Add docs of almost everything here (descriptions)
-
 from pydantic import BaseModel, StringConstraints, Field, model_validator, field_serializer
 from enum import Enum
 from typing import Optional, Annotated, Union

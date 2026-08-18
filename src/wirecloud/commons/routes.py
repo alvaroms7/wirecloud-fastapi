@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
+import logging
 from typing import Optional
 from fastapi import APIRouter, Request, Query
 from fastapi.responses import Response
@@ -33,6 +34,7 @@ from wirecloud.database import DBDep
 from wirecloud.translation import gettext as _
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 class JSResponse(Response):
     media_type = "application/javascript"
@@ -75,9 +77,8 @@ async def value_error_handler(request: Request, exc: ValueError):
 
 
 async def general_exception_handler(request: Request, exc: Exception):
-    # Log the exception for debugging purposes TODO better logging
-    import traceback
-    traceback.print_exc()
+    request_path = getattr(getattr(request, "url", None), "path", "<unknown>")
+    logger.exception("Unhandled exception while processing %s", request_path, exc_info=exc)
 
     error_msg = _('An unexpected error occurred')
 

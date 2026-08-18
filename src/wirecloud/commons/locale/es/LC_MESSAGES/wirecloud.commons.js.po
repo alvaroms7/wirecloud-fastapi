@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WireCloud VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-01-20 10:07+0100\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "<div class=\"se-input-group\"><t:firstBtn/><t:prevBtn/><div class=\"se-"
 "box\">Página: "
-"<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></s:styledgui>"
+"<t:currentPage/>/<t:totalPages/></div><t:nextBtn/><t:lastBtn/></div>"
 
 #: ../../../static/js/wirecloud/ui/MACSearch.js:136
 #, python-format
@@ -67,17 +67,21 @@ msgstr ""
 "las palabras estén escritas correctamente.</li><li>Prueba con otras palabras "
 "clave.</li><li>Inténtalo con palabras clave más generales.</li></ul>"
 
-#: ../../../static/js/StyledElements/Form.js:242
-#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:42
+#: ../../../static/js/StyledElements/Form.js:243
+#: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:44
 msgid "Accept"
 msgstr "Aceptar"
 
-#: ../../../static/js/StyledElements/Notebook.js:164
-#: ../../../static/js/StyledElements/Notebook.js:167
+#: ../../../static/js/StyledElements/Notebook.js:165
+#: ../../../static/js/StyledElements/Notebook.js:168
 msgid "Add Tab"
 msgstr "Añadir pestaña"
 
-#: ../../../static/js/StyledElements/Form.js:253
+#: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:52
+msgid "Available tutorials"
+msgstr "Tutoriales disponibles"
+
+#: ../../../static/js/StyledElements/Form.js:254
 #: ../../../static/js/wirecloud/ui/Tutorial/SimpleDescription.js:136
 msgid "Cancel"
 msgstr "Cancelar"
@@ -97,9 +101,22 @@ msgstr "Cerrar"
 msgid "Connection error: No resource retrieved"
 msgstr "Problema de conexión: No se ha recibido ningún recurso"
 
+#: ../../../static/js/StyledElements/PaginationInterface.js:93
+msgid "Current page number"
+msgstr "Número de página actual"
+
 #: ../../../static/js/wirecloud/ui/MessageWindowMenu.js:26
 msgid "Error"
 msgstr "Error"
+
+#: ../../../static/js/StyledElements/CodeArea.js:47
+msgid "Exit full screen"
+msgstr "Salir de pantalla completa"
+
+#: ../../../static/js/StyledElements/CodeArea.js:47
+#: ../../../static/js/StyledElements/CodeArea.js:99
+msgid "Full screen"
+msgstr "Ver a pantalla completa"
 
 #: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:49
 msgid "If you prefer, you can follow some of these tutorials:"
@@ -125,7 +142,7 @@ msgstr "Siguiente"
 msgid "No"
 msgstr "No"
 
-#: ../../../static/js/StyledElements/ModelTable.js:449
+#: ../../../static/js/StyledElements/ModelTable.js:455
 msgid "No data available"
 msgstr "No hay datos disponibles"
 
@@ -133,27 +150,44 @@ msgstr "No hay datos disponibles"
 msgid "No results found for <em><t:query/></em>"
 msgstr "No se han encontrado resultados para <em><t:query/></em>"
 
-#: ../../../static/js/StyledElements/Form.js:230
+#: ../../../static/js/StyledElements/Form.js:231
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: ../../../static/js/wirecloud/ui/MACField.js:96
+#: ../../../static/js/wirecloud/ui/MACField.js:99
 msgid "Search"
 msgstr "Buscar"
 
-#: ../../../static/js/StyledElements/FileField.js:97
+#: ../../../static/js/StyledElements/FileField.js:100
 #: ../../../static/js/wirecloud/ui/MACSelectionWindowMenu.js:34
 msgid "Select"
 msgstr "Seleccionar"
 
-#: ../../../static/js/StyledElements/Form.js:219
+#: ../../../static/js/StyledElements/FileField.js:98
+msgid "Select file"
+msgstr "Seleccionar archivo"
+
+#: ../../../static/js/wirecloud/ui/MACField.js:95
+msgid "Selected component"
+msgstr "Componente seleccionado"
+
+#: ../../../static/js/StyledElements/FileField.js:91
+msgid "Selected file name"
+msgstr "Nombre del archivo seleccionado"
+
+#: ../../../static/js/StyledElements/Form.js:220
 msgid "Set Defaults"
 msgstr "Valores por defecto"
 
-#: ../../../static/js/StyledElements/ModelTable.js:54
+#: ../../../static/js/StyledElements/ModelTable.js:56
 #, python-format
 msgid "Sort by %(column_name)s"
 msgstr "Ordenar por %(column_name)s"
+
+#: ../../../static/js/wirecloud/ui/TutorialCatalogue.js:59
+#, python-format
+msgid "Start %(tutorial)s tutorial"
+msgstr "Iniciar el tutorial %(tutorial)s"
 
 #: ../../../static/js/StyledElements/InputInterfaces.js:78
 #, python-format
@@ -198,6 +232,18 @@ msgstr ""
 "Los tamaños de pantalla no son correctos. Deben cubrir todo el rango de "
 "posibles tamaños de pantalla sin huecos ni solapamientos."
 
+#: ../../../static/js/StyledElements/PaginationInterface.js:101
+msgid "Total items count"
+msgstr "Recuento total de artículos"
+
+#: ../../../static/js/StyledElements/PaginationInterface.js:97
+msgid "Total pages"
+msgstr "Páginas totales"
+
+#: ../../../static/js/wirecloud/ui/Tutorial.js:76
+msgid "Tutorial instructions"
+msgstr "Instrucciones tutoriales"
+
 #: ../../../static/js/wirecloud/ui/TutorialSubMenu.js:29
 msgid "Tutorials"
 msgstr "Tutoriales"
@@ -210,4 +256,3 @@ msgstr "Atención"
 #: ../../../static/js/wirecloud/ui/AlertWindowMenu.js:73
 msgid "Yes"
 msgstr "Sí"
-

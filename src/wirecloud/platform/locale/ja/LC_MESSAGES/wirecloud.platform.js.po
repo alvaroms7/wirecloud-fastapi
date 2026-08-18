@@ -1,0 +1,3231 @@
+# Japanese translations for WireCloud.
+# Copyright (C) 2026 Future Internet Consulting and Development Solutions S.L.
+# This file is distributed under the same license as the WireCloud project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WireCloud VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-08-07 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:115
+msgid " smart"
+msgstr " スマート"
+
+#: ../../../static/js/wirecloud/Workspace.js:78
+#, python-format
+msgid "%(base)s (%(copy)s)"
+msgstr "%(base)s (%(copy)s)"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:252
+#, python-format
+msgid "%(behaviour_title)s's logs"
+msgstr "%(behaviour_title)s のログ"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:122
+#, python-format
+msgid "%(columns)s columns x %(rows)s rows"
+msgstr "%(columns)s columns x %(rows)s 行"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:119
+#, python-format
+msgid "%(columns)s%(smart)s columns"
+msgstr "%(columns)s%(smart)s 列"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:177
+#, python-format
+msgid "%(count)s error"
+msgstr "%(count)s エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1096
+#, python-format
+msgid "%(count)s nodes"
+msgstr "%(count)s ノード"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:195
+#, python-format
+msgid "%(errorCount)s error"
+msgstr "%(errorCount)s エラー"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:109
+#, python-format
+msgid "%(fullname)s (You)"
+msgstr "%(fullname)s (あなた)"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:563
+#, python-format
+msgid "%(operator_title)s's logs"
+msgstr "%(operator_title)s のログ"
+
+#: ../../../static/js/wirecloud/UserInterfaceManager.js:106
+#, python-format
+msgid "%(subTask)s: %(percentage)s%"
+msgstr "%(subTask)s: %(percentage)s%"
+
+#: ../../../static/js/wirecloud/UserInterfaceManager.js:91
+#, python-format
+msgid "%(task)s %(percentage)s%"
+msgstr "%(task)s %(percentage)s%"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentGroup.js:66
+#, python-format
+msgid "%(version)s (latest)"
+msgstr "%(version)s (最新)"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:1135
+#, python-format
+msgid "%(workspace_title)s - Wiring"
+msgstr "%(workspace_title)s - ワイヤーリング"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabView.js:372
+#, python-format
+msgid "(Overriden) Editing for screen size %(name)s"
+msgstr "(オーバーライド) 画面サイズの編集 %(name)s"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:195
+msgid ""
+"... <strong>his location should appear</strong> in the <em>Technician "
+"Location</em> widget."
+msgstr "... <strong>彼の所在地は</strong><em>技術者の位置</em>ウィジェットに<strong>表示されるはずです</strong>。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:192
+msgid ""
+"... <strong>the profile of the technician should appear</strong> in the "
+"<em>Technician Profile</em> widget."
+msgstr "... <em>技術者プロファイル</em>のウィジェットには、<strong>技術者のプロファイルが表示されます</strong>。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:189
+msgid "... and <strong>find him</strong> in the technician list."
+msgstr "... そして、技術者リストで <strong>彼を見つけてください</strong>。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:215
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:235
+msgid "... and the <strong>description</strong>."
+msgstr "... と<strong>説明</strong>。"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:153
+msgid "... to <em>YouTube Browser</em>'s <em>keyword</em> endpoint"
+msgstr "<em>YouTube Browser</em> の <em>キーワード</em> エンドポイントに"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:198
+msgid ""
+"... we want to be able to <strong>call him</strong> using the <em>Technician "
+"VideoCall</em> widget."
+msgstr "... <em>技術者 ビデオコール</em>のウィジェットを使って、<strong>彼に電話を</strong>できるようにしたい。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:377
+msgid "<a>Click here</a> for a quick guide/tutorial on how to use this new feature."
+msgstr "<a>ここをクリック</a>して、この新機能の使用方法に関するクイックガイド/チュートリアルをご覧ください。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:180
+msgid "<li>The <strong><t:title/></strong> <t:type/>.</li>"
+msgstr "<li><strong><t:title/></strong> <t:type/>.</li>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:162
+msgid ""
+"<p><span class=\"label label-success\">Congratulations!</span> you have "
+"finished your first <em>application mashup</em>.</p><p>As you can see, the "
+"<em>YouTube Browser</em> widget has been updated successfuly.</p>"
+msgstr ""
+"<p><span class=\"label label-success\">おめでとう！</span> "
+"最初の<em>アプリケーション・マッシュアップ</em>が完了しました。</p><p>ご覧のとおり、<em>YouTube Browser</em> "
+"ウィジェットが正常に更新されました。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:244
+msgid ""
+"<p><span class=\"label label-success\">Congratulations!</span> you have "
+"finished your first <em>behaviour oriented</em> wiring "
+"configuration.</p><p>This is the end of this tutorial, but you can play with "
+"the example dashboard and check if it follow the described behaviours.</p>"
+msgstr ""
+"<p><span class=\"label label-success\">おめでとう!</span> "
+"最初の<em>ビヘイビア指向</em>ワイヤーリング設定が完了しました。</p><p>これはこのチュートリアルの最後ですが、例のダッシュボードを試して、説明されているビヘイビアに従っているかどうかを確認できます。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:80
+msgid ""
+"<p><span class=\"label label-success\">Great!</span> That was easy, wasn't "
+"it?.</p><p>Let's continue adding the <em>Input Box</em> widget.</p>"
+msgstr ""
+"<p><span class=\"label label-success\">すばらしい！</span> "
+"簡単でしたね。</p><p><em>入力ボックス</em> ウィジェットを追加しましょう</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:184
+msgid ""
+"<p><span class=\"label label-success\">Great!</span> We are now ready to "
+"start. Let's start by identifying the behaviours we want to model.</p><div "
+"class=\"alert alert-info\">We have installed a mashup into your account "
+"(<strong>BOW-Tutorial</strong>), you can remove it safely.</div>"
+msgstr ""
+"<p><span class=\"label label-success\">すばらしい！</span> 私たちは今すぐ始めましょう。 "
+"私たちがモデルにしたいビヘイビアを特定することから始めましょう。</p><div class=\"alert alert-"
+"info\">アカウントにマッシュアップをインストールしました (<strong>BOW-Tutorial</strong>), "
+"安全に取り外すことができます。</div>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:241
+msgid ""
+"<p><span class=\"label label-success\">Great!</span> We have cleaned up this "
+"behaviour successfully. Have you noticed that when we removed the components "
+"also the affected connections were removed? That saved us, again, some steps "
+":).</p><p>Anyway, you can also directly remove connections in a similar way "
+"clicking on their <em>Remove</em> button (take into account that associated "
+"components are no removed automatically in that case)</p>"
+msgstr ""
+"<p><span class=\"label label-success\">すばらしい!</span> "
+"私たちはこのビヘイビアを正常にクリーンアップしました。 影響を受けた接続も削除されていることに気付きましたか？ "
+"それは私たちをもう一度、いくつかのステップを救いました:)。</p><p>とにかく、<em>削除</em> "
+"ボタンをクリックして同様の方法で直接接続を削除することもできます (その場合、関連コンポーネントは自動的に削除されません)</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:221
+msgid ""
+"<p><span class=\"label label-success\">Great!</span> We have finished our "
+"first behaviour. Have you noticed that when we added the connections also the"
+" affected components were added? That saved us some steps :).</p><p>Anyway, "
+"you can also directly add components in a similar way clicking on theirs "
+"<em>Add</em> button (take into account that associated connections are no "
+"added automatically in that case)</p><div class=\"alert alert-info\">The "
+"third and the fourth behaviour can be created the same way, so we are going "
+"to create them for you.</div>"
+msgstr ""
+"<p><span class=\"label label-success\">すばらしい！</span> 私たちは最初のビヘイビアを終えました。 "
+"接続を追加したときにも、影響を受けるコンポーネントが追加されていることに気付きましたか？ "
+"それは私たちにいくつかのステップを救いました:)。</p><p>とにかく、コンポーネントを<em>Add</em>ボタンをクリックして同様の方法で直接追加することもできます(その場合、関連する接続は自動的に追加されません)</p><div"
+" class=\"alert alert-info\">3番目と4番目のビヘイビアは同じ方法で作成することができるため、それらを作成します。</div>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:93
+msgid ""
+"<p>Also, some widgets can be parameterized through settings giving you the "
+"chance to use them for very general purporses.</p>"
+msgstr "<p>また、いくつかのウィジェットは、非常に一般的な目的のためにそれらを使用する機会を与える設定を介してパラメータ化することができます。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:205
+msgid ""
+"<p>As you can see, we already have all the connections and components needed "
+"for implementing all the identified behaviours. The first step for converting"
+" this wiring configuration into a behaviour oriented configuration is "
+"enabling the behaviour engine.</p>"
+msgstr ""
+"<p>ご覧のとおり、識別されたすべての行動を実装するために必要なすべての接続とコンポーネントが既に用意されています。 "
+"このワイヤーリング構成をビヘイビア指向の構成に変換するための最初のステップは、ビヘイビア・エンジンを有効にすることです。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:116
+msgid ""
+"<p>In the next steps, we are going to connect the <em>Input Box</em> and "
+"<em>YouTube Browser</em> widgets together. This will allow you to perform "
+"searches in the <em>YouTube Browser</em> through the <em>Input Box</em> "
+"widget.</p>"
+msgstr ""
+"<p>次のステップでは、<em>入力ボックス</em> と <em>YouTube Browser </em> ウィジェットを一緒に接続します。 "
+"これにより、<em>入力ボックス</em> ウィジェットから <em>YouTube Browser</em> で検索を実行できます。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:237
+msgid ""
+"<p>In this case there are components and connections that are not part of "
+"this behaviour. Let's remove them.</p>"
+msgstr "<p>この場合、このビヘイビアの一部ではないコンポーネントと接続が存在します。 それらを削除しましょう。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:115
+msgid ""
+"<p>In this sidebar you can find all the available widgets. In our example, we"
+" are interested in the widgets added to the workspace: the <em>YouTube "
+"Browser</em> and the <em>Input Box</em> (This last will be listed using the "
+"new name given in previous step).</p><p>You can also find <em>operators</em>."
+" These components can act as source, transformators or data targets as well "
+"as a combination of these behaviours.</p>"
+msgstr ""
+"<p>このサイドバーには、利用可能なすべてのウィジェットがあります。この例では、ワークスペースに追加されたウィジェット、つまり <em>YouTube "
+"Browser</em> と<em>入力ボックス</em>に注目しています "
+"(これは、以前の手順で指定した新しい名前を使用して表示されます)。</p><p><em>オペレータ</em>もあります。これらのコンポーネントは、これらのビヘイビアの組み合わせと同様に、ソース、トランスフォーマ、またはデータ・ターゲットとして機能します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:218
+msgid ""
+"<p>Now, we are going to add the components and the connections needed for "
+"implementing this behaviour taking them from the behaviour created by "
+"default.</p>"
+msgstr "<p>ここでは、このビヘイビアを実装するために必要なコンポーネントと接続を、デフォルトで作成されたビヘイビアから取得するために追加します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:71
+msgid ""
+"<p>Ok, widgets have been installed successfuly.</p><p>Next step is to add the"
+" <em>YouTube Browser</em> widget to the workspace.</p>"
+msgstr ""
+"<p>ウィジェットは正常にインストールされました。</p><p>次のステップは、<em>YouTube "
+"Browser</em>ウィジェットをワークスペースに追加することです。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:202
+msgid ""
+"<p>Once identified the desired behaviours, we're going to create them in the "
+"Wiring Editor view.</p>"
+msgstr "<p>必要なビヘイビアを特定したら、ワイヤーリング・エディタ・ビューでそれらのビヘイビアを作成します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:87
+msgid ""
+"<p>One of the main features of WireCloud is that you can edit your "
+"workspaces' layout not only by adding and removing widgets, but also moving, "
+"resizing, renaming, etc.</p>"
+msgstr ""
+"<p> WireCloud "
+"の主な機能の1つは、ウィジェットの追加や削除だけでなく、移動、サイズ変更、名前の変更など、ワークスペースのレイアウトを編集できることです。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:187
+msgid ""
+"<p>Our <strong>first behaviour (1 of 4)</strong> is going to be: Allow "
+"technician searches</p>"
+msgstr "<p><strong>最初のビヘイビア (1/4) は</strong>次のようになります: 技術者の検索を許可します</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:196
+msgid ""
+"<p>Our <strong>fourth and last behaviour (4 of 4)</strong> is going to be: "
+"Allow videocalls with the technicians.</p>"
+msgstr "<p><strong>第4のビヘイビア (4/4) は</strong>次のようになります: 技術者とビデオコールを許可します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:190
+msgid ""
+"<p>Our <strong>second behaviour (2 of 4)</strong> is going to be: Display "
+"techinican profiles.</p>"
+msgstr "<p><strong>第2のビヘイビア (2/4) は</strong>次のようになります: 技術者プロファイルを表示します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:193
+msgid ""
+"<p>Our <strong>third behaviour (3 of 4)</strong> is going to be: Locate "
+"technicians.</p>"
+msgstr "<p><strong>第3のビヘイビア (3/4)は</strong>次のようになります: 技術者を探します。</p>"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:82
+msgid "<p>Showing results for <b><t:corrected_query/></b></p>"
+msgstr "<p><b><t:corrected_query/></b> の結果を表示</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:230
+msgid ""
+"<p>The last step is cleaning up our first behaviour as it currently contains "
+"all the components and connections of the wiring configuration. We have to "
+"convert it into our real first behaviour: Allow techinican "
+"searches.</p><p>We're going to start by updating the behaviour's details.</p>"
+msgstr ""
+"<p>最後のステップは、ワイヤーリング構成のすべてのコンポーネントと接続が現在含まれているため、最初のビヘイビアをクリーンアップすることです。 "
+"私たちはそれを本当の最初のビヘイビアに変換しなければなりません: "
+"技術者の検索を許可する.</p><p>ビヘイビアの詳細を更新することから始めます。</p>"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:186
+msgid ""
+"<p>These components only exist within the current behaviour "
+"<strong><t:title/></strong>:</p><ul><t:components/></ul><p>Would you like to "
+"continue?</p>"
+msgstr ""
+"<p>これらのコンポーネントは、現在のビヘイビア "
+"<strong><t:title/></strong>:</p><ul><t:components/></ul>内にのみ存在します "
+"<p>続行しますか？</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:66
+msgid ""
+"<p>This is the <em>Editor</em> view. In this view, you can use and modify "
+"your workspaces. Currently you are in a newly created workspace: <em>Basic "
+"concepts tutorial</em>. This workspace is empty, so the first step is to add "
+"some widgets.</p><div class=\"alert alert-info\"><p>In next steps we need "
+"some widgets, so we are going to install them for you. You can safely "
+"uninstall these widgets after finishing the tutorial.</p></div>"
+msgstr ""
+"<p>これは<em>エディタ</em> ビューです。このビューではワークスペースを使用および変更できます。 "
+"現在、あなたは新しく作成されたワークスペースにいます: <em>基本概念のチュートリアル</em>. "
+"このワークショップは空なので、最初にウィジェットを追加します。</p><div class=\"alert alert-"
+"info\"><p>次のステップではいくつかのウィジェットが必要なので、それらをインストールします。 "
+"チュートリアルの終了後、これらのウィジェットを安全にアンインストールできます。</p></div>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:111
+msgid ""
+"<p>This is the <em>Wiring Editor</em> view.</p><p>Here you can wire widgets "
+"and operators together turning your workspace into and <em>application "
+"mashup</em>.</p>"
+msgstr ""
+"<p>これは <em>ワイヤーリング・エディタ</em>のビューです。</p><p>ここでは、"
+"ウィジェットとオペレータを接続して、ワークスペースを<em>アプリケーション・"
+"マッシュアップ</em>にすることができます。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:164
+msgid ""
+"<p>This is the end of this tutorial. Remember that you can always go to the "
+"Tutorial menu for others.</p>"
+msgstr "<p>これはこのチュートリアルの最後です。 いつでも他のチュートリアル・メニューに行くことができます。</p>"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:232
+msgid ""
+"<p>This operator is currently not available. You or an administrator probably"
+" uninstalled it.</p><h5>Suggestions:</h5><ul><li>Remove the "
+"operator.</li><li>Reinstall the same version of the operator.</li><li>Or "
+"install another version of the operator and then use the "
+"<em>Upgrade/Downgrade</em> option.</li></ul>"
+msgstr ""
+"<p>このオペレータは現在使用できません。 "
+"管理者または管理者がおそらくアンインストールしました。</p><h5>対応:</h5><ul><li>オペレータを削除します.</li><li>同じバージョンのオペレーターを再インストールしてください.</li><li>または、オペレーターの別のバージョンをインストールし、<em>アップグレード/ダウングレード</em>オプションを使用してください。</li></ul>"
+
+#: ../../../static/js/wirecloud/Widget.js:371
+msgid ""
+"<p>This widget is currently not available. You or an administrator probably "
+"uninstalled it.</p><h5>Suggestions:</h5><ul><li>Remove this widget from the "
+"dashboard</li><li>Reinstall the appropiated version of the widget</li><li>Or "
+"install another version of the widget and then use the "
+"<em>Upgrade/Downgrade</em> option</li></ul>"
+msgstr ""
+"<p>このウィジェットは現在利用できません。 "
+"管理者または管理者がおそらくアンインストールしました。</p><h5>対処:</h5><ul><li>このウィジェットをダッシュボードから削除します</li><li>ウィジェットの適切なバージョンを再インストールしてください</li><li>または、別のバージョンのウィジェットをインストールしてから、<em>アップグレード/ダウングレード</em>オプションを使用してください</li></ul>"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:114
+#, python-format
+msgid ""
+"<p>We couldn't find anything for your search - "
+"<b>%(keywords)s.</b></p><p>Suggestions:</p><ul><li>Make sure all words are "
+"spelled correctly.</li><li>Try different keywords.</li><li>Try more general "
+"keywords.</li></ul>"
+msgstr ""
+"<p>検索で何も見つかりませんでした - "
+"<b>%(keywords)s.</b></p><p>対処:</p><ul><li>すべての単語のスペルが正しいことを確認してください。</li><li>異なるキーワードを試してみてください。</li><li>より一般的なキーワードを試してください。</li></ul>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:63
+msgid ""
+"<p>Welcome to WireCloud!!</p><p>This tutorial will show you the basic "
+"concepts behind WireCloud.</p>"
+msgstr "<p> WireCloudへようこそ!! </p> <p>このチュートリアルでは、WireCloudの基本概念を紹介します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:180
+msgid ""
+"<p>Welcome to this Step-by-Step Interactive Tutorial!</p><p>In this tutorial "
+"you will learn how to build a <strong>behaviour oriented</strong> wiring "
+"configuration, a new feature added in WireCloud v0.8.0.</p><p>To do so, we "
+"are going to convert an application mashup created using a wiring "
+"configuration that doesn't use the behaviour engine to one that does.</p>"
+msgstr ""
+"<p>このステップ・バイ・ステップのインタラクティブ・チュートリアルへようこそ！</p><p>このチュートリアルでは、WireCloud v0.8.0 "
+"に追加された<strong>ビヘイビア指向の</strong>ワイヤーリング設定を構築する方法を学習します。</p><p>そのために、ビヘイビア・エンジンを使用しないワイヤーリング構成を使用して作成されたアプリケーション・マッシュアップを、そのようなものに変換します。</p>"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:212
+msgid ""
+"<p>When you enable the behaviour engine, a default behaviour will be created "
+"with all existing components and connections.</p><p>Let's continue "
+"<strong>creating the second behaviour</strong> (Display technician "
+"profiles).</p>"
+msgstr ""
+"<p>ビヘイビア・エンジンを有効にすると、既定のビヘイビアがすべての既存の"
+"コンポーネントと接続で作成されます。</p><p>続いて、<strong>2つ目のビヘイビアを"
+"作成します</strong>（技術者プロファイルの表示）。</p>"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:48
+msgid ""
+"<p>WireCloud is not connected with any "
+"marketplace.</p><p>Suggestions:</p><ul><li>Connect WireCloud with a new "
+"marketplace.</li><li>Go to the my resources view instead</li></ul>"
+msgstr "<p>WireCloudはどのマーケットにも接続していません。</p><p>対応:</p><ul><li>WireCloudを新しいマーケットプレイスに接続します。</li><li>代わりに自分のリソースビューに移動する</li></ul>"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:81
+msgid ""
+"<strong>Warning!</strong> Configured and stored data in your workspace "
+"(properties and preferences except passwords) will be shared by default!"
+msgstr ""
+"<strong>警告!</strong> あなたのワークスペースに設定され、保存されたデータ (パスワード以外のプロパティと設定) "
+"は、デフォルトで共有されます！"
+
+#: ../../../static/js/WirecloudAPI/WirecloudAPICommon.js:230
+msgid ""
+"<ul><li><b>File:</b> <t:file/></li><li><b>Line: </b><t:line/></li></ul><p>See"
+" the <a href=\"http://webmasters.stackexchange.com/questions/8525/how-to-"
+"open-the-javascript-console-in-different-browsers\" target=\"_blank\">browser"
+" console</a> for more details</p>"
+msgstr ""
+"<ul><li><b>ファイル:</b> <t:file/></li><li><b>ライン: "
+"</b><t:line/></li></ul><p>詳細については、<a "
+"href=\"http://webmasters.stackexchange.com/questions/8525/how-to-open-the-"
+"javascript-console-in-different-browsers\" target=\"_blank\">ブラウザのコンソール</a> "
+"を参照してください。</p>"
+
+#: ../../../static/js/wirecloud/ui/EmbedCodeWindowMenu.js:65
+msgid "Accept"
+msgstr "同意"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:50
+msgid "Actions"
+msgstr "アクション"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1260
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1365
+msgid "Active"
+msgstr "アクティブ"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:231
+msgid "Active the first behaviour"
+msgstr "最初のビヘイビアをアクティブにする"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:217
+msgid "Active the second behaviour"
+msgstr "2番目のビヘイビアをアクティブにする"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:73
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:481
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:491
+msgid "Add"
+msgstr "追加"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2220
+msgid "Add Group"
+msgstr "グループの追加"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:181
+msgid "Add a person, a group or an organization"
+msgstr "個人、グループ、または組織を追加する"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1709
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1992
+msgid "Add a user..."
+msgstr "ユーザーを追加..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:943
+msgid "Add child group"
+msgstr "子グループを追加する"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:456
+msgid "Add components"
+msgstr "コンポーネントを追加"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2162
+#, python-format
+msgid "Add group to \"%(parent)s\""
+msgstr "「%(parent)s」にグループを追加"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:93
+msgid "Add marketplace"
+msgstr "マーケットプレイスを追加"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:65
+msgid "Add new marketplace"
+msgstr "新しいマーケットプレイスを追加"
+
+#: ../../../static/js/wirecloud/ui/ComponentSidebar.js:64
+msgid "Add to workspace"
+msgstr "ワークスペースに追加"
+
+#: ../../../static/js/wirecloud/MarketManager.js:114
+msgid "Adding marketplace"
+msgstr "マーケットプレイスの追加"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:128
+msgid "Admin Panel"
+msgstr "管理者パネル"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:155
+msgid "Administration Panel"
+msgstr "管理パネル"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:64
+msgid "Advanced"
+msgstr "アドバンスド"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:197
+msgid "After <strong>selecting a technician</strong> ..."
+msgstr "<strong>技術者を選択した</strong>後 ..."
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:159
+msgid "All"
+msgstr "全て"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:234
+msgid "Allow technician searches"
+msgstr "技術者の検索を許可します"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:38
+msgid "Allow to move this widget"
+msgstr "このウィジェットの移動を許可します"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:226
+msgid "Allow to stablish a videocall with the selected technician."
+msgstr "選択した技術者とのビデオ通話を確立することを許可します。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:226
+msgid "Allow videocalls with the technicians"
+msgstr "技術者とビデオコールを許可します"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:90
+msgid "Allows the user to clone workspaces owned by other users."
+msgstr "ユーザーが他のユーザーが所有するワークスペースのクローンを作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:309
+msgid "Allows the user to create a group."
+msgstr "ユーザーがグループを作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:260
+msgid "Allows the user to create a marketplace."
+msgstr "ユーザーがマーケットプレイスを作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:285
+msgid "Allows the user to create a user."
+msgstr "ユーザーがユーザーを作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:66
+msgid "Allows the user to create a workspace."
+msgstr "ユーザーがワークスペースを作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:333
+msgid "Allows the user to create an organization."
+msgstr "ユーザーが組織を作成できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:186
+msgid "Allows the user to create operators in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースにオペレーターを作成できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:126
+msgid "Allows the user to create tabs in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースにタブを作成できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:150
+msgid "Allows the user to create widgets in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースにウィジェットを作成できるようになります。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:210
+msgid "Allows the user to create wiring in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースに配線を作成できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:247
+msgid "Allows the user to delete all versions of a component at once"
+msgstr "ユーザーがコンポーネントのすべてのバージョンを一度に削除できるようにします"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:327
+msgid "Allows the user to delete groups."
+msgstr "ユーザーがグループを削除できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:272
+msgid "Allows the user to delete marketplaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するマーケットプレイスを削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:192
+msgid "Allows the user to delete operators in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のオペレーターを削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:351
+msgid "Allows the user to delete organizations."
+msgstr "ユーザーが組織を削除できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:138
+msgid "Allows the user to delete tabs in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のタブを削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:303
+msgid "Allows the user to delete users."
+msgstr "ユーザーがユーザーを削除できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:168
+msgid "Allows the user to delete widgets in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のウィジェットを削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:222
+msgid "Allows the user to delete wiring in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内の配線を削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:84
+msgid "Allows the user to delete workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースを削除できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:321
+msgid "Allows the user to edit groups."
+msgstr "ユーザーがグループを編集できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:345
+msgid "Allows the user to edit organizations."
+msgstr "ユーザーが組織を編集できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:198
+msgid ""
+"Allows the user to edit preferences of operators in workspaces owned by other"
+" users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のオペレーターの設定を編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:144
+msgid ""
+"Allows the user to edit preferences of tabs in workspaces owned by other "
+"users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のタブの設定を編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:174
+msgid ""
+"Allows the user to edit preferences of widgets in workspaces owned by other "
+"users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のウィジェットの設定を編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:120
+msgid "Allows the user to edit preferences of workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースの設定を編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:204
+msgid ""
+"Allows the user to edit properties of operators in workspaces owned by other "
+"users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のオペレーターのプロパティを編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:180
+msgid ""
+"Allows the user to edit properties of widgets in workspaces owned by other "
+"users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のウィジェットのプロパティを編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:132
+msgid "Allows the user to edit tabs in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースのタブを編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:297
+msgid "Allows the user to edit users."
+msgstr "ユーザーがユーザーを編集できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:162
+msgid "Allows the user to edit widgets in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のウィジェットを編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:216
+msgid "Allows the user to edit wiring in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内の配線を編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:78
+msgid "Allows the user to edit workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースを編集できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:229
+msgid "Allows the user to install components."
+msgstr "ユーザーがコンポーネントをインストールできるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:114
+msgid "Allows the user to merge workspaces owned by other users."
+msgstr "ユーザーが他のユーザーが所有するワークスペースを結合できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:278
+msgid "Allows the user to publish marketplaces owned by other users."
+msgstr "ユーザーが他のユーザーが所有するマーケットプレイスを公開できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:102
+msgid "Allows the user to publish workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペースを公開できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:96
+msgid "Allows the user to publish your workspaces."
+msgstr "ユーザーがワークスペースを公開できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:108
+msgid "Allows the user to share workspaces owned by other users."
+msgstr "ユーザーが他のユーザーが所有するワークスペースを共有できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:59
+msgid ""
+"Allows the user to switch to another user. This will make the user gain all "
+"permissions of the switched user (and looses all permissions of the current "
+"user, except for this one)."
+msgstr ""
+"ユーザーが別のユーザーに切り替えることができます。これにより、ユーザーは切り替えられたユーザーのすべての権限を取得します "
+"(そして、このユーザーを除く現在のユーザーのすべての権限が失われます)。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:241
+msgid "Allows the user to uninstall one version of a component."
+msgstr "ユーザーがコンポーネントの 1 つのバージョンをアンインストールできるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:253
+msgid "Allows the user to update all versions of a component at once"
+msgstr "ユーザーがコンポーネントのすべてのバージョンを一度に更新できるようにします"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:235
+msgid "Allows the user to view all components."
+msgstr "ユーザーがすべてのコンポーネントを表示できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:315
+msgid "Allows the user to view all groups."
+msgstr "ユーザーがすべてのグループを表示できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:266
+msgid "Allows the user to view all marketplaces."
+msgstr "ユーザーがすべてのマーケットプレイスを表示できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:339
+msgid "Allows the user to view all organizations."
+msgstr "ユーザーはすべての組織を表示できます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:291
+msgid "Allows the user to view all users."
+msgstr "ユーザーがすべてのユーザーを表示できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:72
+msgid "Allows the user to view all workspaces."
+msgstr "ユーザーがすべてのワークスペースを表示できるようにします。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:156
+msgid "Allows the user to view widgets in workspaces owned by other users."
+msgstr "ユーザーは、他のユーザーが所有するワークスペース内のウィジェットを表示できます。"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:165
+msgid "Anyone on the Internet can find and access this dashboard."
+msgstr "インターネット上の誰でもこのダッシュボードを見つけてアクセスできます。"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:166
+msgid ""
+"Anyone on the Internet can find this dashboard. Only registered users can "
+"access it."
+msgstr "インターネット上の誰でもこのダッシュボードを見つけることができます。登録ユーザーのみがアクセスできます。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1551
+#, python-format
+msgid "Are you sure you want to delete group %(name)s? This action cannot be undone."
+msgstr "グループ %(name)s を削除してもよろしいですか?この操作は元に戻すことができません。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2042
+#, python-format
+msgid ""
+"Are you sure you want to delete organization %(name)s? This action cannot be "
+"undone."
+msgstr "組織 %(name)s を削除してもよろしいですか?この操作は元に戻すことができません。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1452
+#, python-format
+msgid ""
+"Are you sure you want to delete user %(username)s? This action cannot be "
+"undone."
+msgstr "ユーザー %(username)s を削除してもよろしいですか?この操作は元に戻すことができません。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1023
+#, python-format
+msgid "Are you sure you want to remove \"%(name)s\" from its parent group?"
+msgstr "「%(name)s」を親グループから削除してもよろしいですか?"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:48
+msgid "Authors"
+msgstr "著者"
+
+#: ../../../static/js/wirecloud/ui/EmbedCodeWindowMenu.js:49
+msgid "Auto"
+msgstr "自動"
+
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:88
+msgid "Available versions"
+msgstr "使用可能なバージョン"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:80
+#, python-format
+msgid "Avatar of %(username)s"
+msgstr "%(username)sのアバター"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:183
+msgid "BOW Tutorial"
+msgstr "BOW チュートリアル"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:138
+#, python-format
+msgid "Back to %(user)s"
+msgstr "%(user)s に戻る"
+
+#: ../../../static/js/wirecloud/constants.js:59
+msgid "Bad Gateway"
+msgstr "悪いゲートウェイ"
+
+#: ../../../static/js/wirecloud/constants.js:35
+msgid "Bad Request"
+msgstr "要求が正しくありません"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:61
+msgid "Basic concepts"
+msgstr "基本概念"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:589
+msgid "Behaviour"
+msgstr "ビヘイビア"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:179
+msgid "Behaviour Oriented Wiring"
+msgstr "ビヘイビア指向のワイヤーリング"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:180
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:184
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:202
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:205
+msgid "Behaviour Oriented Wiring Tutorial"
+msgstr "ビヘイビア指向のワイヤーリング・チュートリアル"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:273
+msgid "Behaviour settings"
+msgstr "動作設定"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:141
+#, python-format
+msgid "Behaviour: %(title)s"
+msgstr "動作: %(title)s"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:67
+msgid "Block connections"
+msgstr "接続をブロック"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:66
+msgid "Block widgets"
+msgstr "ウィジェットをブロック"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:151
+msgid "Bottom"
+msgstr "下"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:76
+msgid ""
+"By typing \"browser\" we can filter widgets that contains in their name or "
+"description these words"
+msgstr "\"browser\" と入力すると、名前や説明にこれらの単語を含むウィジェットをフィルタリングできます"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:127
+msgid "Can view"
+msgstr "見ることができる"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:63
+#: ../../../static/js/wirecloud/ui/PreferencesWindowMenu.js:236
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:221
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:136
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:395
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1027
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1783
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1951
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2248
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:100
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:112
+msgid "Center"
+msgstr "センター"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:39
+msgid "Clear filters"
+msgstr "フィルターをクリア"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:216
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:236
+msgid "Click <em>Accept</em>"
+msgstr "<em>設定</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:84
+msgid "Click <em>Add to workspace</em>"
+msgstr "<em>ワークスペースを追加</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:219
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:220
+msgid "Click <em>Add</em>"
+msgstr "<em>追加</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:158
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:243
+msgid "Click <em>Back</em>"
+msgstr "<em>戻る</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:213
+msgid "Click <em>Create behaviour</em>"
+msgstr "<em>ビヘイビアを作成をクリックします</em>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:143
+msgid "Click <em>Find components</em> to close the sidebar"
+msgstr "サイドバーを閉じるには <em>コンポーネントを検索</em> をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:112
+msgid "Click <em>Find components</em> to open the sidebar"
+msgstr "サイドバーを開くには、<em>コンポーネントを検索</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:206
+msgid "Click <em>List Behaviours</em>"
+msgstr "<em>ビヘイビア・リスト</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:232
+msgid "Click <em>Preferences</em>"
+msgstr "<em>設定</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:238
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:239
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:240
+msgid "Click <em>Remove</em>"
+msgstr "<em>削除</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:91
+msgid "Click <em>Rename</em>"
+msgstr "<em>リネーム</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:95
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:233
+msgid "Click <em>Settings</em>"
+msgstr "<em>設定</em> をクリック"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:114
+msgid "Click <em>Widgets</em>"
+msgstr "<em>ウィジェット</em> をクリックしてください"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:203
+msgid "Click <em>Wiring</em>"
+msgstr "<em>ワイヤーリング</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:108
+msgid "Click <em>Wiring</em> to continue"
+msgstr "続行するには <em>ワイヤーリング</em> をクリックしてください"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:103
+msgid "Click here to submit"
+msgstr "ここをクリックして設定してください"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:74
+msgid "Click the <em>Add components</em> button"
+msgstr "<em>コンポーネントを追加</em> ボタンをクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:72
+msgid "Click the <em>Edit</em> button"
+msgstr "<em>編集</em> ボタンをクリックします"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:89
+msgid "Clone Workspaces"
+msgstr "ワークスペースのクローンを作成する"
+
+#: ../../../static/js/wirecloud/ui/LogWindowMenu.js:50
+msgid "Close"
+msgstr "クローズ"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:85
+msgid "Close the component sidebar"
+msgstr "コンポーネントのサイドバーを閉じる"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1600
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1942
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1943
+msgid "Codename"
+msgstr "コードネーム"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:471
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:502
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:54
+msgid "Collapse"
+msgstr "折り畳む"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:40
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:76
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:143
+msgid "Columns"
+msgstr "列"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:150
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:592
+#, python-format
+msgid "Component: %(title)s"
+msgstr "コンポーネント: %(title)s"
+
+#: ../../../static/js/wirecloud/constants.js:44
+msgid "Conflict"
+msgstr "コンフリクト"
+
+#: ../../../static/js/wirecloud/constants.js:34
+msgid "Connection Refused"
+msgstr "接続拒否"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:108
+msgid "Connection error: No resource retrieved."
+msgstr "接続エラー: リソースが取得されませんでした."
+
+#: ../../../static/js/wirecloud/wiring/Connection.js:152
+msgid "Connection's logs"
+msgstr "接続のログ"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:152
+msgid "Context"
+msgstr "コンテキスト"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:54
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:362
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:99
+msgid "Continue"
+msgstr "続ける"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:53
+msgid "Copy Workspace"
+msgstr "ワークスペースのコピー"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:91
+#, python-format
+msgid "Copy of %(title)s"
+msgstr "%(title)s のコピー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1107
+msgid "Could not build hierarchy"
+msgstr "階層を構築できませんでした"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2101
+msgid "Could not find root organization node"
+msgstr "ルート組織ノードが見つかりませんでした"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentGroup.js:80
+msgid "Create"
+msgstr "作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:551
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1525
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1529
+msgid "Create Group"
+msgstr "グループの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:308
+msgid "Create Groups"
+msgstr "グループの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:259
+msgid "Create Marketplace"
+msgstr "マーケットプレイスの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1264
+msgid "Create New User"
+msgstr "新しいユーザーの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:185
+msgid "Create Operators"
+msgstr "演算子の作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:564
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1871
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1875
+msgid "Create Organization"
+msgstr "組織の作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:332
+msgid "Create Organizations"
+msgstr "組織の作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:538
+msgid "Create User"
+msgstr "ユーザーの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:284
+msgid "Create Users"
+msgstr "ユーザーの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:149
+msgid "Create Widgets"
+msgstr "ウィジェットの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:209
+msgid "Create Wiring"
+msgstr "配線の作成"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:53
+msgid "Create Workspace"
+msgstr "ワークスペースの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:125
+msgid "Create Workspace Tabs"
+msgstr "ワークスペースタブの作成"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:65
+msgid "Create Workspaces"
+msgstr "ワークスペースの作成"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:342
+msgid "Create behaviour"
+msgstr "ビヘイビアを作成"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:79
+#, python-format
+msgid "Creating a %(owner)s/%(title)s workspace"
+msgstr "%(owner)s/%(title)s ワークスペースの作成"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:77
+#, python-format
+msgid "Creating a %(owner)s/%(title)s workspace using %(mashup)s as template"
+msgstr "%(mashup)s をテンプレートとして使用して %(owner)s/%(title)s ワークスペースを作成する"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:82
+#, python-format
+msgid "Creating a new workspace using %(mashup)s as template"
+msgstr "%(mashup)s をテンプレートとして使用して新しいワークスペースを作成します"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:145
+msgid "Creation date"
+msgstr "作成日"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:41
+msgid "Current User:"
+msgstr "現在のユーザー:"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:41
+msgid "Current value"
+msgstr "現在の値"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:55
+msgid ""
+"Currently, you do not have access to any component. You can get components "
+"using the Marketplace view or by uploading components manually using the "
+"Upload button."
+msgstr ""
+"現在、どのコンポーネントにもアクセスすることはできません。 マーケットプレイス・ビューを使用するか、\"アップロード\" "
+"ボタンを使用してコンポーネントを手動でアップロードしてコンポーネントを取得できます。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ConnectionPrefs.js:35
+msgid "Customize"
+msgstr "カスタマイズ"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:42
+msgid "Default value"
+msgstr "デフォルト値"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:607
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:650
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:693
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1782
+msgid "Delete"
+msgstr "削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:246
+msgid "Delete Components"
+msgstr "コンポーネントの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:326
+msgid "Delete Groups"
+msgstr "グループの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:271
+msgid "Delete Marketplaces"
+msgstr "マーケットプレイスの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:191
+msgid "Delete Operators"
+msgstr "演算子の削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:350
+msgid "Delete Organizations"
+msgstr "組織の削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:302
+msgid "Delete Users"
+msgstr "ユーザーの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:167
+msgid "Delete Widgets"
+msgstr "ウィジェットの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:221
+msgid "Delete Wiring"
+msgstr "配線の削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:137
+msgid "Delete Workspace Tabs"
+msgstr "ワークスペースタブの削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:83
+msgid "Delete Workspaces"
+msgstr "ワークスペースの削除"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:143
+msgid "Delete cascade"
+msgstr "カスケードを削除"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:112
+msgid "Delete marketplace"
+msgstr "マーケットプレイスを削除"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:178
+#, python-format
+msgid "Deleting %(title)s (%(uri)s)"
+msgstr "%(title)s (%(uri)s) を削除"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:167
+#, python-format
+msgid "Deleting all versions of %(title)s (%(group_id)s)"
+msgstr "%(title)s (%(group_id)s) のすべてのバージョンを削除"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:271
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:84
+msgid "Description"
+msgstr "説明"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:46
+msgid "Detailed description (Markdown)"
+msgstr "詳細な説明 (Markdown)"
+
+#: ../../../static/js/wirecloud/ui/LogWindowMenu.js:119
+msgid "Details"
+msgstr "詳細"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:397
+msgid "Disable"
+msgstr "無効化"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:38
+msgid "Disallow to move this widget"
+msgstr "このウィジェットの移動を禁止する"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:214
+msgid "Display technician profiles"
+msgstr "技術者プロファイルの表示"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:215
+msgid ""
+"Display technician profiles when they are selected in other widgets, e.g. in "
+"the technician list widget."
+msgstr "技術者プロファイルが他のウィジェットで選択されたときに表示します。 例えば、技術者リストのウィジェットに表示されます。"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:101
+msgid "Django Admin panel"
+msgstr "Django 管理パネル"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:392
+#, python-format
+msgid ""
+"Do you really want to remove all versions of the (vendor: \"%(vendor)s\", "
+"name: \"%(name)s\") resource?"
+msgstr "本当に (ベンダー: \"%(vendor)s\", 名前: \"%(name)s\") リソースのすべてのバージョンを削除しますか？"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:368
+#, python-format
+msgid ""
+"Do you really want to remove the \"%(name)s\" (vendor: \"%(vendor)s\", "
+"version: \"%(version)s\") resource?"
+msgstr "本当に \"%(name)s\" (ベンダー: \"%(vendor)s\", バージョン \"%(version)s\") リソースを削除しますか？"
+
+#: ../../../static/js/WirecloudAPI/DashboardManagementAPI.js:143
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:100
+#, python-format
+msgid "Do you really want to remove the \"%(name)s\" workspace?"
+msgstr "本当にワークスペース \"%(name)s\" を削除しますか？"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:114
+#, python-format
+msgid "Do you really want to remove the marketplace \"%(marketName)s\"?"
+msgstr "本当にマーケットプレイス \"%(marketName)s\" を削除したいですか？"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:432
+#, python-format
+msgid ""
+"Do you really want to update \"%(name)s\" (vendor: \"%(vendor)s\", version: "
+"\"%(version)s\") in all editable workspaces?"
+msgstr ""
+"すべての編集可能なワークスペースで「%(name)s」(ベンダー: 「%(vendor)s」、バージョン: 「%(version)s」) "
+"を本当に更新しますか?"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:85
+msgid "Documentation"
+msgstr "ドキュメンテーション"
+
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:47
+msgid "Downgrade"
+msgstr "ダウングレード"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ConnectionHandle.js:66
+msgid "Drag & Drop"
+msgstr "ドラッグ＆ドロップ"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:147
+msgid ""
+"Drag &amp; drop a new connection from <em>Search Box</em>'s <em>keyword</em> "
+"endpoint ..."
+msgstr "<em>検索ボックス</em>の<em>キーワード</em> エンドポイントから新しい接続をドロップ&ドロップする..."
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:122
+msgid "Drag &amp; drop the <em>Input Box</em> widget"
+msgstr "<em>入力ボックス</em> ウィジェットをドラック＆ドロップします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:135
+msgid "Drag &amp; drop the <em>YouTube Browser</em> widget"
+msgstr "<em>YouTube Browser</em> ウィジェットをドラック＆ドロップします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:89
+msgid "Drag &amp; drop to move the widget"
+msgstr "ウィジェットを移動するためにドラック＆ドロップ"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:88
+msgid "Drag &amp; drop to resize the widget"
+msgstr "ウィジェットのサイズを変更するためにドラック＆ドロップ"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:89
+msgid "Duplicate"
+msgstr "重複"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:598
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:641
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:870
+msgid "Edit"
+msgstr "編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1584
+msgid "Edit Group"
+msgstr "グループの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:320
+msgid "Edit Groups"
+msgstr "グループの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:197
+msgid "Edit Operator Preferences"
+msgstr "オペレータ設定の編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:203
+msgid "Edit Operator Properties"
+msgstr "オペレータのプロパティの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:344
+msgid "Edit Organizations"
+msgstr "組織の編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:143
+msgid "Edit Tab Preferences"
+msgstr "「編集」タブの設定"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1335
+msgid "Edit User"
+msgstr "ユーザーの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:296
+msgid "Edit Users"
+msgstr "ユーザーの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:173
+msgid "Edit Widget Preferences"
+msgstr "ウィジェット設定の編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:179
+msgid "Edit Widget Properties"
+msgstr "ウィジェットのプロパティを編集する"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:161
+msgid "Edit Widgets"
+msgstr "ウィジェットの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:215
+msgid "Edit Wiring"
+msgstr "配線の編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:119
+msgid "Edit Workspace Preferences"
+msgstr "ワークスペース設定の編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:131
+msgid "Edit Workspace Tabs"
+msgstr "ワークスペースタブの編集"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:77
+msgid "Edit Workspaces"
+msgstr "ワークスペースの編集"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabView.js:374
+#, python-format
+msgid "Editing for screen size %(name)s"
+msgstr "画面サイズ %(name)s の編集"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:44
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1256
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1353
+msgid "Email"
+msgstr "Eメール"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:76
+msgid "Embed"
+msgstr "埋め込み"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:77
+msgid "Embed Code"
+msgstr "埋め込みコード"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:68
+msgid "Embed used widgets/operators"
+msgstr "使用されたウィジェット/オペレータを埋め込む"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:60
+msgid "Empty Marketplace!"
+msgstr "空のマーケットプレイス!"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:54
+msgid "Empty resource list"
+msgstr "空のリソース・リスト"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceListItems.js:42
+msgid "Empty workspace list"
+msgstr "空のワークスペース・リスト"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:335
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:411
+msgid "Enable"
+msgstr "有効化"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:208
+msgid "Enable the behaviour engine"
+msgstr "ビヘイビア・エンジンを有効化"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:374
+msgid "Enable the behaviours to enjoy with a new way to handle connections."
+msgstr "ビヘイビアが新しい方法で接続を処理できるようにします。"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:92
+msgid ""
+"Enter a new name for the widget (e.g <em>Search</em>) and press "
+"<kbd>Enter</kbd> or click outside the title"
+msgstr "ウィジェットの新しい名前を入力し (例 <em>Search</em>) <kbd>Enter</kbd> を押すか、タイトルの外側をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:160
+msgid "Enter a search keyword and press <kbd>Enter</kbd>"
+msgstr "検索キーワードを入力し、<kbd> Enter </kbd> を押します"
+
+#: ../../../static/js/wirecloud/ui/PreferencesWindowMenu.js:221
+msgid "Error"
+msgstr "エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2240
+msgid "Error adding group to organization"
+msgstr "組織にグループを追加するときにエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1531
+msgid "Error creating group"
+msgstr "グループ作成エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1877
+msgid "Error creating organization"
+msgstr "組織の作成中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1306
+msgid "Error creating user"
+msgstr "ユーザー作成エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1553
+msgid "Error deleting group"
+msgstr "グループ削除エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2044
+msgid "Error deleting organization"
+msgstr "組織の削除中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1454
+msgid "Error deleting user"
+msgstr "ユーザー削除エラー"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:124
+#: ../../../static/js/wirecloud/WorkspaceCatalogue.js:78
+#, python-format
+msgid "Error loading %(resource)s metadata"
+msgstr "%(resource)s のメタデータの読み込み中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/core.js:388
+msgid "Error loading WireCloud"
+msgstr "WireCloud の読み込みエラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1773
+msgid "Error loading group data"
+msgstr "グループデータのロード中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1493
+msgid "Error loading groups. Please try again."
+msgstr "グループのロード中にエラーが発生しました。もう一度試してください。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2121
+msgid "Error loading organization hierarchy"
+msgstr "組織階層の読み込みエラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1839
+msgid "Error loading organizations. Please try again."
+msgstr "組織の読み込み中にエラーが発生しました。もう一度試してください。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1443
+msgid "Error loading user data"
+msgstr "ユーザーデータの読み込みエラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1755
+msgid "Error loading users"
+msgstr "ユーザーの読み込みエラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1220
+msgid "Error loading users. Please try again."
+msgstr "ユーザーの読み込み中にエラーが発生しました。もう一度試してください。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2082
+msgid "Error parsing organization data"
+msgstr "組織データの解析エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2148
+msgid "Error reloading organization hierarchy"
+msgstr "組織階層の再ロード中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1049
+msgid "Error removing parent"
+msgstr "親の削除中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1652
+msgid "Error updating group"
+msgstr "グループの更新中にエラーが発生しました"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1412
+msgid "Error updating user"
+msgstr "ユーザー更新エラー"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:427
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1030
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1372
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1604
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1786
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1902
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2168
+msgid "Error:"
+msgstr "エラー:"
+
+#: ../../../static/js/wirecloud/wiring/OperatorTargetEndpoint.js:86
+#: ../../../static/js/wirecloud/wiring/OperatorTargetEndpoint.js:101
+#: ../../../static/js/wirecloud/wiring/WidgetTargetEndpoint.js:90
+#: ../../../static/js/wirecloud/wiring/WidgetTargetEndpoint.js:102
+#, python-format
+msgid ""
+"Exception catched while processing an event that reached the "
+"\"%(inputendpoint)s\" input endpoint"
+msgstr "\"%(inputendpoint)s\" 入力エンドポイントに達したイベントを処理中に例外がキャッチされました"
+
+#: ../../../static/js/wirecloud/Widget.js:1127
+#: ../../../static/js/wirecloud/Widget.js:1138
+#: ../../../static/js/wirecloud/ui/OperatorPreferencesWindowMenu.js:38
+#: ../../../static/js/wirecloud/wiring/Operator.js:624
+#: ../../../static/js/wirecloud/wiring/Operator.js:635
+msgid "Exception catched while processing preference changes"
+msgstr "環境設定の変更を処理中に例外がキャッチされました"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:225
+msgid "Exit Full Dragboard"
+msgstr "フル・ドラッグボードを終了"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:416
+msgid "Exit full screen"
+msgstr "全画面を終了"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:498
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:52
+msgid "Expand"
+msgstr "展開"
+
+#: ../../../static/js/wirecloud/constants.js:52
+msgid "Expectation Failed"
+msgstr "期待できない"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:245
+msgid "Extract from grid"
+msgstr "グリッドからの抽出"
+
+#: ../../../static/js/wirecloud/constants.js:55
+msgid "Failed Dependency"
+msgstr "依存関係の失敗"
+
+#: ../../../static/js/wirecloud/Wiring.js:593
+#: ../../../static/js/wirecloud/wiring/Operator.js:230
+msgid "Failed to load operator."
+msgstr "オペレータを読み込めませんでした。"
+
+#: ../../../static/js/wirecloud/Widget.js:369
+#: ../../../static/js/wirecloud/Wiring.js:598
+msgid "Failed to load widget."
+msgstr "ウィジェットをロードできませんでした。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:235
+msgid "Find a technician by a name at the technician list."
+msgstr "技術者リストの名前で技術者を探します。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:257
+msgid "Find components"
+msgstr "コンポーネントの検索"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:140
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1257
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1356
+msgid "First Name"
+msgstr "名"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:208
+msgid "Fixed height"
+msgstr "固定高さ"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:194
+msgid "Fixed width"
+msgstr "固定幅"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:164
+msgid "Fixed x"
+msgstr "固定×"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:179
+msgid "Fixed y"
+msgstr "固定y"
+
+#: ../../../static/js/wirecloud/constants.js:38
+msgid "Forbidden"
+msgstr "禁止"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:208
+msgid "From (px):"
+msgstr "から (ピクセル):"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:228
+msgid "Full Dragboard"
+msgstr "フル・ドラッグボード"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:409
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:420
+msgid "Full screen"
+msgstr "全画面"
+
+#: ../../../static/js/wirecloud/constants.js:61
+msgid "Gateway Timeout"
+msgstr "ゲートウェイのタイムアウト"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:39
+msgid "General info"
+msgstr "一般的な情報"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:76
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:196
+msgid "Get more components"
+msgstr "より多くのコンポーネントを入手"
+
+#: ../../../static/js/wirecloud/constants.js:45
+msgid "Gone"
+msgstr "実行済み"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:144
+msgid "Grid"
+msgstr "グリッド"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:42
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:78
+msgid "Grid columns. (default: 20 columns)"
+msgstr "グリッド列 (デフォルト: 20桁)"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:87
+msgid "Grid rows. (default: 12 rows)"
+msgstr "グリッドの行。(デフォルト: 12行)"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:826
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2180
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2206
+msgid "Group"
+msgstr "グループ"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1527
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1593
+msgid "Group Info"
+msgstr "グループ情報"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1528
+msgid "Group name"
+msgstr "グループ名"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1182
+msgid "Groups"
+msgstr "グループ"
+
+#: ../../../static/js/wirecloud/LogManager.js:248
+#, python-format
+msgid "HTTP Error %(errorCode)s - %(errorDesc)s"
+msgstr "HTTPエラー %(errorCode)s - %(errorDesc)s"
+
+#: ../../../static/js/wirecloud/constants.js:62
+msgid "HTTP Version Not Supported"
+msgstr "サポートされていない HTTP バージョン"
+
+#: ../../../static/js/wirecloud/Widget.js:728
+msgid "Height"
+msgstr "高さ"
+
+#: ../../../static/js/wirecloud/Widget.js:743
+msgid "Height in pixels (deprecated)"
+msgstr "高さ (ピクセル単位) (非推奨)"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:243
+msgid "Hello, welcome to the Wiring Editor view!"
+msgstr "ワイヤーリング・エディタ・ビューへようこそ!"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:37
+msgid "Hidden"
+msgstr "隠された"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:44
+msgid "Hide title"
+msgstr "タイトルを隠す"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:47
+msgid "Home page"
+msgstr "ホーム・ページ"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:57
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:93
+msgid "Horizontal Margin between widgets (in pixels)"
+msgstr "ウィジェット間の水平マージン (ピクセル単位)"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:59
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:95
+msgid ""
+"Horizontal Margin between widgets. Must be specified in pixel units. "
+"(default: 4px)"
+msgstr "ウィジェット間の水平マージン。ピクセル単位で指定する必要があります (デフォルト: 4px)"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:42
+msgid "Id of the vendor/distributor of the mashable application component"
+msgstr "マッシュアップ・アプリケーション・コンポーネントのベンダー/ディストリビュータの Id"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:57
+msgid "Image shown in catalogue (170x80 px)"
+msgstr "カタログに表示される画像 (170x80 px)"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:244
+msgid ""
+"In this view you can connect all the components of your dashboard in a visual"
+" way."
+msgstr "このビューではダッシュボードのすべてのコンポーネントを視覚的に接続できます"
+
+#: ../../../static/js/wirecloud/ui/PreferencesWindowMenu.js:102
+msgid "Inherit"
+msgstr "継承"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:107
+msgid "Initial behaviour"
+msgstr "初期動作"
+
+#: ../../../static/js/wirecloud/ui/CatalogueView.js:63
+msgid "Install"
+msgstr "インストール"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:228
+msgid "Install Components"
+msgstr "コンポーネントのインストール"
+
+#: ../../../static/js/wirecloud/constants.js:64
+msgid "Insufficient Storage"
+msgstr "ストレージ不足"
+
+#: ../../../static/js/wirecloud/constants.js:57
+msgid "Internal Server Error"
+msgstr "内部サーバーエラー"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:274
+#, python-format
+msgid "Invalid component type: %(type)s"
+msgstr "無効なコンポーネントタイプ: %(type)s"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:122
+msgid "Keywords..."
+msgstr "キーワード..."
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:145
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1258
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1359
+msgid "Last Name"
+msgstr "姓"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:169
+msgid "Layout configuration"
+msgstr "レイアウト設定"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:100
+msgid "Left"
+msgstr "左"
+
+#: ../../../static/js/wirecloud/constants.js:46
+msgid "Length Required"
+msgstr "必要な長さ"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:270
+msgid "List behaviours"
+msgstr "ビヘイビアの一覧"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2061
+msgid "Loading Organization Hierarchy"
+msgstr "組織階層の読み込み中"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1319
+msgid "Loading User Data"
+msgstr "ユーザーデータのロード"
+
+#: ../../../static/js/wirecloud/core.js:399
+msgid "Loading WireCloud Platform"
+msgstr "WireCloud プラットフォームの読み込み"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1571
+msgid "Loading group information..."
+msgstr "グループ情報を読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1472
+msgid "Loading groups..."
+msgstr "グループを読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1678
+msgid "Loading members..."
+msgstr "メンバーを読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2064
+msgid "Loading organization structure..."
+msgstr "組織構造を読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1817
+msgid "Loading organizations..."
+msgstr "組織を読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1322
+msgid "Loading user information..."
+msgstr "ユーザー情報を読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1201
+msgid "Loading users..."
+msgstr "ユーザーを読み込んでいます..."
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:222
+msgid "Locate technicians"
+msgstr "技術者を検索"
+
+#: ../../../static/js/wirecloud/constants.js:54
+msgid "Locked"
+msgstr "ロックされた"
+
+#: ../../../static/js/wirecloud/ui/LogWindowMenu.js:30
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:68
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:134
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:92
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:306
+msgid "Logs"
+msgstr "ログ"
+
+#: ../../../static/js/wirecloud/constants.js:65
+msgid "Loop Detected"
+msgstr "ループが検出されました"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:261
+msgid "Marketplace"
+msgstr "マーケットプレイス"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:264
+#, python-format
+msgid "Marketplace - %(marketname)s"
+msgstr "マーケットプレイス - %(marketname)s"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:41
+msgid "Mashup Title"
+msgstr "マッシュアップのタイトル"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:161
+#: ../../../static/js/wirecloud/ui/ComponentSidebar.js:37
+msgid "Mashups"
+msgstr "マッシュアップ"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:252
+msgid "Massive Update Components"
+msgstr "大規模アップデートコンポーネント"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:533
+msgid "Maximize"
+msgstr "最大化"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:53
+msgid "Media"
+msgstr "メディア"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1670
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1961
+msgid "Members"
+msgstr "メンバー"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:339
+msgid "Menu"
+msgstr "メニュー"
+
+#: ../../../static/js/wirecloud/ui/ComponentSidebar.js:64
+msgid "Merge"
+msgstr "マージ"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:113
+msgid "Merge Workspaces"
+msgstr "ワークスペースの結合"
+
+#: ../../../static/js/wirecloud/constants.js:40
+msgid "Method Not Allowed"
+msgstr "メソッドは許可されていません"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:350
+#: ../../../static/js/wirecloud/ui/WidgetView.js:548
+msgid "Minimize"
+msgstr "最小化"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:175
+msgid "Missing"
+msgstr "ミッシング"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:32
+msgid "Missing dependencies"
+msgstr "不足している依存関係"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:39
+msgid "Missing dependencies list"
+msgstr "不足している依存関係リスト"
+
+#: ../../../static/js/wirecloud/core.js:579
+msgid "Missing name or title parameter"
+msgstr "名前またはタイトル・パラメータがありません"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:46
+msgid "Modify"
+msgstr "変更"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:281
+msgid "Move to the bottom sidebar"
+msgstr "下部のサイドバーに移動"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:290
+msgid "Move to the left sidebar"
+msgstr "左側のサイドバーに移動"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:272
+msgid "Move to the right sidebar"
+msgstr "右のサイドバーに移動"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:263
+msgid "Move to the top sidebar"
+msgstr "上部のサイドバーに移動"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:175
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:144
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:162
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:187
+msgid "My Resources"
+msgstr "マイ・リソース"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:159
+#, python-format
+msgid "My Resources - %(resource)s"
+msgstr "マイ・リソース - %(resource)s"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:71
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:48
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1597
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1940
+msgid "Name"
+msgstr "名前"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:189
+msgid "Name of the screen size range."
+msgstr "画面サイズ範囲の名前。"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:188
+msgid "Name:"
+msgstr "名前:"
+
+#: ../../../static/js/wirecloud/ui/RenameWindowMenu.js:30
+msgid "New Name"
+msgstr "新しい名前"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:83
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:86
+msgid "New behaviour"
+msgstr "新しいビヘイビア"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:373
+msgid "New feature"
+msgstr "新機能"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:394
+msgid "New tab"
+msgstr "新しいタブ"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:46
+msgid "New workspace"
+msgstr "新しいワークスペース"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:42
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:43
+msgid "No"
+msgstr "いいえ"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentGroup.js:35
+msgid "No description provided"
+msgstr "説明はありません"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Endpoint.js:169
+msgid "No description provided."
+msgstr "説明はありません。"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1502
+msgid "No groups found"
+msgstr "グループが見つかりませんでした"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2090
+msgid "No groups found for this organization"
+msgstr "この組織のグループは見つかりませんでした"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentGroup.js:57
+msgid "No image available"
+msgstr "使用可能なイメージはありません"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1530
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1685
+msgid "No members in this group"
+msgstr "このグループにはメンバーがいません"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1876
+msgid "No members in this organization"
+msgstr "この組織にはメンバーがいません"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1848
+msgid "No organizations found"
+msgstr "組織が見つかりませんでした"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1229
+msgid "No users found"
+msgstr "ユーザーが見つかりませんでした"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:363
+msgid "No, thank you"
+msgstr "いいえ、結構です"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:32
+msgid "Normal"
+msgstr "ノーマル"
+
+#: ../../../static/js/wirecloud/constants.js:41
+msgid "Not Acceptable"
+msgstr "許容できません"
+
+#: ../../../static/js/wirecloud/constants.js:66
+msgid "Not Extended"
+msgstr "拡張されていない"
+
+#: ../../../static/js/wirecloud/constants.js:39
+msgid "Not Found"
+msgstr "見つかりません"
+
+#: ../../../static/js/wirecloud/constants.js:58
+msgid "Not Implemented"
+msgstr "実装されていない"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:157
+msgid "Now it's time to test our creation."
+msgstr "作成したアプリケーション・マッシュアップをテストしましょう"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:79
+msgid ""
+"Once you have the results, you can add the widget. So click <em>Add to "
+"workspace</em>"
+msgstr "結果が得られたら、ウィジェットを追加することができます。 <em>ワークスペースに追加</em>をクリックします"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:90
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:94
+msgid "Open <em>Input Box</em> menu"
+msgstr "<em>入力ボックス</em> のメニューを開きます"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:250
+msgid ""
+"Open the sidebar using the <em>Find components</em> button and drag &amp; "
+"drop components (operators/widgets) from the sidebar for being able to "
+"connect them as you wish."
+msgstr ""
+"<em>コンポーネントの検索</em> ボタンを使用してサイドバーを開き、サイドバーからコンポーネント (オペレータ/ウィジェット) "
+"をドラッグ＆ドロップして、希望どおりに接続することができます。"
+
+#: ../../../static/js/wirecloud/ui/OperatorPreferencesWindowMenu.js:46
+msgid "Operator Settings"
+msgstr "オペレーターの設定"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:438
+msgid "Operator created successfully."
+msgstr "オペレータが正常に作成されました。"
+
+#: ../../../static/js/wirecloud/wiring/OperatorTargetEndpoint.js:90
+msgid "Operator has not registered a callback for this input endpoint"
+msgstr "オペレータはこの入力エンドポイントに対してコールバックを登録していません"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:235
+msgid "Operator loaded successfully."
+msgstr "オペレータが正常にロードされました。"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:271
+msgid "Operator unloaded successfully."
+msgstr "オペレータが正常にアンロードされました。"
+
+#: ../../../static/js/wirecloud/wiring/Operator.js:430
+#, python-format
+msgid "Operator: %(title)s"
+msgstr "オペレーター: %(title)s"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:162
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentShowcase.js:41
+msgid "Operators"
+msgstr "オペレータ"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:349
+msgid "Order behaviours"
+msgstr "ビヘイビアを順序付ける"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:62
+msgid "Order endpoints"
+msgstr "エンドポイントを並び替え"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:826
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2206
+msgid "Organization"
+msgstr "組織"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2109
+msgid "Organization Hierarchy"
+msgstr "組織階層"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1873
+msgid "Organization Info"
+msgstr "組織情報"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1874
+msgid "Organization name"
+msgstr "組織名"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1092
+#, python-format
+msgid "Organization: %(name)s"
+msgstr "組織: %(name)s"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1187
+msgid "Organizations"
+msgstr "組織"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:127
+msgid "Owner"
+msgstr "所有者"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:52
+msgid "Parametrization"
+msgstr "パラメータ化"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:44
+msgid "Parametrize"
+msgstr "パラメータ設定"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:43
+msgid "Parametrized value"
+msgstr "パラメータ化された値"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1259
+msgid "Password"
+msgstr "パスワード"
+
+#: ../../../static/js/wirecloud/constants.js:37
+msgid "Payment Required"
+msgstr "支払いが必要"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1426
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1758
+msgid "Permissions"
+msgstr "権限"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:137
+msgid "Persistent variables"
+msgstr "永続変数"
+
+#: ../../../static/js/wirecloud/PlatformPreferences.js:35
+msgid "Platform Preferences"
+msgstr "プラットフォームの設定"
+
+#: ../../../static/js/wirecloud/constants.js:47
+msgid "Precondition Failed"
+msgstr "前提条件が失敗"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:130
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:44
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:86
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:265
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:326
+#: ../../../static/js/wirecloud/ui/WorkspaceTabView.js:234
+msgid "Preferences"
+msgstr "設定"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:167
+msgid "Private"
+msgstr "プライベート"
+
+#: ../../../static/js/wirecloud/constants.js:42
+msgid "Proxy Authentication Required"
+msgstr "プロキシ認証が必要"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:90
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:165
+msgid "Public"
+msgstr "パブリック"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:277
+msgid "Publish Marketplaces"
+msgstr "マーケットプレイスを公開する"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:101
+msgid "Publish Other Workspaces"
+msgstr "他のワークスペースを公開する"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:95
+msgid "Publish Workspaces"
+msgstr "ワークスペースの公開"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:72
+#, python-format
+msgid "Purging %(componenttype)s info"
+msgstr "%(componenttype)s の情報をパージ"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabView.js:389
+msgid "Quit editing interval"
+msgstr "編集間隔の終了"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:33
+msgid "Read Only"
+msgstr "読み取り専用"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:41
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:134
+msgid "Refresh"
+msgstr "リフレッシュ"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:166
+msgid "Registered User"
+msgstr "登録ユーザー"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:208
+msgid "Relative height"
+msgstr "相対高さ"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:194
+msgid "Relative width"
+msgstr "相対幅"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:164
+msgid "Relative x"
+msgstr "相対x"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:179
+msgid "Relative y"
+msgstr "相対y"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:53
+msgid "Reload"
+msgstr "リロード"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:131
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1026
+#: ../../../static/js/wirecloud/ui/WidgetView.js:297
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:49
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:271
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:492
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggable.js:503
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:316
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:503
+#: ../../../static/js/wirecloud/ui/WiringEditor/Connection.js:515
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:63
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:98
+msgid "Remove"
+msgstr "削除"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1007
+msgid "Remove from parent"
+msgstr "親から削除"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:91
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:46
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:117
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:85
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:44
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:52
+msgid "Rename"
+msgstr "リネーム"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:71
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:43
+#, python-format
+msgid "Rename %(type)s"
+msgstr "%(type)s の名前を変更"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:53
+msgid "Rename Workspace"
+msgstr "ワークスペースの名前を変更"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:45
+msgid "Rename Workspace Tab"
+msgstr "ワークスペース・タブの名前を変更"
+
+#: ../../../static/js/wirecloud/constants.js:48
+msgid "Request Entity Too Large"
+msgstr "リクエスト・エンティティが大きすぎます"
+
+#: ../../../static/js/wirecloud/constants.js:43
+msgid "Request Timeout"
+msgstr "要求のタイムアウト"
+
+#: ../../../static/js/wirecloud/constants.js:49
+msgid "Request-URI Too Long"
+msgstr "リクエスト URI が長すぎます"
+
+#: ../../../static/js/wirecloud/constants.js:51
+msgid "Requested Range Not Satisfiable"
+msgstr "リクエストされた範囲が満足できない"
+
+#: ../../../static/js/wirecloud/core.js:485
+msgid "Requesting workspace data"
+msgstr "ワークスペース・データの要求"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewResizeHandle.js:49
+msgid "Resize widget"
+msgstr "ウィジェットのサイズ変更"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ConnectionPrefs.js:87
+msgid "Restore defaults"
+msgstr "デフォルトに戻す"
+
+#: ../../../static/js/wirecloud/core.js:325
+msgid "Retrieving WireCloud code"
+msgstr "WireCloud コードの取得"
+
+#: ../../../static/js/wirecloud/core.js:328
+msgid "Retrieving initial data"
+msgstr "初期データの取得"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:124
+msgid "Right"
+msgstr "右"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:49
+msgid "Row Height (in pixels)"
+msgstr "行の高さ (ピクセル単位)"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:51
+msgid "Row/cell height. Must be specified in pixel units. (default: 13px)"
+msgstr "行/セルの高さ。 ピクセル単位で指定する必要があります (デフォルト: 13px)"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:85
+msgid "Rows"
+msgstr "行"
+
+#: ../../../static/js/wirecloud/ui/PreferencesWindowMenu.js:228
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:217
+msgid "Save"
+msgstr "保存"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:393
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2174
+#, python-format
+msgid "Search and select a group to add as child of \"%(parent)s\""
+msgstr "「%(parent)s」の子として追加するグループを検索して選択します"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:2183
+msgid "Search group..."
+msgstr "グループを検索..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:549
+msgid "Search groups..."
+msgstr "グループを検索..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:562
+msgid "Search organizations..."
+msgstr "組織を検索..."
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:536
+msgid "Search users..."
+msgstr "ユーザーを検索..."
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:59
+msgid "Select a mashup template"
+msgstr "マッシュアップ・テンプレートを選択"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:468
+msgid "Select all"
+msgstr "すべて選択"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:54
+msgid "Select parameter type"
+msgstr "パラメータのタイプを選択してください"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:68
+msgid "Select specific parameter"
+msgstr "特定のパラメータを選択してください"
+
+#: ../../../static/js/wirecloud/constants.js:60
+msgid "Service Unavailable"
+msgstr "サービスは利用できません"
+
+#: ../../../static/js/wirecloud/ui/PreferencesWindowMenu.js:204
+msgid "Set Defaults"
+msgstr "デフォルト設定"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:50
+msgid "Set as initial"
+msgstr "初期としてセット"
+
+#: ../../../static/js/wirecloud/TabPreferences.js:41
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:95
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:233
+#: ../../../static/js/wirecloud/Widget/PreferencesWindowMenu.js:29
+#: ../../../static/js/wirecloud/WorkspacePreferences.js:36
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:74
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:93
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:137
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:95
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:57
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:82
+msgid "Settings"
+msgstr "設定"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:59
+msgid "Share"
+msgstr "共有"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:107
+msgid "Share Workspaces"
+msgstr "ワークスペースを共有する"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:167
+msgid "Shared with specific people and organizations."
+msgstr "特定の人や組織と共有します。"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:155
+msgid "Sharing settings"
+msgstr "共有設定"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:45
+msgid "Short Description (plain text)"
+msgstr "簡単な説明 (テキスト)"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:222
+msgid "Show the current location of the selected technician."
+msgstr "選択した技術者の現在の場所を表示します。"
+
+#: ../../../static/js/wirecloud/ui/WidgetView.js:44
+msgid "Show title"
+msgstr "タイトルを表示"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:144
+msgid "Sign out"
+msgstr "サインアウト"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:31
+msgid "Smart"
+msgstr "スマート"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:254
+msgid "Snap to grid"
+msgstr "グリッドにスナップ"
+
+#: ../../../static/js/wirecloud/Widget.js:734
+msgid ""
+"Specifies if the widget is being displayed, altough the user may have to do "
+"scroll to be able to see it"
+msgstr "ウィジェットを表示するかどうかを指定します。ただし、ウィジェットを表示するにはユーザーがスクロールする必要がある場合があります"
+
+#: ../../../static/js/wirecloud/Widget.js:714
+msgid "Specifies the x-coordinate at which the widget is placed"
+msgstr "ウィジェットが配置される x 座標を指定します"
+
+#: ../../../static/js/wirecloud/Widget.js:719
+msgid "Specifies the y-coordinate at which the widget is placed"
+msgstr "ウィジェットが配置される y 座標を指定します"
+
+#: ../../../static/js/wirecloud/Widget.js:724
+msgid "Specifies the z-coordinate at which the widget is placed"
+msgstr "ウィジェットが配置される z 座標を指定します"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1261
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1362
+msgid "Staff status"
+msgstr "スタッフのステータス"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:43
+msgid "Staff:"
+msgstr "スタッフ:"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:92
+msgid "Statistics"
+msgstr "統計"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:47
+msgid "Status"
+msgstr "ステータス"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:187
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:190
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:193
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:196
+msgid "Step 1: Identify the behaviours"
+msgstr "ステップ1: ビヘイビアを特定する"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:212
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:218
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:221
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:230
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:237
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:241
+msgid "Step 2: Design the behaviours"
+msgstr "ステップ2: ビヘイビアをデザイン"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ConnectionPrefs.js:35
+msgid "Stop customizing"
+msgstr "カスタマイズの停止"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:60
+msgid "Stop ordering"
+msgstr "並び替えを中止"
+
+#: ../../../static/js/wirecloud/UserInterfaceManager.js:96
+msgid "Subtasks progress"
+msgstr "サブタスクの進行状況"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1262
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1368
+msgid "Superuser status"
+msgstr "スーパーユーザーのステータス"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:42
+msgid "Superuser:"
+msgstr "スーパーユーザー:"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:58
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:114
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:115
+msgid "Switch User"
+msgstr "ユーザの切り替え"
+
+#: ../../../static/js/wirecloud/core.js:75 ../../../static/js/wirecloud/core.js:533
+msgid "Switching active workspace"
+msgstr "アクティブなワークスペースの切り替え"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:37
+msgid "System Information"
+msgstr "システム情報"
+
+#: ../../../static/js/wirecloud/Workspace.js:71
+#, python-format
+msgid "Tab %(index)s"
+msgstr "タブ %(index)s"
+
+#: ../../../static/js/wirecloud/ui/NewWorkspaceWindowMenu.js:56
+msgid "Template"
+msgstr "テンプレート"
+
+#: ../../../static/js/wirecloud/Widget.js:1264
+#: ../../../static/js/wirecloud/wiring/Operator.js:704
+#, python-format
+msgid "The %(type)s was downgraded to v%(version)s successfully."
+msgstr "%(type)s は v%(version)s に正常にダウングレードされました。"
+
+#: ../../../static/js/wirecloud/Widget.js:1267
+#: ../../../static/js/wirecloud/wiring/Operator.js:707
+#, python-format
+msgid "The %(type)s was replaced using v%(version)s successfully."
+msgstr "%(type)sは v%(version)s を使用して正常に置き換えられました。"
+
+#: ../../../static/js/wirecloud/Widget.js:1262
+#: ../../../static/js/wirecloud/wiring/Operator.js:702
+#, python-format
+msgid "The %(type)s was upgraded to v%(version)s successfully."
+msgstr "%(type)s は v%(version)s に正常にアップグレードされました。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:203
+msgid ""
+"The <strong><t:title/></strong> <t:type/> will be <strong>definitely</strong>"
+" removed, would you like to continue?"
+msgstr "<strong><t:title/></strong> <t:type/> は、<strong>間違いなく</strong>削除されますが、続行しますか？"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:162
+msgid ""
+"The <strong><t:title/></strong> <t:type/> will be removed, would you like to "
+"continue?"
+msgstr "<strong><t:title/></strong> <t:type/> は削除されます。続行しますか？"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:226
+msgid "The <strong>fourth behaviour</strong> was created."
+msgstr "<strong> 4番目のビヘイビア</strong>が作成されました。"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:222
+msgid "The <strong>third behaviour</strong> was created."
+msgstr "<strong>第3のビヘイビア</strong>が作成されました。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:687
+#, python-format
+msgid "The behaviour (%(title)s) was loaded."
+msgstr "ビヘイビア (%(title)s) が読み込まれました。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:96
+msgid ""
+"The behaviours will be removed but the components and connections will still "
+"exist, would you like to continue?"
+msgstr "ビヘイビアは削除されますが、コンポーネントと接続はまだ存在します。続行しますか？"
+
+#: ../../../static/js/wirecloud/wiring/Connection.js:112
+#, python-format
+msgid "The connection ('%(source)s'-'%(target)s') has a missing endpoint."
+msgstr "接続 ('%(source)s'-'%(target)s') には、エンドポイントがありません。"
+
+#: ../../../static/js/wirecloud/wiring/Connection.js:85
+#, python-format
+msgid "The connection ('%(source)s'-'%(target)s') was detached."
+msgstr "接続 ('%(source)s'-'%(target)s') が切り離されました。"
+
+#: ../../../static/js/wirecloud/wiring/Connection.js:76
+#, python-format
+msgid "The connection ('%(source)s'-'%(target)s') was established."
+msgstr "接続 ('%(source)s'-'%(target)s') が確立されました。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor.js:513
+msgid ""
+"The connection will also be modified for the rest of behaviours, would you "
+"like to continue?"
+msgstr "残りのビヘイビアのために接続も変更されますが、続行しますか？"
+
+#: ../../../static/js/wirecloud/WorkspaceTab.js:153
+#, python-format
+msgid "The destination tab (%(title)s) is readonly"
+msgstr "宛先のタブ (%(title)s) は読み取り専用です"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:36
+msgid "The following dependencies are missing:"
+msgstr "以下の依存関係はありません:"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:358
+msgid ""
+"The following operation is irreversible and removes the behaviour completely."
+" Would you like to continue?"
+msgstr "次の操作は取り消しができず、ビヘイビアを完全に削除します。 続行しますか？"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:209
+msgid "The left limit of the screen size range (in pixels)."
+msgstr "画面サイズ範囲の左端 (ピクセル単位)。"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:567
+msgid "The requested workspace is no longer available (it was deleted)."
+msgstr "要求されたワークスペースは使用できなくなりました (削除されました)。"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:237
+msgid "The right limit of the screen size range (in pixels). Use -1 for no limit."
+msgstr "画面サイズ範囲の右制限 (ピクセル単位)。制限を設けない場合は -1 を使用します。"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewMenuItems.js:65
+msgid "The tab's widgets will also be removed. Would you like to continue?"
+msgstr "タブのウィジェットも削除されます。 続行しますか？"
+
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:67
+#, python-format
+msgid ""
+"There is not change information between versions %(from_version)s and "
+"%(to_version)s"
+msgstr "バージョン %(from_version)s と %(to_version)s の間で情報を変更することはありません"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:61
+msgid ""
+"This marketplace is empty, that is, it does not provide any resource at this "
+"time."
+msgstr "このマーケットプレイスは空です。現時点ではリソースを提供していません。"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:54
+msgid "This value will be editable by the user"
+msgstr "この値はユーザが編集可能です"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:59
+msgid "This value will be visible to the user"
+msgstr "この値はユーザに表示されます"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:51
+msgid "This value won't be editable by the user"
+msgstr "この値はユーザが編集できません"
+
+#: ../../../static/js/wirecloud/ui/ParametrizableValueInputInterface.js:62
+msgid "This value won't be visible to the user"
+msgstr "この値はユーザに表示されません"
+
+#: ../../../static/js/wirecloud/Widget.js:708
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:146
+#: ../../../static/js/wirecloud/ui/WiringEditor/Behaviour.js:270
+#: ../../../static/js/wirecloud/ui/WiringEditor/BehaviourEngine.js:83
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:69
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:41
+#: ../../../static/js/wirecloud/wiring/Operator.js:418
+msgid "Title"
+msgstr "タイトル"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:41
+msgid "Title to display on the catalogue"
+msgstr "カタログに表示するタイトル"
+
+#: ../../../static/js/wirecloud/ui/ScreenSizesInputInterface.js:236
+msgid "To (px):"
+msgstr "宛先 (ピクセル):"
+
+#: ../../../static/js/wirecloud/ui/SidebarLayout.js:116
+#, python-format
+msgid "Toggle %(position)s sidebar"
+msgstr "%(position)s サイドバーの切り替え"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:139
+msgid "Top"
+msgstr "トップへ"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:113
+msgid "Total Groups"
+msgstr "グループの合計"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:116
+msgid "Total Organizations"
+msgstr "組織全体"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:110
+msgid "Total Users"
+msgstr "総ユーザー数"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:119
+msgid "Total Workspaces"
+msgstr "合計ワークスペース数"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:244
+msgid "Try It Yourself"
+msgstr "試してください"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:164
+msgid "Tutorials"
+msgstr "チュートリアル"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:83
+msgid "Type"
+msgstr "タイプ"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:81
+msgid "Typing <em>input box</em>..."
+msgstr "<em>input box</em>と入力します..."
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:76
+msgid "URL"
+msgstr "URL"
+
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:72
+msgid "Unable to retrieve change log information"
+msgstr "変更ログ情報を取得できません"
+
+#: ../../../static/js/wirecloud/constants.js:36
+msgid "Unauthorized"
+msgstr "無許可"
+
+#: ../../../static/js/wirecloud/MarketManager.js:47
+#: ../../../static/js/wirecloud/MarketManager.js:78
+#: ../../../static/js/wirecloud/MarketManager.js:108
+#: ../../../static/js/wirecloud/Preferences.js:126
+#: ../../../static/js/wirecloud/Wiring.js:461
+#: ../../../static/js/wirecloud/Wiring.js:526
+#: ../../../static/js/wirecloud/Workspace.js:462
+#: ../../../static/js/wirecloud/Workspace.js:598
+#: ../../../static/js/wirecloud/Workspace.js:653
+#: ../../../static/js/wirecloud/WorkspaceTab.js:221
+#: ../../../static/js/wirecloud/WorkspaceTab.js:266
+#: ../../../static/js/wirecloud/core.js:189
+#: ../../../static/js/wirecloud/core.js:487
+#: ../../../static/js/wirecloud/core.js:652
+#: ../../../static/js/wirecloud/core.js:721
+#: ../../../static/js/wirecloud/core.js:727
+#: ../../../static/js/wirecloud/core.js:775
+#: ../../../static/js/wirecloud/ui/PublishResourceWindowMenu.js:100
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewDragboard.js:277
+#: ../../../static/js/wirecloud/ui/WorkspaceTabViewDragboard.js:438
+msgid "Unexpected response from server"
+msgstr "サーバーからの予期しない応答"
+
+#: ../../../static/js/wirecloud/wiring/Endpoint.js:57
+#, python-format
+msgid "Unimplemented function: %(funcName)s"
+msgstr "実装されていない関数: %(funcName)s"
+
+#: ../../../static/js/wirecloud/ui/CatalogueView.js:57
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:240
+msgid "Uninstall Components"
+msgstr "コンポーネントのアンインストール"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:180
+#, python-format
+msgid "Uninstalling %(title)s (%(uri)s)"
+msgstr "%(title)s (%(uri)s) をアンインストール"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:169
+#, python-format
+msgid "Uninstalling all versions of %(title)s (%(group_id)s)"
+msgstr "%(title)s (%(group_id)s) のすべてのバージョンをアンインストール"
+
+#: ../../../static/js/wirecloud/constants.js:69
+msgid "Unknown status code"
+msgstr "不明なステータスコード"
+
+#: ../../../static/js/wirecloud/core.js:237
+msgid "Unloading WireCloud"
+msgstr "WireCloud のアンロード"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:37
+msgid "Unloading affected operators"
+msgstr "影響を受けるオペレータをアンロード"
+
+#: ../../../static/js/wirecloud/LocalCatalogue.js:34
+msgid "Unloading affected widgets"
+msgstr "影響を受けるウィジェットをアンロード"
+
+#: ../../../static/js/wirecloud/constants.js:53
+msgid "Unprocessable Entity"
+msgstr "処理不能なエンティティ"
+
+#: ../../../static/js/wirecloud/constants.js:50
+msgid "Unsupported Media Type"
+msgstr "サポートされていないメディア・タイプ"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:413
+#, python-format
+msgid "Updating %(title)s (%(uri)s) in editable workspaces"
+msgstr "編集可能なワークスペースでの %(title)s (%(uri)s) の更新"
+
+#: ../../../static/js/wirecloud/ui/UpgradeWindowMenu.js:41
+msgid "Upgrade"
+msgstr "アップグレード"
+
+#: ../../../static/js/wirecloud/constants.js:56
+msgid "Upgrade Required"
+msgstr "アップグレードが必要"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:60
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentDraggablePrefs.js:130
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentPrefs.js:88
+msgid "Upgrade/Downgrade"
+msgstr "アップグレード/ダウングレード"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceViewMenuItems.js:58
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:66
+msgid "Upload"
+msgstr "アップロード"
+
+#: ../../../static/js/wirecloud/ui/PublishResourceWindowMenu.js:65
+msgid "Upload resource"
+msgstr "リソースをアップロード"
+
+#: ../../../static/js/wirecloud/ui/PublishResourceWindowMenu.js:47
+msgid "Upload to"
+msgstr "アップロード先"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceViewMenuItems.js:65
+msgid "Upload to my resources"
+msgstr "自分のリソースにアップロード"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:75
+msgid "Upload workspace to my resources"
+msgstr "マイ・リソースにワークスペースをアップロード"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:41
+msgid "Use current value"
+msgstr "現在の値を使用"
+
+#: ../../../static/js/wirecloud/wiring/OperatorTargetEndpoint.js:71
+#: ../../../static/js/wirecloud/wiring/WidgetTargetEndpoint.js:73
+#, python-format
+msgid "Use in %(endpointName)s"
+msgstr "%(endpointName)s で使用"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:131
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:115
+msgid "User"
+msgstr "ユーザ"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1344
+msgid "User Info"
+msgstr "ユーザー情報"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:53
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1162
+msgid "User Management"
+msgstr "ユーザー管理"
+
+#: ../../../static/js/wirecloud/ui/ParametrizedTextInputInterface.js:135
+msgid "User Name"
+msgstr "ユーザ名"
+
+#: ../../../static/js/wirecloud/ui/WidgetViewMenuItems.js:81
+msgid "User's Manual"
+msgstr "ユーザーズ・マニュアル"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1255
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1349
+msgid "Username"
+msgstr "ユーザ名"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1177
+msgid "Users"
+msgstr "ユーザ"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:177
+msgid "Users and groups with access"
+msgstr "アクセス権のあるユーザーとグループ"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:50
+msgid "Value"
+msgstr "値"
+
+#: ../../../static/js/wirecloud/ui/ParametrizeWindowMenu.js:48
+msgid "Value source"
+msgstr "値のソース"
+
+#: ../../../static/js/wirecloud/constants.js:63
+msgid "Variant Also Negotiates"
+msgstr "バリアントもネゴシエートする"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:147
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:42
+msgid "Vendor"
+msgstr "ベンダー"
+
+#: ../../../static/js/wirecloud/ui/PublishWorkspaceWindowMenu.js:43
+msgid "Version"
+msgstr "バージョン"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:65
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:101
+msgid "Vertical Margin between widgets (in pixels)"
+msgstr "ウィジェット間の垂直マージン (ピクセル単位)"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:67
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:103
+msgid ""
+"Vertical Margin between widgets. Must be specified in pixel units. (default: "
+"3px)"
+msgstr "ウィジェット間の垂直マージン。ピクセル単位で指定する必要があります (デフォルト: 3px)"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:684
+msgid "View"
+msgstr "見る"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:71
+msgid "View All Workspaces"
+msgstr "すべてのワークスペースを表示"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:234
+msgid "View Components"
+msgstr "コンポーネントの表示"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:314
+msgid "View Groups"
+msgstr "グループの表示"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:265
+msgid "View Marketplaces"
+msgstr "マーケットプレイスを見る"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:338
+msgid "View Organizations"
+msgstr "組織を表示する"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:290
+msgid "View Users"
+msgstr "ユーザーの表示"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:155
+msgid "View Widgets"
+msgstr "ウィジェットを表示する"
+
+#: ../../../static/js/wirecloud/ui/SharingWindowMenu.js:160
+msgid "Visibility options"
+msgstr "可視性オプション"
+
+#: ../../../static/js/wirecloud/Widget.js:733
+msgid "Visible"
+msgstr "ビジブル"
+
+#: ../../../static/js/wirecloud/Widget.js:753
+msgid "Volatile"
+msgstr "揮発性"
+
+#: ../../../static/js/wirecloud/Widget.js:754
+msgid "Volatile status of the widget"
+msgstr "ウィジェットの揮発性ステータス"
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:214
+msgid "We fill the <strong>title</strong> ..."
+msgstr "<strong>タイトル</strong>を記入します ..."
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:234
+msgid "We have to change the <strong>title</strong> ..."
+msgstr "<strong>タイトル</strong>を変更する必要があります ..."
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:188
+msgid "We want to be able to <strong>type the name of a technician</strong> ..."
+msgstr "<strong>技術者の名前を入力</strong>できるようにしたい ..."
+
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:191
+#: ../../../static/js/wirecloud/Tutorials/BehaviourOrientedWiring.js:194
+msgid "When we <strong>select a technician</strong> ..."
+msgstr "<strong>技術者を選択</strong>すると ..."
+
+#: ../../../static/js/wirecloud/Widget.js:761
+msgid "Widget created successfully."
+msgstr "ウィジェットが正常に作成されました。"
+
+#: ../../../static/js/wirecloud/wiring/WidgetTargetEndpoint.js:92
+msgid "Widget has not registered a callback for this input endpoint"
+msgstr "ウィジェットがこの入力エンドポイントのコールバックを登録していません"
+
+#: ../../../static/js/wirecloud/Widget.js:374
+msgid "Widget loaded successfully."
+msgstr "ウィジェットが正常に読み込まれました。"
+
+#: ../../../static/js/wirecloud/Widget.js:411
+msgid "Widget unloaded successfully."
+msgstr "ウィジェットが正常にアンロードされました。"
+
+#: ../../../static/js/wirecloud/Widget.js:729
+msgid "Widget's height in layout cells"
+msgstr "レイアウト・セル内のウィジェットの高さ"
+
+#: ../../../static/js/wirecloud/Widget.js:744
+msgid "Widget's height in pixels"
+msgstr "ピクセル単位でのウィジェットの高さ"
+
+#: ../../../static/js/wirecloud/Widget.js:709
+#: ../../../static/js/wirecloud/wiring/Operator.js:419
+msgid "Widget's title"
+msgstr "ウィジェットのタイトル"
+
+#: ../../../static/js/wirecloud/Widget.js:739
+msgid "Widget's width in layout cells"
+msgstr "レイアウト・セル内のウィジェットの幅"
+
+#: ../../../static/js/wirecloud/Widget.js:749
+msgid "Widget's width in pixels"
+msgstr "ピクセル単位のウィジェットの幅"
+
+#: ../../../static/js/wirecloud/ui/CatalogueSearchView.js:160
+#: ../../../static/js/wirecloud/ui/ComponentSidebar.js:50
+#: ../../../static/js/wirecloud/ui/WiringEditor/ComponentShowcase.js:54
+msgid "Widgets"
+msgstr "ウィジェット"
+
+#: ../../../static/js/wirecloud/ui/LayoutInputInterface.js:33
+msgid ""
+"Widgets will tend to be placed on the topmost position available if this "
+"option is enabled. (default: enabled)"
+msgstr "このオプションが有効になっている場合、ウィジェットは利用可能な一番上の位置に配置される傾向があります。(デフォルト: 有効)"
+
+#: ../../../static/js/wirecloud/Widget.js:738
+msgid "Width"
+msgstr "幅"
+
+#: ../../../static/js/wirecloud/Widget.js:748
+msgid "Width in pixels"
+msgstr "ピクセル単位の幅"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:63
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:66
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:71
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:80
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:87
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:93
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:111
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:115
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:116
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:157
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:162
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:164
+msgid "WireCloud Basic Tutorial"
+msgstr "WireCloud 基本チュートリアル"
+
+#: ../../../static/js/wirecloud/ui/WirecloudHeader.js:53
+msgid "Wirecloud toolbar"
+msgstr "ワイヤークラウドツールバー"
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:178
+msgid "Wiring"
+msgstr "ワイヤーリング"
+
+#: ../../../static/js/wirecloud/core.js:581
+msgid "Workspace and mashup options cannot be used at the same time"
+msgstr "ワークスペースとマッシュアップ・オプションは同時に使用できません"
+
+#: ../../../static/js/wirecloud/UserInterfaceManager.js:272
+msgid "Workspace loaded"
+msgstr "ワークスペースが読み込まれました"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:101
+msgid "Write a better label for the button, e.g <em>Search</em>."
+msgstr "ボタンのより良いラベルを書き込みます。 例: <em>Search</em>。"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:101
+msgid "Write a better placeholder text for the input, e.g. <em>Keywords</em>"
+msgstr "入力用のプレースホルダテキストを書き込みます。例: <em>Keywords</em>"
+
+#: ../../../static/js/wirecloud/Tutorials/BasicConcepts.js:101
+msgid "Write a label for the input, e.g. <em>Multimedia</em>."
+msgstr "入力のラベルを書き込みます。例: <em>Multimedia</em>。"
+
+#: ../../../static/js/wirecloud/Widget.js:713
+msgid "X-Position"
+msgstr "X ポジション"
+
+#: ../../../static/js/wirecloud/Widget.js:718
+msgid "Y-Position"
+msgstr "Y ポジション"
+
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:42
+#: ../../../static/js/wirecloud/ui/AdminPanelWindowMenu.js:43
+msgid "Yes"
+msgstr "はい"
+
+#: ../../../static/js/wirecloud/ui/MyResourcesView.js:284
+msgid ""
+"You have not configured any marketplace to upload this resource. Please, "
+"configure one on the Marketplace view."
+msgstr "このリソースをアップロードするマーケットプレイスを設定していません。マーケットプレイス・ビューで設定してください。"
+
+#: ../../../static/js/wirecloud/ui/MissingDependenciesWindowMenu.js:49
+msgid "You will be able to continue after installing all the required dependencies."
+msgstr "必要なすべての依存関係をインストールした後に続行することができます。"
+
+#: ../../../static/js/wirecloud/Widget.js:723
+msgid "Z-Position"
+msgstr "Z ポジション"
+
+#: ../../../static/js/wirecloud/WidgetMeta.js:87
+#, python-format
+msgid "[Widget; Vendor: %(vendor)s, Name: %(name)s, Version: %(version)s]"
+msgstr "[ウィジェット; ベンダー: %(vendor)s, 名前: %(name)s, パージョン: %(version)s]"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:34
+msgid "in use"
+msgstr "使用中"
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:237
+msgid "loading marketplace view..."
+msgstr "マーケットプレイス・ビューを読み込む..."
+
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:515
+#: ../../../static/js/wirecloud/ui/WorkspaceView.js:529
+msgid "loading..."
+msgstr "読み込んでいます..."
+
+#: ../../../static/js/wirecloud/ui/MarketplaceView.js:239
+msgid "marketplace list not available"
+msgstr "マーケットプレイス・リストは利用できません"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:31
+msgid "missing"
+msgstr "ミッシング"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:37
+msgid "no endpoints"
+msgstr "エンドポイントなし"
+
+#: ../../../static/js/wirecloud/ui/DragboardLayout.js:242
+msgid ""
+"the widget could not be associated with this layout as it already has an "
+"associated layout."
+msgstr "ウィジェットは既に関連付けられたレイアウトを持っているため、このレイアウトに関連付けることはできませんでした。"
+
+#: ../../../static/js/wirecloud/ui/WiringEditor/Component.js:28
+msgid "volatile"
+msgstr "揮発性"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:409
+msgid "← Admin Panel"
+msgstr "← 管理パネル"
+
+#: ../../../static/js/wirecloud/ui/UserManagementWindowMenu.js:1077
+msgid "← Back"
+msgstr "← 戻る"

@@ -16,8 +16,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Wirecloud.  If not, see <http://www.gnu.org/licenses/>.
 
-# TODO Add HTML response
-
 import socket
 from email.utils import formatdate
 from inspect import Signature
@@ -388,7 +386,6 @@ def get_absolute_reverse_url(viewname: str, request: Optional[Request] = None, *
     return urljoin(get_current_scheme(request) + '://' + get_current_domain(request), url)
 
 
-# FIXME Request.url_for could be used instead of this
 def get_relative_reverse_url(viewname: str, request: Optional[Request] = None, **kwargs) -> str:
     from wirecloud.platform.plugins import get_plugin_urls
 

@@ -29,7 +29,7 @@ from fastapi import FastAPI, Request
 import wirecloud.platform as platform
 from wirecloud import settings
 from wirecloud.catalogue.crud import get_catalogue_resource
-from wirecloud.commons.auth.crud import get_user_groups, get_all_user_permissions
+from wirecloud.commons.auth.crud import get_user_groups, get_all_user_permissions, get_group_by_id
 from wirecloud.commons.auth.routes import admin_router
 from wirecloud.commons.utils.http import get_absolute_reverse_url
 from wirecloud.commons.utils.template.schemas.macdschemas import Vendor, Name, Version
@@ -253,7 +253,19 @@ class WirecloudCorePlugin(WirecloudPlugin):
             fullname = user.get_full_name()
             avatar = 'https://www.gravatar.com/avatar/' + md5(
                 user.email.strip().lower().encode('utf8')).hexdigest() + '?s=25'
-            groups = tuple([group.name for group in await get_user_groups(db, user.id)])
+            user_groups = await get_user_groups(db, user.id)
+            groups = tuple(group.name for group in user_groups)
+            organizations_by_id = {}
+            for group in user_groups:
+                if not getattr(group, "is_organization", False) or not getattr(group, "path", None):
+                    continue
+                root_id = group.path[0]
+                if root_id in organizations_by_id:
+                    continue
+                root = group if group.id == root_id else await get_group_by_id(db, root_id)
+                if root is not None:
+                    organizations_by_id[root_id] = root.name
+            organizations = tuple(organizations_by_id.values())
             try:
                 permissions = [p.codename for p in await get_all_user_permissions(db, user.id)]
             except InvalidId:
@@ -263,7 +275,8 @@ class WirecloudCorePlugin(WirecloudPlugin):
             fullname = 'Anonymous'
             avatar = 'https://www.gravatar.com/avatar/00000000000000000000000000000000?s=25'
             groups = ()
-            permissions = () # TODO Maybe specify anonymous user permissions?
+            organizations = ()
+            permissions = ()
 
         return {
             'language': request.state.lang if request else None,
@@ -276,7 +289,7 @@ class WirecloudCorePlugin(WirecloudPlugin):
             'issuperuser': user.is_superuser if user else False,
             'groups': groups,
             'permissions': permissions,
-            # 'organizations': tuple(user.groups.filter(organization__isnull=False).values_list('name', flat=True)), # TODO
+            'organizations': organizations,
             'mode': get_current_view(request) if request else None,
             'realuser': session.real_user if session else None,
             'theme': get_current_theme(request) if request else None,
@@ -355,7 +368,7 @@ class WirecloudCorePlugin(WirecloudPlugin):
             PreferenceKey(
                 name='sharelist',
                 label=_('Share list'),
-                type='layout',  # TODO This is layout type in the original code, but that does not make sense
+                type='layout',  # Legacy client field type used by the preference renderer.
                 hidden=True,
                 description=_('List of users with access to this workspace. (default: [])'),
                 defaultValue=[]

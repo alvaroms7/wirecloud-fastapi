@@ -26,13 +26,16 @@ BLACKLISTED_HEADERS = {
 }
 
 
-# TODO Add FastAPI handlers for this exception
 class ValidationError(Exception):
     def __init__(self, msg):
         self.msg = msg
 
     def get_response(self, request):
         return build_error_response(request, 422, self.msg)
+
+
+async def validation_error_handler(request, exc: ValidationError):
+    return exc.get_response(request)
 
 
 def is_valid_response_header(header: str) -> bool:

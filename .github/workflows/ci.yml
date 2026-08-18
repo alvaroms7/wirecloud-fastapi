@@ -1,30 +1,34 @@
 name: WireCloud CI
 
-on:
-  push:
-    branches:
-      - "**"
-  pull_request:
-    branches:
-      - "**"
+on: [push, pull_request]
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
-  test-and-coverage:
-    permissions: write-all
+  test_and_coverage:
+    name: Test and coverage
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
+    outputs:
+      python_base: ${{ steps.coverage_diff.outputs.python_base }}
+      python_head: ${{ steps.coverage_diff.outputs.python_head }}
+      python_delta: ${{ steps.coverage_diff.outputs.python_delta }}
+      javascript_base: ${{ steps.coverage_diff.outputs.javascript_base }}
+      javascript_head: ${{ steps.coverage_diff.outputs.javascript_head }}
+      javascript_delta: ${{ steps.coverage_diff.outputs.javascript_delta }}
+      javascript_branches: ${{ steps.head_coverage.outputs.javascript_branches }}
+      javascript_functions: ${{ steps.head_coverage.outputs.javascript_functions }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.9"
           cache: "pip"
@@ -32,13 +36,21 @@ jobs:
             requirements.txt
             requirements-test.txt
 
-      - name: Install dependencies
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -r requirements-test.txt
+          python -m pip install -r requirements.txt -r requirements-test.txt
 
-      - name: Run tests (head)
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Run Python tests with coverage
         run: |
           pytest -q \
             --cov=src \
@@ -47,27 +59,48 @@ jobs:
             --cov-report=xml:coverage-head.xml \
             --cov-report=json:coverage-head.json
 
+      - name: Run JavaScript tests with coverage
+        run: npm run test:js:cov
+
       - name: Read head coverage
-        id: head_cov
+        id: head_coverage
         run: |
           python - <<'PY'
           import json
           import os
+
           with open("coverage-head.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
-          head = float(data["totals"]["percent_covered"])
-          with open("/tmp/head_cov.txt", "w", encoding="utf-8") as out:
-              out.write(f"{head:.2f}")
-          print(f"head={head:.2f}")
+              python_coverage = float(json.load(f)["totals"]["percent_covered"])
+          with open("coverage/js/coverage-summary.json", "r", encoding="utf-8") as f:
+              javascript = json.load(f)["total"]
+
+          values = {
+              "python": python_coverage,
+              "javascript_lines": float(javascript["lines"]["pct"]),
+              "javascript_branches": float(javascript["branches"]["pct"]),
+              "javascript_functions": float(javascript["functions"]["pct"]),
+          }
+
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"head={head:.2f}\n")
+              for name, value in values.items():
+                  print(f"{name}={value:.2f}")
+                  out.write(f"{name}={value:.2f}\n")
           PY
 
-      - name: Run tests (base branch for PR coverage diff)
+      - name: Check out the PR base
         if: github.event_name == 'pull_request'
         run: |
           git worktree add /tmp/base-ref "${{ github.event.pull_request.base.sha }}"
-          cd /tmp/base-ref
+
+      - name: Install base JavaScript dependencies
+        if: github.event_name == 'pull_request'
+        working-directory: /tmp/base-ref
+        run: npm ci
+
+      - name: Run base Python tests with coverage
+        if: github.event_name == 'pull_request'
+        working-directory: /tmp/base-ref
+        run: |
           pytest -q \
             --cov=src \
             --cov-branch \
@@ -75,73 +108,138 @@ jobs:
             --cov-report=xml:coverage-base.xml \
             --cov-report=json:coverage-base.json
 
+      - name: Run base JavaScript tests with coverage
+        if: github.event_name == 'pull_request'
+        working-directory: /tmp/base-ref
+        # Use the head runner so both sides use the same coverage reporters.
+        run: node "$GITHUB_WORKSPACE/scripts/run-js-coverage.mjs"
+
       - name: Compare coverage (PR)
         if: github.event_name == 'pull_request'
-        id: cov_diff
+        id: coverage_diff
         run: |
           python - <<'PY'
           import json
           import os
 
           with open("coverage-head.json", "r", encoding="utf-8") as f:
-              head = float(json.load(f)["totals"]["percent_covered"])
+              python_head = float(json.load(f)["totals"]["percent_covered"])
           with open("/tmp/base-ref/coverage-base.json", "r", encoding="utf-8") as f:
-              base = float(json.load(f)["totals"]["percent_covered"])
+              python_base = float(json.load(f)["totals"]["percent_covered"])
+          with open("coverage/js/coverage-summary.json", "r", encoding="utf-8") as f:
+              javascript_head = float(json.load(f)["total"]["lines"]["pct"])
+          with open("/tmp/base-ref/coverage/js/coverage-summary.json", "r", encoding="utf-8") as f:
+              javascript_base = float(json.load(f)["total"]["lines"]["pct"])
 
-          delta = head - base
-          trend = "increased" if delta > 0 else ("decreased" if delta < 0 else "unchanged")
-          sign = "+" if delta > 0 else ""
+          values = {
+              "python_base": python_base,
+              "python_head": python_head,
+              "python_delta": python_head - python_base,
+              "javascript_base": javascript_base,
+              "javascript_head": javascript_head,
+              "javascript_delta": javascript_head - javascript_base,
+          }
 
-          summary = (
-              f"Coverage (base -> head): {base:.2f}% -> {head:.2f}% "
-              f"({sign}{delta:.2f} pp, {trend})."
-          )
-
-          print(summary)
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
-              out.write(f"base={base:.2f}\n")
-              out.write(f"head={head:.2f}\n")
-              out.write(f"delta={delta:.2f}\n")
-              out.write(f"trend={trend}\n")
-              out.write(f"summary={summary}\n")
+              for name, value in values.items():
+                  print(f"{name}={value:.2f}")
+                  out.write(f"{name}={value:.2f}\n")
           PY
 
-      - name: Add coverage summary to workflow summary
+      - name: Add coverage to the workflow summary
+        run: |
+          echo "## Coverage report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Suite | Coverage |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| --- | ---: |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Python | ${{ steps.head_coverage.outputs.python }}% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| JavaScript lines | ${{ steps.head_coverage.outputs.javascript_lines }}% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| JavaScript branches | ${{ steps.head_coverage.outputs.javascript_branches }}% |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| JavaScript functions | ${{ steps.head_coverage.outputs.javascript_functions }}% |" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Add PR coverage delta to the workflow summary
         if: github.event_name == 'pull_request'
         run: |
-          {
-            echo "## Coverage report"
-            echo ""
-            echo "- Base coverage: ${{ steps.cov_diff.outputs.base }}%"
-            echo "- Head coverage: ${{ steps.cov_diff.outputs.head }}%"
-            echo "- Delta: ${{ steps.cov_diff.outputs.delta }} pp (${{ steps.cov_diff.outputs.trend }})"
-          } >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Suite | Base | Head | Delta |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| --- | ---: | ---: | ---: |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Python | ${{ steps.coverage_diff.outputs.python_base }}% | ${{ steps.coverage_diff.outputs.python_head }}% | ${{ steps.coverage_diff.outputs.python_delta }} pp |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| JavaScript lines | ${{ steps.coverage_diff.outputs.javascript_base }}% | ${{ steps.coverage_diff.outputs.javascript_head }}% | ${{ steps.coverage_diff.outputs.javascript_delta }} pp |" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Comment PR with coverage delta
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+      - name: Explain read-only PR comment behavior
+        if: >-
+          github.event_name == 'pull_request' &&
+          (github.event.pull_request.head.repo.full_name != github.repository ||
+          github.actor == 'dependabot[bot]')
+        run: echo "Coverage is not posted as a PR comment because GitHub gives this pull request a read-only token. The complete report is available in this summary." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: coverage-reports
+          path: |
+            coverage-head.xml
+            coverage-head.json
+            coverage/js/coverage-summary.json
+            coverage/js/lcov.info
+            /tmp/base-ref/coverage-base.xml
+            /tmp/base-ref/coverage-base.json
+            /tmp/base-ref/coverage/js/coverage-summary.json
+            /tmp/base-ref/coverage/js/lcov.info
+          if-no-files-found: ignore
+
+  comment_on_pr:
+    name: Comment on PR
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    needs: test_and_coverage
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Create or update the coverage comment
+        uses: actions/github-script@v9
+        env:
+          PYTHON_BASE: ${{ needs.test_and_coverage.outputs.python_base }}
+          PYTHON_HEAD: ${{ needs.test_and_coverage.outputs.python_head }}
+          PYTHON_DELTA: ${{ needs.test_and_coverage.outputs.python_delta }}
+          JAVASCRIPT_BASE: ${{ needs.test_and_coverage.outputs.javascript_base }}
+          JAVASCRIPT_HEAD: ${{ needs.test_and_coverage.outputs.javascript_head }}
+          JAVASCRIPT_DELTA: ${{ needs.test_and_coverage.outputs.javascript_delta }}
+          JAVASCRIPT_BRANCHES: ${{ needs.test_and_coverage.outputs.javascript_branches }}
+          JAVASCRIPT_FUNCTIONS: ${{ needs.test_and_coverage.outputs.javascript_functions }}
         with:
           script: |
             const marker = "<!-- coverage-delta-comment -->";
+            const formatDelta = (value) => {
+              const delta = Number(value);
+              const sign = delta > 0 ? "+" : "";
+              return `${sign}${delta.toFixed(2)} pp`;
+            };
             const body = `${marker}
-            ### Coverage Delta
-            - Base: **${{ steps.cov_diff.outputs.base }}%**
-            - Head: **${{ steps.cov_diff.outputs.head }}%**
-            - Delta: **${{ steps.cov_diff.outputs.delta }} pp** (${{ steps.cov_diff.outputs.trend }})
+            ### Coverage report
+
+            | Suite | Base | Head | Delta |
+            | --- | ---: | ---: | ---: |
+            | Python | ${process.env.PYTHON_BASE}% | ${process.env.PYTHON_HEAD}% | ${formatDelta(process.env.PYTHON_DELTA)} |
+            | JavaScript lines | ${process.env.JAVASCRIPT_BASE}% | ${process.env.JAVASCRIPT_HEAD}% | ${formatDelta(process.env.JAVASCRIPT_DELTA)} |
+
+            JavaScript head coverage: ${process.env.JAVASCRIPT_BRANCHES}% branches, ${process.env.JAVASCRIPT_FUNCTIONS}% functions.
             `;
 
             const { owner, repo } = context.repo;
             const issue_number = context.issue.number;
-
             const comments = await github.paginate(github.rest.issues.listComments, {
               owner,
               repo,
               issue_number,
               per_page: 100,
             });
-
             const previous = comments.find(
-              (c) => c.user.type === "Bot" && c.body && c.body.includes(marker)
+              (comment) => comment.user.type === "Bot" && comment.body?.includes(marker)
             );
 
             if (previous) {
@@ -159,14 +257,3 @@ jobs:
                 body,
               });
             }
-
-      - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-reports
-          path: |
-            coverage-head.xml
-            coverage-head.json
-            /tmp/base-ref/coverage-base.xml
-            /tmp/base-ref/coverage-base.json
-          if-no-files-found: ignore
